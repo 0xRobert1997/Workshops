@@ -1,2 +1,13 @@
-package Workshops.no1_genercis.genericInterface;public class PackableBagGeneric {
+package Workshops.no1_genercis.genericInterface;
+
+public class PackableBagGeneric<T> implements Packable<T> {
+    @Override
+    public void pack(T element) {
+
+    }
+
+    @Override
+    public T empty() {
+        return null;
+    }
 }
