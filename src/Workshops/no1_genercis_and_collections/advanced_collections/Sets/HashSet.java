@@ -1,20 +1,17 @@
 package Workshops.no1_genercis_and_collections.advanced_collections.Sets;
 
-import java.util.HashSet;
 import java.util.Set;
 
-public class Main {
+public class HashSet {
 
     public static void main(String[] args) {
-        Set<Dog> dogs = new HashSet<>();
+        Set<Dog> dogs = new java.util.HashSet<>();
         dogs.add(new Dog("Romek"));
         dogs.add(new Dog("Stefan"));
         dogs.add(new Dog("Romek"));
         dogs.add(new Dog("Zbyszek"));
         dogs.add(new Dog("Kiciek"));
         dogs.add(new Dog("Filip"));
-
-
 
     }
 
@@ -32,6 +29,19 @@ public class Main {
         @Override
         public String toString() {
             return "Dog" + name;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Dog dog)) return false;
+
+            return getName() != null ? getName().equals(dog.getName()) : dog.getName() == null;
+        }
+
+        @Override
+        public int hashCode() {
+            return getName() != null ? getName().hashCode() : 0;
         }
     }
 }

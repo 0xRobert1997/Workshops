@@ -1,8 +1,7 @@
-package Workshops.no1_genercis.Upper_bound_wildcard;
+package Workshops.no1_genercis_and_collections.generics.Upper_bound_wildcard;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Main {
 

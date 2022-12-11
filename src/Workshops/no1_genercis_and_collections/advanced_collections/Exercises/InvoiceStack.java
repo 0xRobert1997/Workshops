@@ -1,4 +1,6 @@
-package Workshops.no1_genercis_and_collections.advanced_collections.Exercises.ex1;
+package Workshops.no1_genercis_and_collections.advanced_collections.Exercises;
+
+import Workshops.no1_genercis_and_collections.advanced_collections.Exercises.Invoice;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

@@ -2,7 +2,7 @@ package Workshops.no1_genercis_and_collections.comparing;
 
 import java.util.*;
 
-public class Comparator {
+public class MainComparator {
 
 //     compare zwraca
 //     liczba ujemna jeśli o1 > o2
@@ -15,7 +15,7 @@ public class Comparator {
 
         List<String> strings = Arrays.asList("a", "A", "1", "X", "aA", "Aa", "A1", "B1", "b2");
         System.out.println(strings);
-        java.util.Comparator<String> myComparator = java.util.Comparator.<String>naturalOrder().reversed();
+        Comparator<String> myComparator = Comparator.<String>naturalOrder().reversed();
         strings.sort(myComparator);
         System.out.println(strings);
 
@@ -32,12 +32,12 @@ public class Comparator {
 
 
         //klasa anonimowa
-        java.util.Comparator<Cat> myFirstComparator = new java.util.Comparator<Cat>() {
+        Comparator<Cat> myFirstComparator = new Comparator<Cat>() {
             @Override
             public int compare(Cat o1, Cat o2) {
                 return o1.getName().compareTo(o2.getName());
             }
-        }.thenComparing(new java.util.Comparator<Cat>() {
+        }.thenComparing(new Comparator<Cat>() {
             // jeśli jakieś koty bd mieć takie samo imię to dodatkowo porównuje id
             @Override
             public int compare(Cat o1, Cat o2) {
@@ -46,7 +46,7 @@ public class Comparator {
         });
         //cats.sort(myFirstComparator.reversed());
 
-        java.util.Comparator<Cat> mySecondComparator = new java.util.Comparator<Cat>() {
+        Comparator<Cat> mySecondComparator = new Comparator<Cat>() {
             @Override
             public int compare(Cat o1, Cat o2) {
                 if (o1 == null){
@@ -64,7 +64,7 @@ public class Comparator {
         };
         cats.sort(mySecondComparator.reversed());
 
-        java.util.Comparator<Cat> myThirdComparator = (o1, o2) -> o1.getName().compareTo(o2.getName());
+        Comparator<Cat> myThirdComparator = (o1, o2) -> o1.getName().compareTo(o2.getName());
         myThirdComparator = myThirdComparator.thenComparing((o1, o2) -> o1.getId() - o2.getId());
 
         cats.sort(myThirdComparator);

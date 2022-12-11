@@ -5,21 +5,22 @@ import java.util.Deque;
 import java.util.List;
 import java.util.Queue;
 
-public class Main {
+public class queueAndDeque {
 
     public static void main(String[] args) {
         List<Integer> input = List.of(1, 5, 9, 1, 62);
 
         Queue<Integer> queue = new ArrayDeque<>();
-        /*  peek() - zwraca pierwszy element kolejki
+        /*  offer() - dodawanie e
+            peek() - zwraca pierwszy element kolejki
             poll() - zwraca i usuwa pierwszy element albo null jeśli queue jest pusta
             removes() - -,,- ale nie zwraca nulla
          */
 
-        Deque<Integer> stack = new ArrayDeque<>();
+        Deque<Integer> stack = new ArrayDeque<>(input);
         /*  push() - dodaje e z porzodu
             peek() - tak samo zwraca pierwszy element
-            pop() -  usuwa pierwszy elemen
+            pop() -  zwraca usuwa pierwszy elemen
          */
 
 
@@ -36,5 +37,9 @@ public class Main {
             System.out.println("queue.poll: " + queue.poll());
             System.out.println(queue);
         }
+
+        System.out.println(stack);
+        System.out.println(stack.pop());
+        System.out.println(stack);
     }
 }

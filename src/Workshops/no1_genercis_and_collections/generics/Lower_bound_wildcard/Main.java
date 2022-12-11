@@ -1,4 +1,4 @@
-package Workshops.no1_genercis.Lower_bound_wildcard;
+package Workshops.no1_genercis_and_collections.generics.Lower_bound_wildcard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ public class Main {
         addFlyingDog(dogs);
         addFlyingDog(animals);
 
-        // dziwny zapis mówi że w liście nie będzie nic co jest wyżej w hierarchi dziedziczenia niż Dog
-        // czyli albo Dog albo niżej
+        // dziwny zapis mówi że w liście nie będzie nic co jest niżej w hierarchi dziedziczenia niż Dog
+        // czyli albo Dog albo coś z czego Dog dziedziczy
         List<? super Dog> list1 = dogs;
         List<? super Dog> list2 = animals;
         list1.add(new Dog());

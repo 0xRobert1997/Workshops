@@ -1,4 +1,4 @@
-package Workshops.no1_genercis.genericClass;
+package Workshops.no1_genercis_and_collections.generics.genericClass;
 
 public class Bag<T> {
 

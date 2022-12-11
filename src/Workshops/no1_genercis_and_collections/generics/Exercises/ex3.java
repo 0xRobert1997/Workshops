@@ -1,4 +1,4 @@
-package Workshops.no1_genercis.Exercises;
+package Workshops.no1_genercis_and_collections.generics.Exercises;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -20,9 +20,9 @@ public class ex3 {
 
     }
 
-    private static <t> void filter(List<t> list, Predicate<t> checker) {
+    private static <T> void filter(List<T> list, Predicate<T> checker) {
         int counter = 0;
-        for (t element : list) {
+        for (T element : list) {
             if (checker.test(element)) {
                 counter++;
             }

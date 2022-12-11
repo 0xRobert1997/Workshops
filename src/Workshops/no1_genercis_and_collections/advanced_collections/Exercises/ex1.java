@@ -1,4 +1,4 @@
-package Workshops.no1_genercis_and_collections.advanced_collections.Exercises.ex1;
+package Workshops.no1_genercis_and_collections.advanced_collections.Exercises;
 
 import java.util.NavigableSet;
 import java.util.TreeSet;

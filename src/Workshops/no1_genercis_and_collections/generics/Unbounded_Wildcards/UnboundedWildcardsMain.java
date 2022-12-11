@@ -1,4 +1,4 @@
-package Workshops.no1_genercis.Unbounded_Wildcards;
+package Workshops.no1_genercis_and_collections.generics.Unbounded_Wildcards;
 
 import java.util.ArrayList;
 import java.util.List;

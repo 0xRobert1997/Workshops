@@ -1,4 +1,4 @@
-package Workshops.no1_genercis.genericsMethods;
+package Workshops.no1_genercis_and_collections.generics.genericsMethods;
 
 import java.util.Map;
 

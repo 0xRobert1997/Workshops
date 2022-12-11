@@ -1,4 +1,4 @@
-package Workshops.no1_genercis.Exercises;
+package Workshops.no1_genercis_and_collections.generics.Exercises;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Workshops.no1_genercis.Exercises;
+package Workshops.no1_genercis_and_collections.generics.Exercises;
 
 import java.util.List;
 
@@ -7,10 +7,10 @@ public class ex5 {
     public static void main(String[] args) {
 
         List<Integer> valuesList = List.of(1, 5, 20, 30, 22, 33, 11, 31, 43, 34, 55, 86);
-        maxValue(valuesList,1, 5);
+        maxValue(valuesList,2, 5);
     }
 
-    private static <t> void maxValue(List<t> valuesList, t start, t end) {
+    private static <T extends Number> void maxValue(List<T> valuesList, T start, T end) {
         int max = (int)start;
         int x = (int) start;
         int y = (int) end;

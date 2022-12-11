@@ -1,15 +1,17 @@
 package Workshops.no1_genercis_and_collections.advanced_collections.Exercises.Project;
 
-public class CommandProcessor {
+public class PersonCommandProcessor {
 
     private final CustomQueue<Person> customQueue;
 
-    public CommandProcessor(CustomQueue<Person> customQueue) {
+    public PersonCommandProcessor(CustomQueue<Person> customQueue) {
         this.customQueue = customQueue;
     }
 
     public void processCommand(String command) {
-        if (command.contains("ADD PERSON")) {
+        if (command.contains("VIP")) {
+            handleVipPerson(command);
+        } else if (command.contains("ADD PERSON")) {
             handleAddPerson(command);
         } else if (command.contains("LEAVE PERSON")) {
             handleLeavePerson(command);
@@ -20,13 +22,17 @@ public class CommandProcessor {
         }
     }
 
+    private void handleVipPerson(String command) {
+        System.out.println(command);
+        Person incomingPerson = createPerson(command);
+        customQueue.welcomeVip(incomingPerson);
+    }
+
     private void handleAddPerson(String command) {
-        command = command.substring(11);
-        command = command.replace(")", "");
+        String personKey = command.substring(11);
+        personKey = personKey.replace(")", "");
 
-        String personKey = command;
-
-        String[] split = command.split("_");
+        String[] split = personKey.split("_");
 
         if (split.length != 2) {
             throw new RuntimeException("O co chodzi?");
@@ -35,25 +41,43 @@ public class CommandProcessor {
         String name = split[0];
         String surname = split[1];
 
-        Integer counter = getAndIncreaseCounter(personKey);
+        Integer counter = customQueue.getAndIncreaseCounter(personKey);
 
-        System.out.println(name + " " + surname + " " + counter);
+        System.out.println(command);
 
-        queue.offer(new Person(name, surname, counter));
+        customQueue.welcome(new Person(name, surname, counter));
 
-    }
-
-    private Integer getAndIncreaseCounter(String personKey) {
-        Integer tempCounter = counterMap.getOrDefault(personKey, 0);
-        counterMap.put(personKey, ++tempCounter);
-        return tempCounter;
     }
 
     private void handleLeavePerson(String command) {
+        System.out.println(command);
+        String personId = command
+                .replace("LEAVE PERSON(", "")
+                        .replace(")", "");
+
+        Person person = createPerson(command);
+        customQueue.leave(person);
+
+    }
+
+    private static Person createPerson(String command) {
+        String personId = command
+                .replace("LEAVE PERSON(", "")
+                .replace(")", "");
+
+
+        String[] splitId = personId.split("_");
+
+        if (splitId.length == 2) {
+            return new Person(splitId[0], splitId[1], 1);
+        } else {
+            return new Person(splitId[0], splitId[1], Integer.valueOf(splitId[2]));
+        }
 
     }
 
     private void handleProcess(String command) {
-
+        System.out.println(command);
+        customQueue.enter();
     }
 }
