@@ -1,14 +1,14 @@
 package Workshops.no2_functional_programming.MethodReference;
 
-public class Main {
+public class withStaticsMethods {
 
     public static void main(String[] args) {
 
         MilkProducer producer = () -> "someMilk";
-        MilkProducer producer2 = Main::someMilkReference;
+        MilkProducer producer2 = withStaticsMethods::someMilkReference;
 
         MilkConsumer consumer = a -> "someMilkConsumed: " + a;
-        MilkConsumer consumer2 = Main::someMilkReference;
+        MilkConsumer consumer2 = withStaticsMethods::someMilkReference;
 
         System.out.println(producer.produce());
         System.out.println();
