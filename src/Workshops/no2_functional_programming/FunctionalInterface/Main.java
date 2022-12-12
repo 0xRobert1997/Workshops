@@ -1,4 +1,4 @@
-package Workshops.no2_functional_programming;
+package Workshops.no2_functional_programming.FunctionalInterface;
 
 public class Main {
 
@@ -8,5 +8,6 @@ public class Main {
         myImpl.consume("myArgument");
         myImpl.someDefault();
         SomeFunctionalInterface.someStatic();
+
     }
 }

@@ -1,4 +1,4 @@
-package Workshops.no2_functional_programming;
+package Workshops.no2_functional_programming.FunctionalInterface;
 
 @FunctionalInterface
 public interface SomeFunctionalInterface {
