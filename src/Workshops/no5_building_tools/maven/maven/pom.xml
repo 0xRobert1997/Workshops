@@ -1,0 +1,129 @@
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0. http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pl.zajavka</groupId>
+    <artifactId>java-maven-examples</artifactId>
+    <version>1.0.0</version>
+
+    <!--    <parent>-->
+    <!--        <groupId>pl.zajavka.parent</groupId>-->
+    <!--        <artifactId>java-maven-examples-parent</artifactId>-->
+    <!--        <version>1.0.0</version>-->
+    <!--        <relativePath>../parent/pom.xml</relativePath>-->
+    <!--    </parent>-->
+
+<!--    żeby wyświetlić finalną konfigurację po dziedziczeniu:-->
+<!--    mvn help:effective-pom-->
+
+    <properties>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.14.2</version>
+<!-- runtime, compile, provided, test
+compile jest domyślne, -->
+            <scope>compile</scope>
+
+<!--dodawanie zdalnego repozytorium-->
+<!--            <repositories>-->
+<!--                <repository>-->
+<!--                    <id>my-repo1</id>-->
+<!--                    <name>my custom repo 1</name>-->
+<!--                    <url>http://my1.custom.repo</url>-->
+<!--                </repository>-->
+<!--                <repository>-->
+<!--                    <id>my-repo2</id>-->
+<!--                    <name>my custom repo 2</name>-->
+<!--                    <url>http://my2.custom.repo</url>-->
+<!--                </repository>-->
+<!--            </repositories>-->
+
+
+        </dependency>
+    </dependencies>
+
+
+<!--odpalanie z danym profilem-->
+<!-- mvn compile -P TEST-->
+    <profiles>
+        <profile>
+            <id>DEV</id>
+            <build></build>
+            <repositories></repositories>
+            <dependencies></dependencies>
+        </profile>
+        <profile>
+            <id>TEST</id>
+            <build></build>
+            <repositories></repositories>
+            <dependencies></dependencies>
+        </profile>
+    </profiles>
+
+
+    <build>
+        <plugins>
+
+            <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.10.1</version>
+                <configuration>
+                    <release>15</release>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.20.0</version>
+                <configuration>
+                    <printFailingErrors>true</printFailingErrors>
+                </configuration>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+
+                        </execution>
+                    </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>code.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
