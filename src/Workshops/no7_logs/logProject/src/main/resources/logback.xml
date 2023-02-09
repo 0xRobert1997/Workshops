@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <appender name="TO_CONSOLE" class ="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} %method: %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="TO_FILE" class ="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.dir}/logs/project-logs/newest.log</file>
+        <append>false</append>
+        <immediateFlush>true</immediateFlush>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${user.dir}/logs/project-logs/archived/rolled.%d{yyyy.MM.dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <totalSizeCap>5GB</totalSizeCap>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{HH:mm:SSS} %-5level %logger{36} line: %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="mortgage.services.PrintingServiceImpl" level="info" additivity="false">
+        <appender-ref ref="TO_FILE"/>
+    </logger>
+
+
+
+    <root level ="trace">
+        <appender-ref ref="TO_CONSOLE"/>
+
+    </root>
+</configuration>
