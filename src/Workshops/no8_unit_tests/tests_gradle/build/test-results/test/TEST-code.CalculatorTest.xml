@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="code.CalculatorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-02-12T15:01:42" hostname="DESKTOP-BLH904A" time="0.02">
+  <properties/>
+  <testcase name="subtract()" classname="code.CalculatorTest" time="0.013"/>
+  <testcase name="divide()" classname="code.CalculatorTest" time="0.002"/>
+  <testcase name="Testing method wich tests adding behaviour" classname="code.CalculatorTest" time="0.002"/>
+  <testcase name="multiply()" classname="code.CalculatorTest" time="0.002"/>
+  <system-out><![CDATA[Before ALL
+Before each!
+Before each!
+Before each!
+Before each!
+After ALL
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
