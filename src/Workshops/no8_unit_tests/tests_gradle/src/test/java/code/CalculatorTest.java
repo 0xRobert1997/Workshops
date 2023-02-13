@@ -1,6 +1,8 @@
 package code;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 class CalculatorTest {
 
@@ -27,6 +29,36 @@ class CalculatorTest {
         System.out.println("After each!");
     }
 
+    @Test
+    @Disabled("Explanation why this test is disabled xd")
+    void assertionsTest() {
+        Assertions.assertEquals(1, 1, createMessage(1));
+        Assertions.assertEquals("test1", "test2", () -> "custom message");
+
+        Assertions.assertAll(
+                () -> Assertions.assertEquals("test1", "test2", () -> "custom message1"),
+                () -> Assertions.assertEquals("test1", "test2", () -> "custom message2")
+                );
+
+    }
+
+    private String createMessage(int param) {
+        System.out.println("message creation: " + param);
+        return "Failure message " + param;
+    }
+
+    @ParameterizedTest
+    @MethodSource(value = "testData")
+    void testCalculator(int[] testData) {
+        //given, when ,then
+        Assertions.assertEquals((Integer) testData[0], (Integer) Calculator.add(testData[1], testData[2]));
+    }
+    public static int[][] testData() {
+        return new int[][]{
+                {5, 2,3},
+                {8, 3,5},
+                {9, 2,7}};
+    }
 
     @Test
     @DisplayName("Testing method wich tests adding behaviour")
