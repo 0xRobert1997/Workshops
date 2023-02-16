@@ -1,2 +1,5 @@
-package code;public class anotherCalculator {
+package code;
+
+public class anotherCalculator {
+
 }
