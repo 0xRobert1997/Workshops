@@ -4,10 +4,12 @@ import java.util.*;
 
 public class UserManagmentService {
 
-    public static Map<String, User> mapOfUsers = new HashMap<>();
+    public Map<String, User> mapOfUsers = new HashMap<>();
 
-    static void create(User user) {
-
+    void create(User user) {
+        if (mapOfUsers.containsKey(user.getEmail())) {
+            throw new RuntimeException("User with email: [" + user.getEmail() + "] is already created");
+        }
         mapOfUsers.put(user.getEmail(), user);
     }
 
@@ -29,8 +31,18 @@ public class UserManagmentService {
         return listOfUsers;
     }
 
-    public void update(String email, User withEmail) {
+    public void update(String email, User withNewEmail) {
 
+        if (mapOfUsers.containsKey(email)) {
+            User userToUpdate = mapOfUsers.get(email);
+            User userToUpdate2 = new User(userToUpdate.getName(), userToUpdate.getSurname(), userToUpdate.getEmail());
+            mapOfUsers.remove(email);
+            userToUpdate2.setEmail(withNewEmail.getEmail());
+            mapOfUsers.put(userToUpdate2.getEmail(), userToUpdate2);
+
+        } else {
+            throw new RuntimeException("User with email: [" + email + "] doesn't exist");
+        }
     }
 
     public void delete(String email) {
@@ -42,7 +54,8 @@ public class UserManagmentService {
         }
         if (temp) {
             mapOfUsers.remove(email);
+        } else {
+            throw new RuntimeException("User with email: [" + email + "] doesn't exist");
         }
-
     }
 }

@@ -1,12 +1,15 @@
 package code;
 
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 
-import static code.UserManagmentService.mapOfUsers;
 
 @Builder
+@Setter
 @Getter
+@EqualsAndHashCode
 public class User implements Comparable<User> {
     private String name;
     private String surname;
@@ -16,47 +19,21 @@ public class User implements Comparable<User> {
         this.name = name;
         this.surname = surname;
         this.email = email;
-      //  mapOfUsers.put(email, this);
+    }
+    @Override
+    public int compareTo(User o) {
+        return this.email.compareTo(o.email);
     }
 
     public User withName(String name) {
-        this.name = name;
-        return this;
+        return this.name == name ? this : new User(name, this.surname, this.email);
     }
 
     public User withSurname(String surname) {
-        this.surname = surname;
-        return this;
+        return this.surname == surname ? this : new User(this.name, surname, this.email);
     }
 
     public User withEmail(String email) {
-        this.email = email;
-        return this;
-    }
-
-    public boolean isPresent() {
-        return mapOfUsers.containsValue(this);
-    }
-
-    public User get() {
-        return this;
-    }
-
-    public boolean isEmpty() {
-        for (String s : mapOfUsers.keySet()) {
-            if (s.equals(this.getEmail())) {
-                continue;
-            } else {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override
-    public int compareTo(User o) {
-        int result = this.email.compareTo(o.email);
-
-        return result;
+        return this.email == email ? this : new User(this.name, this.surname, email);
     }
 }

@@ -18,7 +18,7 @@ public class UserManagmentServiceTest {
     }
 
     @Test
-    void shouldCreateUserCorretly() {
+    void shouldCreateUserCorrectly() {
         //given
         var user = someUser();
         //when
@@ -52,7 +52,7 @@ public class UserManagmentServiceTest {
         Assertions.assertEquals(user1, result1.get());
         Assertions.assertTrue(result2.isPresent());
         Assertions.assertEquals(user2, result2.get());
-        Assertions.assertTrue(result2.isPresent());
+        Assertions.assertTrue(result3.isPresent());
         Assertions.assertEquals(user3, result3.get());
     }
 
@@ -108,9 +108,9 @@ public class UserManagmentServiceTest {
         String newEmail = "newEmail@gmail.com";
 
         //when
-        UserManagmentService.create(user1);
-        UserManagmentService.create(user2);
-        UserManagmentService.create(user3);
+        userManagmentService.create(user1);
+        userManagmentService.create(user2);
+        userManagmentService.create(user3);
 
         var all = userManagmentService.findAll();
         Assertions.assertEquals(3, all.size());
@@ -151,8 +151,8 @@ public class UserManagmentServiceTest {
 
         //when
         userManagmentService.create(user1);
-        UserManagmentService.create(user2);
-        UserManagmentService.create(user3);
+        userManagmentService.create(user2);
+        userManagmentService.create(user3);
 
         var all = userManagmentService.findAll();
         Assertions.assertEquals(3, all.size());
