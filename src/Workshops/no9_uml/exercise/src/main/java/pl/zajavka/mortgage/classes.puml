@@ -1,62 +1,70 @@
 @startuml
 class InputData {
-   {field} ~LocalDate : repaymentStartDate;
-   {field} ~ BigDecimal : wiborPercent;
-   {field} ~ BigDecimal :  amount;
-   {field} ~ BigDecimal :  monthsDuration;
-   {field} ~ MortgageType :  rateType;
-   {field} ~ BigDecimal :  marginPercent;
-   {field} ~ BigDecimal :  overpaymentProvisionPercent;
-   {field} ~ BigDecimal :  overpaymentProvisionMonths;
-   {field} ~ BigDecimal :  overpaymentStartMonth;
-   {field} ~ Map : <Integer, BigDecimal> overpaymentSchema;
-   {field} ~ String :  overpaymentReduceWay;
-   {field} ~ boolean :  mortgagePrintPayoffsSchedule;
-   {field} ~ Integer :  mortgageRateNumberToPrint;
+   {field} ~LocalDate : repaymentStartDate
+   {field} ~ BigDecimal : wiborPercent
+   {field} ~ BigDecimal :  amount
+   {field} ~ BigDecimal :  monthsDuration
+   {field} ~ MortgageType :  rateType
+   {field} ~ BigDecimal :  marginPercent
+   {field} ~ BigDecimal :  overpaymentProvisionPercent
+   {field} ~ BigDecimal :  overpaymentProvisionMonths
+   {field} ~ BigDecimal :  overpaymentStartMonth
+   {field} ~ Map : <Integer, BigDecimal> overpaymentSchema
+   {field} ~ String :  overpaymentReduceWay
+   {field} ~ boolean :  mortgagePrintPayoffsSchedule
+   {field} ~ Integer :  mortgageRateNumberToPrint
    {method} InputData defaultInputData()
 }
+InputData - MortgageType
 
 class MortgageReference {
-    {field} ~ BigDecimal : referenceAmount;
-    {field} ~ BigDecimal : referenceDuration;
+    {field} ~ BigDecimal : referenceAmount
+    {field} ~ BigDecimal : referenceDuration
     }
 class MortgageResidual {
-    {field} ~ BigDecimal : residualAmount;
-    {field} ~ BigDecimal : residualDuration;
-    }
+    {field} ~ BigDecimal : residualAmount
+    {field} ~ BigDecimal : residualDuration
+}
 enum MortgageType {
-    {field} CONSTANT("CONSTANT"),
-    {field} DECREASING("DECREASING");
-    }
+    {field} CONSTANT,
+    {field} DECREASING
+}
 class Overpayment {
-'    {field} {static} + final String REDUCE_RATE = "REDUCE_RATE";
-'    {field} {static} + final String REDUCE_PERIOD = "REDUCE_PERIOD";
-    {field} ~ BigDecimal amount;
-    {field} ~ BigDecimal provisionAmount;
-    }
+'    {field} {static} + final String REDUCE_RATE = "REDUCE_RATE"
+'    {field} {static} + final String REDUCE_PERIOD = "REDUCE_PERIOD"
+    {field} ~ BigDecimal amount
+    {field} ~ BigDecimal provisionAmount
+}
 class Rate {
-    {field} ~ BigDecimal rateNumber;
-    {field} ~ TimePoint timePoint;
-    {field} ~ RateAmounts rateAmounts;
-    {field} ~ MortgageResidual mortgageResidual;
-    {field} ~ MortgageReference mortgageReference;
-    }
+    {field} ~ BigDecimal rateNumber
+    {field} ~ TimePoint timePoint
+    {field} ~ RateAmounts rateAmounts
+    {field} ~ MortgageResidual mortgageResidual
+    {field} ~ MortgageReference mortgageReference
+}
+    Rate - TimePoint
+    Rate - RateAmounts
+    Rate - MortgageResidual
+    Rate - MortgageReference
+
 class RateAmounts {
-    {field} ~ BigDecimal rateAmount;
-    {field} ~ BigDecimal interestAmount;
-    {field} ~ BigDecimal capitalAmount;
-    {field} ~ Overpayment overpayment;
-    }
+    {field} ~ BigDecimal rateAmount
+    {field} ~ BigDecimal interestAmount
+    {field} ~ BigDecimal capitalAmount
+    {field} ~ Overpayment overpayment
+}
+RateAmounts - Overpayment
+
 class Summary {
-    {field} ~ BigDecimal interestSum;
-    {field} ~ BigDecimal overpaymentProvisionSum;
-    {field} ~ BigDecimal totalLostSum;
-    {field} ~ BigDecimal totalCapital;
+    {field} ~ BigDecimal interestSum
+    {field} ~ BigDecimal overpaymentProvisionSum
+    {field} ~ BigDecimal totalLostSum
+    {field} ~ BigDecimal totalCapital
 }
 class TimePoint {
-    {field} ~ BigDecimal year;
-    {field} ~ BigDecimal month;
-    {field} ~ LocalDate date;
+    {field} ~ BigDecimal year
+    {field} ~ BigDecimal month
+    {field} ~ LocalDate date
 }
 
 

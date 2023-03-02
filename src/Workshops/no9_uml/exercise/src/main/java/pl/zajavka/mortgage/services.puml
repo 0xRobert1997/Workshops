@@ -1,0 +1,162 @@
+@startuml
+interface AmountsCalculationService{
+RateAmounts calculate(final InputData inputData, final Overpayment overpayment)
+RateAmounts calculate(final InputData inputData, final Overpayment overpayment, final Rate previousRate);
+{static} BD calculateInterestAmount(final BD residualAmount, final BD interestPercentValue)
+{static} BD calculateQ(final BD interestPercent)
+{static} BD compareCapitalWithResidual(final BD capitalAmount, final BD residualAmount)
+}
+class AmountsCalculationServiceImpl implements AmountsCalculationService {
++ RateAmounts calculate(final InputData inputData, final Overpayment overpayment)
++ RateAmounts calculate(final InputData inputData, final Overpayment overpayment, final Rate previousRate)
+- BD calculateConstantRateAmount(final BD q, final BD interestAmount, final BD residualAmount, final BD referenceAmount, final BD referenceDuration)
+- BD compareRateWithResidual(final BD rateAmount, final BD interestAmount, final BD residualAmount)
+}
+AmountsCalculationService - ConstantAmountsCalculationService
+AmountsCalculationService - DecreasingAmountsCalculationService
+
+
+
+interface ConstantAmountsCalculationService {
+RateAmounts calculate(InputData inputData, Overpayment overpayment)
+RateAmounts calculate(InputData inputData, Overpayment overpayment, Rate previousRate)
+}
+class ConstantAmountsCalculationServiceImpl implements ConstantAmountsCalculationService{
++ RateAmounts calculate(final InputData inputData, final Overpayment overpayment)
++ RateAmounts calculate(final InputData inputData, final Overpayment overpayment, final Rate previousRate)
+- BD calculateConstantRateAmount(final BD q, final BD interestAmount, final BD residualAmount, final BD referenceAmount, final BD referenceDuration)
+- BD compareRateWithResidual(final BD rateAmount, final BD interestAmount, final BD residualAmount)
+}
+
+
+
+interface DecreasingAmountsCalculationService{
+RateAmounts calculate(InputData inputData, Overpayment overpayment)
+RateAmounts calculate(InputData inputData, Overpayment overpayment, Rate previousRate)
+}
+class DecreasingAmountsCalculationServiceImpl implements DecreasingAmountsCalculationService {
++ RateAmounts calculate(final InputData inputData, final Overpayment overpayment)
++ RateAmounts calculate(final InputData inputData, final Overpayment overpayment, final Rate previousRate)
+- BD calculateDecreasingCapitalAmount(final BD residualAmount, final BD residualDuration)
+}
+
+
+
+interface Function{
+BD calculate(Rate rate)
+}
+
+
+interface MortgageCalculationService {
+void calculate(InputData inputData)
+}
+class MortgageCalculationServiceImpl implements MortgageCalculationService {
+- final RateCalculationService rateCalculationService;
+- final PrintingService printingService;
+- final SummaryService summaryService;
++ void calculate(InputData inputData)
+}
+MortgageCalculationServiceImpl - RateCalculationService
+MortgageCalculationServiceImpl - PrintingService
+MortgageCalculationServiceImpl - SummaryService
+
+
+interface OverpaymentCalculationService {
+Overpayment calculate(final BigDecimal rateNumber, final InputData inputData)
+}
+class OverpaymentCalculationServiceImpl implements OverpaymentCalculationService {
++ Overpayment calculate(final BigDecimal rateNumber, final InputData inputData)
+- Optional<BigDecimal> calculateOverpaymentAmount(final BigDecimal rateNumber, Map<Integer, BigDecimal> overpaymentSchema)
+- BigDecimal calculateOverpaymentProvision(final BigDecimal rateNumber, final BigDecimal overpaymentAmount, final InputData inputData)
+}
+
+
+
+interface PrintingService {
+void printIntroInformation(InputData inputData)
+void printSchedule(List<Rate> rates, final InputData inputData)
+void printSummary(Summary summaryNoOverpayment)
+}
+class PrintingServiceImpl implements PrintingService {
++ void printIntroInformation(InputData inputData)
+- void logOverpayment(final StringBuilder msg, final Map<Integer, BD> schema, final String reduceWay)
+- String prettyPrintOverpaymentSchema(Map<Integer, BD> schema)
++ void printSchedule(final List<Rate> rates, final InputData inputData)
++ void printSummary(final Summary summary)
+}
+
+
+
+interface RateCalculationService {
+List<Rate> calculate(InputData inputData)
+}
+class RateCalculationServiceImpl implements RateCalculationService {
+- final TimePointCalculationService timePointCalculationService;
+    - final OverpaymentCalculationService overpaymentCalculationService;
+    - final AmountsCalculationService amountsCalculationService;
+    - final ResidualCalculationService residualCalculationService;
+    - final ReferenceCalculationService referenceCalculationService;
+    + List<Rate> calculate(final InputData inputData)
+    - Rate calculateZeroRate(final BD rateNumber, final InputData inputData)
+    - Rate calculateNextRate(final BD rateNumber, final InputData inputData, final Rate previousRate)
+}
+RateCalculationService - TimePointCalculationService
+RateCalculationService - OverpaymentCalculationService
+RateCalculationService - AmountsCalculationService
+RateCalculationService - ResidualCalculationService
+RateCalculationService - ReferenceCalculationService
+
+
+
+interface ReferenceCalculationService {
+MortgageReference calculate(RateAmounts rateAmounts, InputData inputData)
+MortgageReference calculate(RateAmounts rateAmounts, final InputData inputData, Rate previousRate)
+}
+class ReferenceCalculationServiceImpl implements ReferenceCalculationService {
++ MortgageReference calculate(RateAmounts rateAmounts, InputData inputData)
++ MortgageReference calculate(RateAmounts rateAmounts, final InputData inputData, Rate previousRate)
+- MortgageReference reduceRateMortgageReference(final RateAmounts rateAmounts, final MortgageResidual previousResidual)
+- BD calculateResidualAmount(final BD residualAmount, final RateAmounts rateAmounts)
+}
+
+
+
+interface ResidualCalculationService {
+MortgageResidual calculate(RateAmounts rateAmounts, InputData inputData)
+MortgageResidual calculate(RateAmounts rateAmounts, final InputData inputData, Rate previousRate)
+}
+class ResidualCalculationServiceImpl implements ResidualCalculationService {
++ MortgageResidual calculate(RateAmounts rateAmounts, InputData inputData)
++ MortgageResidual calculate(RateAmounts rateAmounts, final InputData inputData, Rate previousRate)
+- BD calculateResidualDuration(InputData inputData, BD residualAmount, BD previousResidualDuration, RateAmounts rateAmounts)
+- BD calculateDecreasingResidualDuration(BD residualAmount, RateAmounts rateAmounts)
+- BD calculateConstantResidualDuration(InputData inputData, BD residualAmount, RateAmounts rateAmounts)
+- BD calculateResidualAmount(final BD residualAmount, final RateAmounts rateAmounts)
+}
+
+
+interface SummaryService {
+Summary calculateSummary(List<Rate> rates)
+}
+class SummaryServiceFactory {
++ {static} SummaryService create()
+- {static} BD totalCapital(final RateAmounts rateAmounts)
+- {static} BD calculate(final List<Rate> rates, Function function)
+}
+
+interface TimePointCalculationService {
+TimePoint calculate(final BD rateNumber, final InputData inputData)
+TimePoint calculate(BD rateNumber, Rate previousRate)
+}
+class TimePointCalculationServiceImpl implements TimePointCalculationService {
++ TimePoint calculate(final BD rateNumber, final InputData inputData)
++ TimePoint calculate(BD rateNumber, Rate previousRate)
+- BD calculateYear(final BD rateNumber)
+- BD calculateMonth(final BD rateNumber)
+}
+
+Exception MortgageException{
+}
+
+
+@enduml
