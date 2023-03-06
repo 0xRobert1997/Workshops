@@ -1,0 +1,4 @@
+package Workshops.no10_design_principles_patterns.CompositionOverInheritence;
+
+public class Impl4 implements DecreasingAmountCalculationService{
+}
