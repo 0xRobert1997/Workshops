@@ -1,4 +1,4 @@
-package Workshops.no10_design_principles_patterns.Patterns.Builder;
+package Workshops.no10_design_principles_patterns.Patterns.Creational.Builder;
 
 public class Car {
     private final String brand;

@@ -1,6 +1,4 @@
-package Workshops.no10_design_principles_patterns.Patterns.Factory;
-
-import Workshops.no10_design_principles_patterns.Principles.SOLID.DIP.C;
+package Workshops.no10_design_principles_patterns.Patterns.Creational.Factory;
 
 import java.util.HashMap;
 import java.util.Map;
