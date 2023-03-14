@@ -1,4 +1,4 @@
-package Workshops.no10_design_principles_patterns.Patterns.Creational.Singleton;
+package Creational.Singleton;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package Workshops.no10_design_principles_patterns.Patterns.Creational.Factory;
+package Creational.Factory;
 
 public class PepperoniPizza implements Pizza{
     @Override

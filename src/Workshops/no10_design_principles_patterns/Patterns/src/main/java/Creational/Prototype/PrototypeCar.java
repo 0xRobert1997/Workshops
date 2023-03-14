@@ -1,4 +1,4 @@
-package Workshops.no10_design_principles_patterns.Patterns.Creational.Prototype;
+package Creational.Prototype;
 
 import java.util.ArrayList;
 import java.util.Arrays;
