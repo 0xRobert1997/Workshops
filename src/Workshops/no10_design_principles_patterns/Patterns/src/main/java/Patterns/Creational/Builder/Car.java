@@ -1,4 +1,4 @@
-package Creational.Builder;
+package Patterns.Creational.Builder;
 
 public class Car {
     private final String brand;

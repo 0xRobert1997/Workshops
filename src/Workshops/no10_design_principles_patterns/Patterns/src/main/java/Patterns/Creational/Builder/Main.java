@@ -1,5 +1,5 @@
 
-package Creational.Builder;
+package Patterns.Creational.Builder;
 public class Main {
 
     public static void main(String[] args) {
