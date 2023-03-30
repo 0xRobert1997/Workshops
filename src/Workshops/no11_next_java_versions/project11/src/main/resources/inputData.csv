@@ -1,0 +1,13 @@
+RepaymentStartDate;2020-12-10
+Wibor;1.70
+Amount;301953.46
+MonthsDuration;180
+RateType;CONSTANT
+Margin;1.6
+OverpaymentProvision;3
+OverpaymentProvisionMonths;36
+OverpaymentStartMonth;1
+OverpaymentSchema;2:10000,3:10000,5:10000,6:10000,7:10000,
+OverpaymentReduceWay;REDUCE_PERIOD
+MortgagePrintPayoffsSchedule;true
+MortgageRateNumberToPrint;1
