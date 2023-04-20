@@ -1,4 +1,4 @@
-package Workshops.no4_databases;
+package Workshops.no4_databases.resultSet;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package Behavioral.ChainOfResponsibility;
+package Patterns.Behavioral.ChainOfResponsibility;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

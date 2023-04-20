@@ -1,7 +1,5 @@
-package Behavioral.ChainOfResponsibility;
+package Patterns.Behavioral.ChainOfResponsibility;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class EquipmentHandler implements CarHandler{

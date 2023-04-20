@@ -1,23 +1,18 @@
 package pl.zajavka.mortgage.services;
 
+import lombok.RequiredArgsConstructor;
 import pl.zajavka.mortgage.model.InputData;
 import pl.zajavka.mortgage.model.Overpayment;
 import pl.zajavka.mortgage.model.Rate;
 import pl.zajavka.mortgage.model.RateAmounts;
-
+@RequiredArgsConstructor
 public class AmountsCalculationServiceImpl implements AmountsCalculationService {
 
     private final ConstantAmountsCalculationService constantAmountsCalculationService;
 
     private final DecreasingAmountsCalculationService decreasingAmountsCalculationService;
 
-    public AmountsCalculationServiceImpl(
-        final ConstantAmountsCalculationService constantAmountsCalculationService,
-        final DecreasingAmountsCalculationService decreasingAmountsCalculationService
-    ) {
-        this.constantAmountsCalculationService = constantAmountsCalculationService;
-        this.decreasingAmountsCalculationService = decreasingAmountsCalculationService;
-    }
+
 
     @Override
     public RateAmounts calculate(final InputData inputData, final Overpayment overpayment) {

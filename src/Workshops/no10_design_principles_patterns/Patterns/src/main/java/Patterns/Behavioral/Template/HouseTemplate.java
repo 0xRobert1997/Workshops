@@ -1,4 +1,4 @@
-package Behavioral.Template;
+package Patterns.Behavioral.Template;
 
 public abstract class HouseTemplate {
 

@@ -40,7 +40,7 @@ public class InvoiceStack {
     private  void processAccountantInput(String command) {
         if (invoiceStack.size() != 0) {
             Invoice invoice = invoiceStack.pop();
-            System.out.printf("%n$s$n", command);
+            System.out.printf("%n%s%n", command);
             System.out.printf("ACCOUNTANT processed invoice: %s%n", invoice);
             System.out.printf("Current invoices amount: %s. Invoices: %s%n", getInvociesSum(),invoiceStack);
         } else {

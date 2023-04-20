@@ -1,2 +1,6 @@
-package Exercises.zad11_Bridge;public interface PizzaMaker {
+package Exercises.zad11_Bridge;
+
+public abstract class PizzaMaker {
+    public PizzaMaker() {
+    }
 }

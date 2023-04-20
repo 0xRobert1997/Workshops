@@ -1,4 +1,4 @@
-package Structural.Facade;
+package Patterns.Structural.Facade;
 
 public interface FrameAssembler {
     void assembleFrame();

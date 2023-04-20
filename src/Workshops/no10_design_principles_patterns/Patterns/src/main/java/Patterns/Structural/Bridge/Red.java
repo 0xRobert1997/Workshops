@@ -1,4 +1,4 @@
-package Structural.Bridge;
+package Patterns.Structural.Bridge;
 
 import lombok.ToString;
 

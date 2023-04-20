@@ -1,2 +1,7 @@
-package Exercises.zad2_Factory;public class Shape {
+package Exercises.zad2_Factory;
+
+
+public interface Shape {
+
+    void draw();
 }

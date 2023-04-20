@@ -1,4 +1,4 @@
-package Behavioral.ChainOfResponsibility;
+package Patterns.Behavioral.ChainOfResponsibility;
 
 public interface CarHandler {
 

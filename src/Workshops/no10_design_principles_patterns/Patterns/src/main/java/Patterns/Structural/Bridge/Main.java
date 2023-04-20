@@ -1,4 +1,4 @@
-package Structural.Bridge;
+package Patterns.Structural.Bridge;
 
 public class Main {
     public static void main(String[] args) {

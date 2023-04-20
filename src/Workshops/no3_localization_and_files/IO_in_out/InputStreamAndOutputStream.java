@@ -2,7 +2,7 @@ package Workshops.no3_localization_and_files.IO_in_out;
 
 import java.io.*;
 
-public class main {
+public class InputStreamAndOutputStream {
     public static void main(String[] args) throws IOException {
         File inputFile = new File("src/Workshops/someFileInput.txt");
         File outputFile = new File("src/Workshops/someFileOutput.txt");

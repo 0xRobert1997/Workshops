@@ -1,5 +1,7 @@
 package pl.zajavka.mortgage.services;
 
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import pl.zajavka.mortgage.model.*;
 
 import java.math.BigDecimal;
@@ -8,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@AllArgsConstructor
 public class RateCalculationServiceImpl implements RateCalculationService {
 
     private final TimePointCalculationService timePointCalculationService;
@@ -20,19 +23,7 @@ public class RateCalculationServiceImpl implements RateCalculationService {
 
     private final OverpaymentCalculationService overpaymentCalculationService;
 
-    public RateCalculationServiceImpl(
-        final TimePointCalculationService timePointCalculationService,
-        final OverpaymentCalculationService overpaymentCalculationService,
-        final AmountsCalculationService amountsCalculationService,
-        final ResidualCalculationService residualCalculationService,
-        final ReferenceCalculationService referenceCalculationService
-    ) {
-        this.timePointCalculationService = timePointCalculationService;
-        this.overpaymentCalculationService = overpaymentCalculationService;
-        this.amountsCalculationService = amountsCalculationService;
-        this.residualCalculationService = residualCalculationService;
-        this.referenceCalculationService = referenceCalculationService;
-    }
+
 
     @Override
     public List<Rate> calculate(final InputData inputData) {

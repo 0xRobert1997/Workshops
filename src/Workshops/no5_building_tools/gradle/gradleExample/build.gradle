@@ -1,2 +1,37 @@
-apply plugin: 'java'
-sourceCompatibility = '18'
+plugins {
+    id 'java';
+
+}
+
+group = 'pl.zajavka'
+version = '0.1.0'
+sourceCompatibility = '15'
+
+repositories {
+    mavenCentral()
+
+//    maven {
+//        url "http://repo.zajavka.pl/maven2"
+//    }
+}
+dependencies {
+//    implementation group: 'org.jsoup', name: 'jsoup', version: '1.14.3'
+
+    implementation 'org.jsoup:jsoup:1.15.3'
+
+}
+
+jar {
+    // ustawia nazwe wyplutego pliku .jar
+    baseName = 'zajavka-jar'
+
+    manifest {
+        attributes('Main-Class': 'code.main')
+    }
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+

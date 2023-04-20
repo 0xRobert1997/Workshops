@@ -1,4 +1,4 @@
-package Workshops.no2_functional_programming.ExercisesStreams.project;
+package Workshops.no2_functional_programming.ExercisesStreams.project.Source;
 
 import java.math.BigInteger;
 import java.util.Objects;
@@ -9,6 +9,16 @@ public class Client implements Comparable<Client> {
     private final String surname;
     private final BigInteger pesel;
     private final String city;
+
+    private Integer year;
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
 
     public Client(String id, String name, String surname, BigInteger pesel, String city) {
         this.id = id;
@@ -55,5 +65,10 @@ public class Client implements Comparable<Client> {
 
     public String getCity() {
         return city;
+    }
+
+    @Override
+    public String toString() {
+        return  "id: " + id;
     }
 }

@@ -1,4 +1,4 @@
-package Structural.Proxy;
+package Patterns.Structural.Proxy;
 
 public class PizzaBakerImpl implements PizzaBaker{
     @Override

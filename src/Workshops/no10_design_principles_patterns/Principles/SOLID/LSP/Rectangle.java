@@ -1,4 +1,4 @@
-package Workshops.no10_design_principles_patterns.Principles.SOLID;
+package Workshops.no10_design_principles_patterns.Principles.SOLID.LSP;
 
 public class Rectangle {
     protected double a;

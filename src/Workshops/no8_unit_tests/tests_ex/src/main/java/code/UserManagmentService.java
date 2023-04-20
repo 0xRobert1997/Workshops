@@ -4,7 +4,7 @@ import java.util.*;
 
 public class UserManagmentService {
 
-    public Map<String, User> mapOfUsers = new HashMap<>();
+    private final Map<String, User> mapOfUsers = new HashMap<>();
 
     void create(User user) {
         if (mapOfUsers.containsKey(user.getEmail())) {

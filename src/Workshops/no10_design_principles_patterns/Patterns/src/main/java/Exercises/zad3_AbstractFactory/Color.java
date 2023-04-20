@@ -1,2 +1,6 @@
-package Exercises.zad3_AbstractFactory;public interface Color {
+package Exercises.zad3_AbstractFactory;
+
+public interface Color {
+
+    void fill();
 }

@@ -3,7 +3,7 @@ package Workshops.no3_localization_and_files.Localization.code;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Formatting {
+public class FormattingNumbers {
 
     public static void main(String[] args) {
 

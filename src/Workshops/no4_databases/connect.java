@@ -2,7 +2,7 @@ package Workshops.no4_databases;
 
 import java.sql.*;
 
-public class main {
+public class connect {
 
     public static void main(String[] args) {
 

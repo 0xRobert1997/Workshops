@@ -1,4 +1,4 @@
-package Workshops.no2_functional_programming.Streams.ExercisesStreams;
+package Workshops.no2_functional_programming.ExercisesStreams;
 
 import java.util.Arrays;
 import java.util.Comparator;

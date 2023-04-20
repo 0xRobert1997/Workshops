@@ -1,4 +1,4 @@
-package Structural.Adapter;
+package Patterns.Structural.Adapter;
 
 public class Main {
 

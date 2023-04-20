@@ -1,4 +1,4 @@
-package Workshops.no2_functional_programming.ExercisesStreams.project;
+package Workshops.no2_functional_programming.ExercisesStreams.project.Source;
 
 import java.math.BigDecimal;
 

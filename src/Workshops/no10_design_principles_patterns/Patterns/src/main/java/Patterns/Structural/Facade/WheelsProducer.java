@@ -1,4 +1,4 @@
-package Structural.Facade;
+package Patterns.Structural.Facade;
 
 public interface WheelsProducer {
     void attachWheels();

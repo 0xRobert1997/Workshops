@@ -1,4 +1,4 @@
-package Creational.Prototype;
+package Patterns.Creational.Prototype;
 
 
 public class SteeringWheel implements Cloneable {

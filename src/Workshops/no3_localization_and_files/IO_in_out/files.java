@@ -3,11 +3,11 @@ package Workshops.no3_localization_and_files.IO_in_out;
 import java.io.File;
 import java.io.IOException;
 
-public class main {
+public class files {
 
     public static void main(String[] args) {
 
-        File file1 = new File("./src/Workshops/xd.txt");
+        File file1 = new File("./src/Workshops/someFileInput.txt");
         System.out.println(file1.exists());
         System.out.println("file1: " + file1);
         System.out.println("AbsolutePath: " + file1.getAbsolutePath());

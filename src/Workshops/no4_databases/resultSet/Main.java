@@ -1,12 +1,9 @@
-package Workshops.no4_databases;
+package Workshops.no4_databases.resultSet;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.List;
 
-public class resultSet {
+public class Main {
     public static void main(String[] args) {
 
         String query = "SELECT * FROM CUSTOMER WHERE NAME LIKE ?;";
@@ -19,6 +16,8 @@ public class resultSet {
         try (
                 Connection connection = DriverManager.getConnection(address, dbUsername, dbPassword);
                 PreparedStatement preparedStatement = connection.prepareStatement(query)
+
+
         ) {
             preparedStatement.setString(1, parameter);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -26,8 +25,11 @@ public class resultSet {
                 customers.forEach(customer -> System.out.println("Customer: " + customer));
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println(e.getSQLState());
+            System.out.println(e.getErrorCode());
+            System.out.println(e.getMessage());
+
 
         }
     }

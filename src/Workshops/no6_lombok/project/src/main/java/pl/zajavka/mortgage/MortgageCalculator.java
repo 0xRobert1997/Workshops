@@ -35,13 +35,12 @@ public class MortgageCalculator {
         PrintingService printingService = new PrintingServiceImpl();
         RateCalculationService rateCalculationService = new RateCalculationServiceImpl(
             new TimePointCalculationServiceImpl(),
-            new OverpaymentCalculationServiceImpl(),
             new AmountsCalculationServiceImpl(
-                new ConstantAmountsCalculationServiceImpl(),
-                new DecreasingAmountsCalculationServiceImpl()
-            ),
-            new ResidualCalculationServiceImpl(),
-            new ReferenceCalculationServiceImpl()
+                    new ConstantAmountsCalculationServiceImpl(),
+                    new DecreasingAmountsCalculationServiceImpl()),
+                new ResidualCalculationServiceImpl(),
+                new ReferenceCalculationServiceImpl(),
+                new OverpaymentCalculationServiceImpl()
         );
 
         MortgageCalculationService mortgageCalculationService = new MortgageCalculationServiceImpl(

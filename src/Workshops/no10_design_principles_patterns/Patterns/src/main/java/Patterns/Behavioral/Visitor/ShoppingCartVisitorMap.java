@@ -1,4 +1,4 @@
-package Behavioral.Visitor;
+package Patterns.Behavioral.Visitor;
 
 import java.math.BigDecimal;
 import java.util.Map;

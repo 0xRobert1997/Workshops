@@ -1,2 +1,5 @@
-package Exercises.zad6_Adapter;public interface Target {
+package Exercises.zad6_Adapter;
+
+public interface Target {
+    void request();
 }

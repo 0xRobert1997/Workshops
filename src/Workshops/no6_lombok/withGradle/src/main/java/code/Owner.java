@@ -1,2 +1,4 @@
-package code;public class Owner {
+package code;
+
+public class Owner {
 }

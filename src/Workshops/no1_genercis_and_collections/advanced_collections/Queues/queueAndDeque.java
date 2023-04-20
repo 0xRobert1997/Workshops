@@ -20,7 +20,8 @@ public class queueAndDeque {
         Deque<Integer> stack = new ArrayDeque<>(input);
         /*  push() - dodaje e z porzodu
             peek() - tak samo zwraca pierwszy element
-            pop() -  zwraca usuwa pierwszy elemen
+            pop() -  zwraca następny element lub rzuca wyjątek jeżeli
+                        kolejka jest pustazwraca usuwa pierwszy elemen
          */
 
 

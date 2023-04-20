@@ -1,4 +1,4 @@
-package Behavioral.Strategy;
+package Patterns.Behavioral.Strategy;
 
 public class CourierStrategy implements  DeliveryStrategy{
     @Override

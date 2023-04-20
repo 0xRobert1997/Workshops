@@ -1,6 +1,4 @@
-package Workshops.no2_functional_programming.Streams.ExercisesStreams;
-
-import java.util.stream.Collectors;
+package Workshops.no2_functional_programming.ExercisesStreams;
 
 public class ex5 {
 

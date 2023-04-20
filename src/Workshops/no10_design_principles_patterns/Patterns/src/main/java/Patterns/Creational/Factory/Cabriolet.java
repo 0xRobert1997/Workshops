@@ -1,4 +1,4 @@
-package Creational.Factory;
+package Patterns.Creational.Factory;
 
 public class Cabriolet implements Car{
 }

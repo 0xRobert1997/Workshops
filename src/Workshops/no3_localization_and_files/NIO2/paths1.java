@@ -5,7 +5,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.*;
 
-public class Main {
+public class paths1 {
     // Uniform Resource Identifier
     public static void main(String[] args) {
         Path path1 = Paths.get("src/Workshops/myFile.txt");

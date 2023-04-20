@@ -1,2 +1,5 @@
-package Exercises.zad9_Proxy;public class Image {
+package Exercises.zad9_Proxy;
+
+public interface Image {
+    void display();
 }

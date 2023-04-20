@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <appender name="TO_CONSOLE" class ="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+        <pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} %method: %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="TO_FILE" class ="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.dir}/my-logs/newest.log</file>
+        <append>true</append>
+        <immediateFlush>true</immediateFlush>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${user.dir}/logs/my-logs/archived/rolled.%d{yyyy.MM.dd}.%i.log</fileNamePattern>
+            <maxFileSize>20MB</maxFileSize>
+            <totalSizeCap>10GB</totalSizeCap>
+            <maxHistory>50</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{HH:mm:SSS} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+
+    <root level ="INFO">
+        <appender-ref ref="TO_FILE"/>
+    </root>
+
+
+</configuration>

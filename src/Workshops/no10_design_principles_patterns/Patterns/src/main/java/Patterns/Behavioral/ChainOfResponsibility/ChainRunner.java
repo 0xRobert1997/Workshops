@@ -1,4 +1,4 @@
-package Behavioral.ChainOfResponsibility;
+package Patterns.Behavioral.ChainOfResponsibility;
 
 import java.util.List;
 

@@ -12,8 +12,11 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
-    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
+ //   implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
+ //   implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
+
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
+    // logback-classic automatycznie dodaje slf4j-api bo jest od niego zależny
 
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'

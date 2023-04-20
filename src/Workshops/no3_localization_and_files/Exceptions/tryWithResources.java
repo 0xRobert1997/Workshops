@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class Main {
+public class tryWithResources {
 
     public static void main(String[] args) {
 
@@ -27,7 +27,7 @@ public class Main {
         }
     }
 
-    
+
     public static void example2(final Path path1, final Path path2) {
         BufferedReader in = null;
         BufferedWriter out = null;

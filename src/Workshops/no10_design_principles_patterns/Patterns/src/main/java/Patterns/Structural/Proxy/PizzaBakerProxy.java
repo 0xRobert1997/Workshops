@@ -1,4 +1,4 @@
-package Structural.Proxy;
+package Patterns.Structural.Proxy;
 
 import lombok.RequiredArgsConstructor;
 

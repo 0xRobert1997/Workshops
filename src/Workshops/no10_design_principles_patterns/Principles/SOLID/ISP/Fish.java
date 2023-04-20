@@ -1,6 +1,8 @@
-package Workshops.no10_design_principles_patterns.Principles.SOLID;
+package Workshops.no10_design_principles_patterns.Principles.SOLID.ISP;
 
-public class Fish implements Animal{
+import Workshops.no10_design_principles_patterns.Principles.SOLID.ISP.Animal;
+
+public class Fish implements Animal {
     @Override
     public void eat() {
         System.out.println("Fish eating");

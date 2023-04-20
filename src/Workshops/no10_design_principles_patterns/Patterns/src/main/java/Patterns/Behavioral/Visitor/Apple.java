@@ -1,4 +1,4 @@
-package Behavioral.Visitor;
+package Patterns.Behavioral.Visitor;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

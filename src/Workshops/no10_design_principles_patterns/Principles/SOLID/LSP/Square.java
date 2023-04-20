@@ -1,4 +1,6 @@
-package Workshops.no10_design_principles_patterns.Principles.SOLID;
+package Workshops.no10_design_principles_patterns.Principles.SOLID.LSP;
+
+import Workshops.no10_design_principles_patterns.Principles.SOLID.LSP.Rectangle;
 
 public class Square extends Rectangle {
 

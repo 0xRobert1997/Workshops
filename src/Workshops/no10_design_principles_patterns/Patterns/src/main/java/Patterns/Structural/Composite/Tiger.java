@@ -1,4 +1,4 @@
-package Structural.Composite;
+package Patterns.Structural.Composite;
 
 public class Tiger implements Animal{
     @Override

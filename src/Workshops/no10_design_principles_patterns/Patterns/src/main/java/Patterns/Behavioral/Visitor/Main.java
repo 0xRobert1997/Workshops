@@ -1,8 +1,7 @@
-package Behavioral.Visitor;
+package Patterns.Behavioral.Visitor;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.function.Function;
 
 public class Main {
     public static void main(String[] args) {

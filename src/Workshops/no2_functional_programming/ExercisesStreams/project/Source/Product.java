@@ -1,6 +1,4 @@
-package Workshops.no2_functional_programming.ExercisesStreams.project;
-
-import java.util.Comparator;
+package Workshops.no2_functional_programming.ExercisesStreams.project.Source;
 
 public class Product implements Comparable<Product> {
 
@@ -39,6 +37,12 @@ public class Product implements Comparable<Product> {
         int otherNumber = Integer.parseInt(o.id.substring(7));
         return thisNumber - otherNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Product:" + name;
+    }
+
     public enum Category {
         HOBBY,
         CLOTHES,

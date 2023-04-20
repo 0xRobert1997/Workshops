@@ -1,6 +1,4 @@
-package Behavioral.Strategy;
-
-import java.util.Collections;
+package Patterns.Behavioral.Strategy;
 
 public class Main {
 

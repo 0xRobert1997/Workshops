@@ -1,4 +1,4 @@
-package Behavioral.ChainOfResponsibility.genericImp;
+package Patterns.Behavioral.ChainOfResponsibility.genericImp;
 
 public abstract class GenericHandler<T> {
 

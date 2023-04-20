@@ -1,13 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no10_design_principles_patterns/Patterns" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no10_design_principles_patterns/Patterns" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no11_next_java_versions/project11" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no11_next_java_versions/project11" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no11_next_java_versions/project17" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no11_next_java_versions/project17" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no5_building_tools/gradle/gradleExample" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/src/Workshops/no5_building_tools/gradle/gradleExample" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no5_building_tools/gradle/gradleExercise" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no5_building_tools/gradle/gradleExercise" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no6_lombok/project" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no6_lombok/project" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no6_lombok/withGradle" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no6_lombok/withGradle" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no7_logs/logEx" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no7_logs/logEx" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no7_logs/logProject" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no7_logs/logProject" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no7_logs/logging" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no7_logs/logging" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no8_unit_tests/tests_ex" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no8_unit_tests/tests_ex" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no8_unit_tests/tests_gradle" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no8_unit_tests/tests_gradle" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no8_unit_tests/tests_project" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no8_unit_tests/tests_project" />
           </set>
         </option>
       </GradleProjectSettings>

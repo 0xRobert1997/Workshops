@@ -1,2 +1,4 @@
-package Exercises.zad6_Adapter;public class Adaptee {
+package Exercises.zad6_Adapter;
+
+public class Adaptee {
 }

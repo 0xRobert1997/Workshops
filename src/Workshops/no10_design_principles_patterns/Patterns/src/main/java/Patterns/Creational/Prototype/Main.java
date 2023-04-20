@@ -1,4 +1,4 @@
-package Creational.Prototype;
+package Patterns.Creational.Prototype;
 
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {

@@ -1,4 +1,4 @@
-package Structural.Adapter;
+package Patterns.Structural.Adapter;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package Workshops.no2_functional_programming.built_in_interfaces.predicate;
+package Workshops.no2_functional_programming.built_in_interfaces;
 
 
 
@@ -9,6 +9,7 @@ import java.util.function.Predicate;
 public class PredicateExample {
 
     public static void main(String[] args) {
+        // przyjmuje 1 arg, zwraca boolean
 
         List<String> cities = new ArrayList<>();
         cities.add("Szczecin");

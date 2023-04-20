@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-public class Main {
+public class resourceBundle {
 
     public static void main(String[] args) {
 

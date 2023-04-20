@@ -1,4 +1,4 @@
-package Structural.Composite;
+package Patterns.Structural.Composite;
 
 import lombok.AllArgsConstructor;
 

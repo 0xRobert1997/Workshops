@@ -1,4 +1,4 @@
-package Behavioral.Observer;
+package Patterns.Behavioral.Observer;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Creational.Singleton;
+package Patterns.Creational.Singleton;
 
 public class LazyInitializationSingleton {
 

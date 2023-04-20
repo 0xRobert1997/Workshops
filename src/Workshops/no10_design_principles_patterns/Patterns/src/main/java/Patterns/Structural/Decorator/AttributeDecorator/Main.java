@@ -1,4 +1,4 @@
-package Structural.Decorator.AttributeDecorator;
+package Patterns.Structural.Decorator.AttributeDecorator;
 
 import org.jsoup.nodes.Attribute;
 

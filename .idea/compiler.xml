@@ -2,15 +2,78 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="java-maven-examples" />
       </profile>
+      <profile name="Annotation profile for tests-maven" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" />
+        </processorPath>
+        <module name="lombokMaven" />
+        <module name="tests-maven" />
+      </profile>
+      <profile name="Annotation profile for mortgage-calculator-uml-diagram" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
+        </processorPath>
+        <module name="mortgage-calculator-uml-diagram (1)" />
+        <module name="mortgage-calculator-uml-diagram" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
+        </processorPath>
+        <module name="project17.test" />
+        <module name="project17.main" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="java-maven-examples" target="1.5" />
+      <module name="gradle-Exercise" target="18" />
+      <module name="gradle-Exercise_main" target="18" />
+      <module name="gradle-Exercise_test" target="18" />
+      <module name="gradleExample" target="15" />
+      <module name="gradleExample.main" target="15" />
+      <module name="gradleExample.test" target="15" />
+      <module name="gradleExercise" target="15" />
+      <module name="gradleExercise.main" target="15" />
+      <module name="gradleExercise.test" target="15" />
+      <module name="java-maven-examples (1)" target="1.5" />
+      <module name="logEx" target="17" />
+      <module name="logEx.main" target="17" />
+      <module name="logEx.test" target="17" />
+      <module name="LogProject" target="17" />
+      <module name="LogProject.main" target="17" />
+      <module name="LogProject.test" target="17" />
+      <module name="maven-exercise" target="17" />
+      <module name="project" target="17" />
+      <module name="project.main" target="17" />
+      <module name="project.test" target="17" />
+      <module name="project1" target="11" />
+      <module name="project1.main" target="11" />
+      <module name="project1.test" target="11" />
+      <module name="test2" target="18" />
+      <module name="test2.main" target="18" />
+      <module name="test2.test" target="18" />
+      <module name="tests" target="17" />
+      <module name="tests.main" target="17" />
+      <module name="tests.test" target="17" />
+      <module name="tests[gradle]" target="17" />
+      <module name="tests[gradle].main" target="17" />
+      <module name="tests[gradle].test" target="17" />
+      <module name="withGradle" target="17" />
+      <module name="withGradle.main" target="17" />
+      <module name="withGradle.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

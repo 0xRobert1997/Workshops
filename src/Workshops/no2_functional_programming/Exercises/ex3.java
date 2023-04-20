@@ -1,9 +1,9 @@
-package Workshops.no2_functional_programming.Exercises.ex3;
+package Workshops.no2_functional_programming.Exercises;
 
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 
-public class main {
+public class ex3 {
 
     public static void main(String[] args) {
 

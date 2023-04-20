@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.zajavka</groupId>
+<!--    artifactId to ta nazwa w nawiasie kwadratowym obok nazwy folderu-->
     <artifactId>java-maven-examples</artifactId>
     <version>1.0.0</version>
 
@@ -15,8 +16,8 @@
     <!--        <relativePath>../parent/pom.xml</relativePath>-->
     <!--    </parent>-->
 
-<!--    żeby wyświetlić finalną konfigurację po dziedziczeniu:-->
-<!--    mvn help:effective-pom-->
+    <!--    żeby wyświetlić finalną konfigurację po dziedziczeniu:-->
+    <!--    mvn help:effective-pom-->
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
@@ -28,37 +29,38 @@
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.14.2</version>
-<!-- runtime, compile, provided, test
-compile jest domyślne, -->
+            <!-- runtime, compile, provided, test
+            compile jest domyślne, -->
             <scope>compile</scope>
 
-<!--dodawanie zdalnego repozytorium-->
-<!--            <repositories>-->
-<!--                <repository>-->
-<!--                    <id>my-repo1</id>-->
-<!--                    <name>my custom repo 1</name>-->
-<!--                    <url>http://my1.custom.repo</url>-->
-<!--                </repository>-->
-<!--                <repository>-->
-<!--                    <id>my-repo2</id>-->
-<!--                    <name>my custom repo 2</name>-->
-<!--                    <url>http://my2.custom.repo</url>-->
-<!--                </repository>-->
-<!--            </repositories>-->
+            <!--dodawanie zdalnego repozytorium-->
+            <!--            <repositories>-->
+            <!--                <repository>-->
+            <!--                    <id>my-repo1</id>-->
+            <!--                    <name>my custom repo 1</name>-->
+            <!--                    <url>http://my1.custom.repo</url>-->
+            <!--                </repository>-->
+            <!--                <repository>-->
+            <!--                    <id>my-repo2</id>-->
+            <!--                    <name>my custom repo 2</name>-->
+            <!--                    <url>http://my2.custom.repo</url>-->
+            <!--                </repository>-->
+            <!--            </repositories>-->
 
 
         </dependency>
     </dependencies>
 
 
-<!--odpalanie z danym profilem-->
-<!-- mvn compile -P TEST-->
+    <!--odpalanie z danym profilem-->
+    <!-- mvn compile -P TEST-->
     <profiles>
         <profile>
             <id>DEV</id>
             <build></build>
             <repositories></repositories>
             <dependencies></dependencies>
+
         </profile>
         <profile>
             <id>TEST</id>
@@ -73,9 +75,9 @@ compile jest domyślne, -->
         <plugins>
 
             <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.10.1</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
                 <configuration>
                     <release>15</release>
                 </configuration>
@@ -88,15 +90,15 @@ compile jest domyślne, -->
                 <configuration>
                     <printFailingErrors>true</printFailingErrors>
                 </configuration>
-                    <executions>
-                        <execution>
-                            <phase>validate</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
 
-                        </execution>
-                    </executions>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>

@@ -1,4 +1,4 @@
-package Exercises.zad1;
+package Exercises.zad1_Singleton;
 
 public class Application {
 
@@ -10,7 +10,7 @@ public class Application {
         System.out.println(singleton1.getAppName()); //"My App"
         singleton2.setAppName("My App The Second");
         System.out.println(singleton1.getAppName()); // "My App The Second"
-        
+
     }
 }
 

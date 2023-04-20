@@ -1,4 +1,4 @@
-package Behavioral.ChainOfResponsibility.genericImp;
+package Patterns.Behavioral.ChainOfResponsibility.genericImp;
 
 import java.util.function.Function;
 import java.util.function.UnaryOperator;

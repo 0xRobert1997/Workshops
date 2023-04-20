@@ -1,4 +1,4 @@
-package Exercises.zad1;
+package Exercises.zad1_Singleton;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package Structural.Decorator;
+package Patterns.Structural.Decorator;
 
 public class RimsDecorator extends CarDecorator{
 

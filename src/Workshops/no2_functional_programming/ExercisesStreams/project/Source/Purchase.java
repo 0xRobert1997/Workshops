@@ -1,4 +1,7 @@
-package Workshops.no2_functional_programming.ExercisesStreams.project;
+package Workshops.no2_functional_programming.ExercisesStreams.project.Source;
+
+import Workshops.no2_functional_programming.ExercisesStreams.project.Source.Client;
+import Workshops.no2_functional_programming.ExercisesStreams.project.Source.Product;
 
 import java.time.LocalDate;
 
@@ -48,6 +51,23 @@ public class Purchase {
 
     public Status getStatus() {
         return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Purchase purchase)) return false;
+
+        return getBuyer() != null ? getBuyer().equals(purchase.getBuyer()) : purchase.getBuyer() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getBuyer() != null ? getBuyer().hashCode() : 0;
     }
 
     public enum Delivery {
