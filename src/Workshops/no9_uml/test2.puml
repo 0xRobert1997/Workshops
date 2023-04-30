@@ -1,0 +1,21 @@
+@startuml
+interface Workshops.no9_uml.Swim {
+~ String SWIMMING_SPEED
+~ {static} void someStaticMethod()
+~ void cantSwim()
+~ String getName()
+}
+class Workshops.no9_uml.main {
+}
+abstract class Workshops.no9_uml.Employee {
+- {static} String SALARY
++ BigDecimal salary
+# String surname
+~ Integer age
+- String name
++ {static} BigDecimal expectedSalary()
+~ {abstract}String opinion()
+- void goToWork(String,String)
+~ boolean satisfied(boolean)
+}
+@enduml

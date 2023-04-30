@@ -27,7 +27,7 @@ hs_err_pid*
 *.iws
 *.iml
 *.ipr
-*/Zajavka
+src/Zajavka/
 
 .gradle
 **/build/

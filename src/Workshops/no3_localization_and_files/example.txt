@@ -1,0 +1,4 @@
+1xdCar{name='Stefan'}
+Zajavka
+somevalue, [Car{name='Stefan'}] 
+somevalue, [Car{name='Stefan'}] 
