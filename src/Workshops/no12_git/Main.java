@@ -152,11 +152,16 @@ public class Main {
                                     ^ nazwa aliasa
 
         git blame Person.java
-        w intellij alt + ~
+        w intellij alt + ~ 5
 
 
         cherry pick
         git cherry pick hash
+
+        pull request PR || merge request MR
+        feature-branch -> origin/feature-branch -> MR -> gradle build -> approve ->
+        (origin/feature-branch => origin/master) -> git checkout master -> git pull
+
 
 
         */
