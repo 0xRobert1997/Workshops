@@ -57,21 +57,21 @@
     <profiles>
         <profile>
             <id>DEV</id>
-            <build></build>
+            <Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build></Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build>
             <repositories></repositories>
             <dependencies></dependencies>
 
         </profile>
         <profile>
             <id>TEST</id>
-            <build></build>
+            <Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build></Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build>
             <repositories></repositories>
             <dependencies></dependencies>
         </profile>
     </profiles>
 
 
-    <build>
+    <Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build>
         <plugins>
 
             <plugin>
@@ -126,6 +126,6 @@
                 </executions>
             </plugin>
         </plugins>
-    </build>
+    </Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build>
 
 </project>

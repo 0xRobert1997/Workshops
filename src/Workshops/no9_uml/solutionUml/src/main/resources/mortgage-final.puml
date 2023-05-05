@@ -35,7 +35,7 @@ class model.InputData {
 
 class model.InputData$InputDataBuilder {
 	{method} +amount ( paramBigDecimal1 : java.math.BigDecimal ) : model.InputData$InputDataBuilder
-	{method} +build () : model.InputData
+	{method} +Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build () : model.InputData
 	{method} +marginPercent ( paramBigDecimal1 : java.math.BigDecimal ) : model.InputData$InputDataBuilder
 	{method} +monthsDuration ( paramBigDecimal1 : java.math.BigDecimal ) : model.InputData$InputDataBuilder
 	{method} +mortgagePrintPayoffsSchedule ( paramboolean1 : boolean ) : model.InputData$InputDataBuilder
@@ -61,7 +61,7 @@ class model.MortgageReference {
 
 
 class model.MortgageReference$MortgageReferenceBuilder {
-	{method} +build () : model.MortgageReference
+	{method} +Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build () : model.MortgageReference
 	{method} +referenceAmount ( paramBigDecimal1 : java.math.BigDecimal ) : model.MortgageReference$MortgageReferenceBuilder
 	{method} +referenceDuration ( paramBigDecimal1 : java.math.BigDecimal ) : model.MortgageReference$MortgageReferenceBuilder
 	{method} +toString () : String
@@ -77,7 +77,7 @@ class model.MortgageResidual {
 
 
 class model.MortgageResidual$MortgageResidualBuilder {
-	{method} +build () : model.MortgageResidual
+	{method} +Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build () : model.MortgageResidual
 	{method} +residualAmount ( paramBigDecimal1 : java.math.BigDecimal ) : model.MortgageResidual$MortgageResidualBuilder
 	{method} +residualDuration ( paramBigDecimal1 : java.math.BigDecimal ) : model.MortgageResidual$MortgageResidualBuilder
 	{method} +toString () : String
@@ -111,7 +111,7 @@ class model.Rate {
 
 
 class model.Rate$RateBuilder {
-	{method} +build () : model.Rate
+	{method} +Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build () : model.Rate
 	{method} +mortgageReference ( paramMortgageReference1 : model.MortgageReference ) : model.Rate$RateBuilder
 	{method} +mortgageResidual ( paramMortgageResidual1 : model.MortgageResidual ) : model.Rate$RateBuilder
 	{method} +rateAmounts ( paramRateAmounts1 : model.RateAmounts ) : model.Rate$RateBuilder
@@ -134,7 +134,7 @@ class model.RateAmounts {
 
 
 class model.RateAmounts$RateAmountsBuilder {
-	{method} +build () : model.RateAmounts
+	{method} +Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build () : model.RateAmounts
 	{method} +capitalAmount ( paramBigDecimal1 : java.math.BigDecimal ) : model.RateAmounts$RateAmountsBuilder
 	{method} +interestAmount ( paramBigDecimal1 : java.math.BigDecimal ) : model.RateAmounts$RateAmountsBuilder
 	{method} +overpayment ( paramOverpayment1 : model.Overpayment ) : model.RateAmounts$RateAmountsBuilder
@@ -162,7 +162,7 @@ class model.TimePoint {
 
 
 class model.TimePoint$TimePointBuilder {
-	{method} +build () : model.TimePoint
+	{method} +Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build () : model.TimePoint
 	{method} +date ( paramLocalDate1 : java.time.LocalDate ) : model.TimePoint$TimePointBuilder
 	{method} +month ( paramBigDecimal1 : java.math.BigDecimal ) : model.TimePoint$TimePointBuilder
 	{method} +toString () : String

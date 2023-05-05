@@ -27,6 +27,4 @@ hs_err_pid*
 *.iws
 *.iml
 *.ipr
-/git_exercise/
-/src/test1/
-/src/Zajavka/
+/src/Workshops/.idea/

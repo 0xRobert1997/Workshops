@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Workshops/no3_localization_and_files/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/Workshops/no3_localization_and_files/Localization/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Workshops/no13_spirng_beans/SpringExample/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/src/test1/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/src/Workshops/no5_building_tools/maven/exMaven/target" />
       <excludeFolder url="file://$MODULE_DIR$/src/Workshops/no7_logs/.gradle" />

@@ -47,7 +47,7 @@
         </dependency>
     </dependencies>
 
-    <build>
+    <Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -65,5 +65,5 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
+    </Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build>
 </project>
