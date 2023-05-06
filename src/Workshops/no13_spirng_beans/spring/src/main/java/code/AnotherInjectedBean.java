@@ -1,5 +1,8 @@
 package code;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class AnotherInjectedBean {
 
     public AnotherInjectedBean() {
