@@ -1,10 +1,8 @@
-import code.InjectedBean;
+import code.ExamplePrototypeBean;
+import code.ExampleSingletonBean;
 import configuration.ExampleConfigurationClass;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-
-import java.util.Arrays;
 
 public class Main {
 
@@ -23,6 +21,16 @@ public class Main {
        - @ComponentScan(basePackageClasses = MarkerInterface.class)
 
        automatic beans binding
+       @Autowire
+
+       Scopes
+        - Singleton domyślnie wszystkie beany są singleton'em
+        - Prototype - za każdym razem tworzony jest nowy obiekt, może dzięki temu przechowywać jakąś wartość
+
+        scoped bean injection problem
+            gdy w singletonie jest pole z prototype to prototype jest zawsze ten sam - czyli nie zachowuje się jak normalny Prototype
+            można użyć ObjectFactory<PrototypeBean>
+
     */
     public static void main(String[] args) {
 
@@ -32,16 +40,12 @@ public class Main {
 
         //    Arrays.asList(context.getBeanDefinitionNames()).forEach(System.out::println);
 
-        System.out.println("### Before retrival");
-        InjectedBean exampleBean = context.getBean(InjectedBean.class);
-        System.out.println("### After retrival");
+        ExampleSingletonBean singleton1 = context.getBean(ExampleSingletonBean.class);
+        ExampleSingletonBean singleton2 = context.getBean(ExampleSingletonBean.class);
 
-        System.out.println("### Before calling method");
-        exampleBean.someMethod();
-        System.out.println("### After calling method");
+        ExamplePrototypeBean prototype1 = context.getBean(ExamplePrototypeBean.class);
+        ExamplePrototypeBean prototype2 = context.getBean(ExamplePrototypeBean.class);
 
-        System.out.println("### Before context closing");
-        context.close();
-        System.out.println("### After context closing");
+        System.out.println();
     }
 }

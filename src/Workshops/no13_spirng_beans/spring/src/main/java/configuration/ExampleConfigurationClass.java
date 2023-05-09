@@ -36,9 +36,9 @@ public class ExampleConfigurationClass {
         return new SomeBean1();
     }*/
 
-    @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
+   /* @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
     public InjectedBean injectedBean() {
         return new InjectedBean();
-    }
+    }*/
 
 }
