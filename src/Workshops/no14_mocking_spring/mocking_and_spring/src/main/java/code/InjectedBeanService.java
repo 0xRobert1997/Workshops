@@ -2,5 +2,5 @@ package code;
 
 public interface InjectedBeanService {
 
-    boolean anotherSampleMethod();
+    String anotherSampleMethod(String something);
 }

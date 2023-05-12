@@ -4,7 +4,7 @@ public class InjectedBeanServiceImpl implements code.InjectedBeanService {
 
 
     @Override
-    public boolean anotherSampleMethod() {
-        return false;
+    public String anotherSampleMethod(String something) {
+        return "something";
     }
 }
