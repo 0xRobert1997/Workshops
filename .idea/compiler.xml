@@ -7,17 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="java-maven-examples" />
-      </profile>
-      <profile name="Annotation profile for tests-maven" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" />
-        </processorPath>
         <module name="lombokMaven" />
+        <module name="mortgage-calculator-uml-diagram (2)" />
         <module name="tests-maven" />
+        <module name="java-maven-examples" />
+        <module name="mortgage-calculator-uml-diagram (1)" />
       </profile>
       <profile name="Annotation profile for mortgage-calculator-uml-diagram" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -26,16 +20,16 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
         </processorPath>
-        <module name="mortgage-calculator-uml-diagram (1)" />
         <module name="mortgage-calculator-uml-diagram" />
       </profile>
-      <profile name="Gradle Imported" enabled="true">
+      <profile name="Annotation profile for mortgage-calculator-uml-diagram" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
         </processorPath>
-        <module name="project17.test" />
-        <module name="project17.main" />
+        <module name="mortgage-calculator-uml-diagram" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -55,7 +49,17 @@
       <module name="LogProject" target="17" />
       <module name="LogProject.main" target="17" />
       <module name="LogProject.test" target="17" />
+      <module name="Logs" target="17" />
+      <module name="Logs.main" target="17" />
+      <module name="LogsProject" target="17" />
+      <module name="LogsProject.main" target="17" />
       <module name="maven-exercise" target="17" />
+      <module name="mockingSpring" target="20" />
+      <module name="mockingSpring.main" target="20" />
+      <module name="mockingSpring.test" target="20" />
+      <module name="pl.zajavka.LogsExercise" target="17" />
+      <module name="pl.zajavka.LogsExercise.main" target="17" />
+      <module name="pl.zajavka.LogsExercise.test" target="17" />
       <module name="project" target="17" />
       <module name="project.main" target="17" />
       <module name="project.test" target="17" />

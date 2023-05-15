@@ -11,6 +11,6 @@ public class ExampleBeanServiceImpl implements code.ExampleBeanService {
 
     @Override
     public String sampleMethod() {
-        return injectedBeanService.anotherSampleMethod("smth");
+        return injectedBeanService.anotherSampleMethod();
     }
 }
