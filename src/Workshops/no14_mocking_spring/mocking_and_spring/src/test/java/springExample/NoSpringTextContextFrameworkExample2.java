@@ -3,11 +3,13 @@ package springExample;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-
+@ExtendWith(SpringExtension.class)
 @SpringJUnitConfig(classes = ConfigScanBean.class)
-public class SpringTextContextFrameworkExample {
+public class NoSpringTextContextFrameworkExample2 {
     @Autowired
     private ExampleBeanService exampleBeanService;
 

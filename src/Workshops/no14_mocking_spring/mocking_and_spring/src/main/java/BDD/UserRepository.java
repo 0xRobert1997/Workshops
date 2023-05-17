@@ -24,4 +24,7 @@ public class UserRepository {
     public User find(final String phone) {
         return USER_MAP.get(phone);
     }
+    private boolean testin() {
+        return true;
+    }
 }

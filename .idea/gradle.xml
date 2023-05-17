@@ -131,6 +131,18 @@
       <GradleProjectSettings>
         <option name="delegatedBuild" value="true" />
         <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no14_mocking_spring/mocking_and_spring_exercise" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-8.1.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no14_mocking_spring/mocking_and_spring_exercise" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no5_building_tools/gradle/gradleExample" />
         <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />

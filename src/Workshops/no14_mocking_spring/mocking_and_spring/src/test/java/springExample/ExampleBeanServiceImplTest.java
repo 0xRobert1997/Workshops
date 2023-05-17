@@ -17,7 +17,7 @@ public class ExampleBeanServiceImplTest {
     private InjectedBeanService injectedBeanService;
 
     @Test
-    public void testSampleMEthod(){
+    public void testSampleMethod(){
         //given
         Mockito.when(injectedBeanService.anotherSampleMethod()).thenReturn(true);
 
