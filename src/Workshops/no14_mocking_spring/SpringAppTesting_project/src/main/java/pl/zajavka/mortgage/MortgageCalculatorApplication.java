@@ -3,6 +3,7 @@ package pl.zajavka.mortgage;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import pl.zajavka.mortgage.configuration.CalculatorConfiguration;
+import pl.zajavka.mortgage.services.ConstantAmountsCalculationServiceImpl;
 import pl.zajavka.mortgage.services.MortgageCalculationService;
 
 public class MortgageCalculatorApplication {
