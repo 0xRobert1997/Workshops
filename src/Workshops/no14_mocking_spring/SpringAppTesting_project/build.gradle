@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group = 'pl.zajavka'
@@ -9,14 +10,12 @@ sourceCompatibility = '17'
 ext {
     logbackVersion = '1.4.1'
     lombokVersion = '1.18.24'
-    junitVersion = '5.9.0'
-    mockitoVersion = '4.8.0'
     springVersion = '5.3.23'
-    postgresqlDriverVersion = '42.5.0'
+    junitVersion = '5.9.3'
+    mockitoVersion = '5.3.1'
 }
 
 dependencies {
-
     implementation "ch.qos.logback:logback-classic:$logbackVersion"
 
     compileOnly "org.projectlombok:lombok:$lombokVersion"
@@ -27,27 +26,33 @@ dependencies {
     implementation "org.springframework:spring-context:$springVersion"
     implementation "org.springframework:spring-context-support:$springVersion"
     implementation "org.springframework:spring-expression:$springVersion"
-    implementation "org.springframework:spring-jdbc:$springVersion"
-    implementation "org.springframework:spring-tx:$springVersion"
-
-    implementation "org.postgresql:postgresql:$postgresqlDriverVersion"
 
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
     testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
-    testImplementation "org.mockito:mockito-junit-jupiter:$mockitoVersion"
-    testImplementation "org.mockito:mockito-inline:$mockitoVersion"
-    testImplementation "org.springframework:spring-test:$springVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
 
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.mockito:mockito-junit-jupiter:$mockitoVersion"
+
+    testImplementation "org.springframework:spring-test:$springVersion"
 }
 
 test {
     useJUnitPlatform()
     testLogging {
-        events "passed", "skipped", "failed"
+        events "skipped", "failed"
     }
+    finalizedBy jacocoTestReport
+}
+jacoco {
+    toolVersion = "0.8.10"
+}
+
+jacocoTestReport {
+    dependsOn test
 }
 
 repositories {
