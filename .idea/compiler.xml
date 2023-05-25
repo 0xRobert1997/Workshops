@@ -36,11 +36,12 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
         </processorPath>
-        <module name="data_access_example1.test" />
-        <module name="data_access_example1.main" />
+        <module name="data_access_project.test" />
+        <module name="data_access_project.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="data_access_example1.test" target="17" />
       <module name="gradle-Exercise" target="18" />
       <module name="gradle-Exercise_main" target="18" />
       <module name="gradle-Exercise_test" target="18" />
