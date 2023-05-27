@@ -2,6 +2,7 @@ package pl.zajavka.domain;
 
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Date;
 @With
@@ -16,7 +17,7 @@ public class Customer {
         private String email;
         private String name;
         private String surname;
-        private OffsetDateTime dateOfBirth;
+        private LocalDate dateOfBirth;
         private String telephoneNumber;
 }
 

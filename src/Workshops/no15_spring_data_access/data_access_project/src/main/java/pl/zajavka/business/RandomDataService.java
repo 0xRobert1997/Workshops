@@ -1,4 +1,4 @@
-package pl.zajavka;
+package pl.zajavka.business;
 
 import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
