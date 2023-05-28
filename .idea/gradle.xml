@@ -33,7 +33,7 @@
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no10_design_principles_patterns/Patterns" />
         <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-8.1.1" />
-        <option name="gradleJvm" value="openjdk-20" />
+        <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/src/Workshops/no10_design_principles_patterns/Patterns" />
@@ -171,6 +171,7 @@
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no15_spring_data_access/data_access_project" />
         <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-8.1.1" />
+        <option name="gradleJvm" value="openjdk-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/src/Workshops/no15_spring_data_access/data_access_project" />
