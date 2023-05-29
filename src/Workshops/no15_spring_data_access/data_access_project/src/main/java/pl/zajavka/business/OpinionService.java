@@ -1,17 +1,20 @@
 package pl.zajavka.business;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.zajavka.domain.Opinion;
-import pl.zajavka.domain.Product;
+import pl.zajavka.domain.Purchase;
 
 import java.util.List;
-import java.util.Map;
 
+@Slf4j
 @Service
 @AllArgsConstructor
 public class OpinionService {
+
+    private final PurchaseService purchaseService;
     private final OpinionRepository opinionRepository;
 
     @Transactional
@@ -21,6 +24,14 @@ public class OpinionService {
 
     @Transactional
     public Opinion create(Opinion opinion) {
+        String email = opinion.getCustomer().getEmail();
+        String productCode = opinion.getProduct().getProductCode();
+        List<Purchase> purchases = purchaseService.findAll(opinion.getCustomer().getEmail(), opinion.getProduct().getProductCode());
+        log.debug("CustomerL [{}] made: [{}] purchases for product: [{}]", email, purchases.size(), productCode);
+        if (purchases.isEmpty()) {
+            throw new RuntimeException("Customer: [%s] wants to give opinion for product: [%s], but there is no purchase"
+                    .formatted(email, productCode));
+        }
         return opinionRepository.create(opinion);
     }
 
@@ -32,6 +43,36 @@ public class OpinionService {
     public List<Opinion> findAll(String email) {
         return opinionRepository.findAll(email);
 
+    }
+
+    public List<Opinion> findAll() {
+        return opinionRepository.findAll();
+    }
+
+    @Transactional
+    public List<Opinion> findUnwantedOpinions() {
+        return opinionRepository.findUnwantedOpinions();
+    }
+
+    @Transactional
+    public void removeUnwantedOpinions() {
+        opinionRepository.removeUnwantedOpinions();
+    }
+
+    public boolean customerGivesUnwantedOpinions(String email) {
+        return opinionRepository.customerGivesUnwantedOpinions(email);
+    }
+
+    public List<Opinion> findAllByProductCode(String productCode) {
+        return opinionRepository.findAllByProductCode(productCode);
+    }
+
+    public void removeAllByProductCode(String productCode) {
+        opinionRepository.removeAllByProductCode(productCode);
+    }
+
+    public void removeAllByProduct(String productCode) {
+        opinionRepository.removeAllByProduct(productCode);
     }
 }
 

@@ -13,4 +13,18 @@ public interface OpinionRepository {
     void removeAll();
 
     void remove(String email);
+
+    List<Opinion> findAll();
+
+    List<Opinion> findUnwantedOpinions();
+
+    void removeUnwantedOpinions();
+
+    boolean customerGivesUnwantedOpinions(String email);
+
+    List<Opinion> findAllByProductCode(String productCode);
+
+    void removeAllByProductCode(String productCode);
+
+    void removeAllByProduct(String productCode);
 }

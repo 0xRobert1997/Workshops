@@ -9,10 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import pl.zajavka.Configuration.ApplicationConfiguration;
 import pl.zajavka.business.*;
-import pl.zajavka.domain.Customer;
-import pl.zajavka.domain.Producer;
-import pl.zajavka.domain.Product;
-import pl.zajavka.domain.StoreFixtures;
+import pl.zajavka.domain.*;
+
+import java.time.LocalDate;
+import java.time.ZoneOffset;
+import java.util.List;
 
 @SpringJUnitConfig(classes = ApplicationConfiguration.class)
 @AllArgsConstructor(onConstructor = @__(@Autowired))
@@ -65,7 +66,61 @@ public class CustomerServiceTest {
 
     @Test
     @DisplayName("Polecenie 4 cz.2")
-    void thatPurchaseIsNotRemovedWhenCustomerRemovingFails() {
+    void thatPurchaseAndOpinionIsNotRemovedWhenCustomerRemovingFails() {
+        //given
+        final Customer customer = customerService.create(StoreFixtures.someCustomer().withDateOfBirth(LocalDate.of(1950, 10, 4)));
+        final Producer producer = producerService.create(StoreFixtures.someProducer());
+        final Product product1 = productService.create(StoreFixtures.someProduct1(producer));
+        final Product product2 = productService.create(StoreFixtures.someProduct2(producer));
+        Purchase purchase1 = purchaseService.create(StoreFixtures.somePurchase(customer, product1).withQuantity(1));
+        Purchase purchase2 = purchaseService.create(StoreFixtures.somePurchase(customer, product2).withQuantity(3));
+        Opinion opinion1 = opinionService.create(StoreFixtures.someOpinion(customer, product1));
 
+        Assertions.assertEquals(customer, customerService.find(customer.getEmail()));
+
+        //then
+        RuntimeException exception
+                = Assertions.assertThrows(RuntimeException.class, () -> customerService.remove(customer.getEmail()));
+        Assertions.assertEquals(
+                "Could not remove customer because he/she is older than 40, email: [%s]".formatted(customer.getEmail()),
+                exception.getMessage()
+        );
+
+        Assertions.assertEquals(
+                customer,
+                customerService.find(customer.getEmail()));
+        Assertions.assertEquals(
+                List.of(
+                        purchase1
+                                .withCustomer(Customer.builder().id(customer.getId()).build())
+                                .withProduct(Product.builder().id(product1.getId()).build())
+                                .withDateTime(purchase1.getDateTime().withOffsetSameInstant(ZoneOffset.UTC)),
+                        purchase2
+                                .withCustomer(Customer.builder().id(customer.getId()).build())
+                                .withProduct(Product.builder().id(product2.getId()).build())
+                                .withDateTime(purchase2.getDateTime().withOffsetSameInstant(ZoneOffset.UTC))),
+                purchaseService.findAll(customer.getEmail())
+
+        );
+        Assertions.assertEquals(
+                List.of(
+                        opinion1
+                                .withCustomer(Customer.builder().id(customer.getId()).build())
+                                .withProduct(Product.builder().id(product1.getId()).build())
+                                .withDateTime(opinion1.getDateTime().withOffsetSameInstant(ZoneOffset.UTC))),
+                opinionService.findAll(customer.getEmail())
+
+        );
+    }
+    @Test
+    @DisplayName("Polecenie 8")
+    void thatCustomersGivingUnwantedOpinionsAreRemoved() {
+        //given
+        reloadDataService.reloadData();
+        Assertions.assertEquals(100, customerService.findAll().size());
+        //when
+        customerService.removeUnwantedCustomers();
+        //then
+        Assertions.assertEquals(64, customerService.findAll().size());
     }
 }

@@ -65,7 +65,7 @@ public class StoreFixtures {
                 .product(product)
                 .stars(new Random().nextInt(1,5))
                 .comment("Comment")
-                .dateTime(OffsetDateTime.of(2000, 2, 1, 1, 1, 1,1, ZoneOffset.ofHours(3)))
+                .dateTime(OffsetDateTime.of(2000, 2, 1, 1, 1, 1,0, ZoneOffset.ofHours(3)))
                 .build();
     }
 }

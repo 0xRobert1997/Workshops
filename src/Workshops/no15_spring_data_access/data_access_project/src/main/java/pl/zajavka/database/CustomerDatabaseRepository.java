@@ -12,6 +12,7 @@ import pl.zajavka.Configuration.DatabaseConfiguration;
 import pl.zajavka.business.CustomerRepository;
 import pl.zajavka.domain.Customer;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -19,6 +20,7 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 public class CustomerDatabaseRepository implements CustomerRepository {
+    private static final String SELECT_ALL = "SELECT * FROM CUSTOMER";
     private static final String DELETE_ALL = "DELETE FROM CUSTOMER WHERE 1=1";
     private static final String SELECT_ONE_WHERE_EMAIL = "SELECT * FROM CUSTOMER WHERE EMAIL = :email";
     private static final String DELETE_WHERE_CUSTOMER_EMAIL = "DELETE FROM CUSTOMER WHERE EMAIL = :email";
@@ -58,5 +60,17 @@ public class CustomerDatabaseRepository implements CustomerRepository {
         NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(simpleDriverDataSource);
         jdbcTemplate.update(DELETE_WHERE_CUSTOMER_EMAIL, Map.of("email", email));
 
+    }
+
+    @Override
+    public List<Customer> findAll(String email) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(simpleDriverDataSource);
+        return jdbcTemplate.query(SELECT_ALL, dataBaseMapper::mapCustomer);
+    }
+
+    @Override
+    public List<Customer> findAll() {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(simpleDriverDataSource);
+        return jdbcTemplate.query(SELECT_ALL, dataBaseMapper::mapCustomer);
     }
 }

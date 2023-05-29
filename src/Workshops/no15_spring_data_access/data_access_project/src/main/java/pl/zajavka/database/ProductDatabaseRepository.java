@@ -3,6 +3,7 @@ package pl.zajavka.database;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.stereotype.Repository;
@@ -10,12 +11,17 @@ import pl.zajavka.Configuration.DatabaseConfiguration;
 import pl.zajavka.business.ProductRepository;
 import pl.zajavka.domain.Product;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Slf4j
 @Repository
 @AllArgsConstructor
 public class ProductDatabaseRepository implements ProductRepository {
+    private static final String SELECT_ALL = "SELECT * FROM PRODUCT";
+    private static final String SELECT_WHERE_PRODUCT_CODE = "SELECT * FROM PRODUCT WHERE PRODUCT_CODE = :productCode";
+    private static final String DELETE_WHERE_PRODUCT_CODE = "DELETE FROM PRODUCT WHERE PRODUCT_CODE = :productCode";
     private final SimpleDriverDataSource simpleDriverDataSource;
 
     private final DataBaseMapper databaseMapper;
@@ -37,5 +43,30 @@ public class ProductDatabaseRepository implements ProductRepository {
     @Override
     public void removeAll() {
         new JdbcTemplate(simpleDriverDataSource).update(DELETE_ALL);
+    }
+
+    @Override
+    public List<Product> findAll() {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(simpleDriverDataSource);
+        return jdbcTemplate.query(SELECT_ALL, databaseMapper::mapProduct);
+    }
+
+    @Override
+    public Optional<Product> find(String productCode) {
+        final var jdbcTemplate = new NamedParameterJdbcTemplate(simpleDriverDataSource);
+
+        try {
+            Map<String, Object> params = Map.of("productCode", productCode);
+            return Optional.ofNullable(jdbcTemplate.queryForObject(SELECT_WHERE_PRODUCT_CODE, params, databaseMapper::mapProduct));
+        } catch (Exception e) {
+            log.warn("Trying to find non-existing product: [{}]", productCode);
+            return Optional.empty();
+        }
+    }
+
+    @Override
+    public void remove(String productCode) {
+        final var jdbcTemplate = new NamedParameterJdbcTemplate(simpleDriverDataSource);
+        jdbcTemplate.update(DELETE_WHERE_PRODUCT_CODE, Map.of("productCode", productCode));
     }
 }
