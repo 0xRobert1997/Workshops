@@ -1,5 +1,9 @@
 package code;
 
+import code.oneToMany.Owner;
+import code.oneToMany.Pet;
+import code.oneToOne.Address;
+import code.oneToOne.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -31,7 +35,10 @@ public class HibernateUtil {
                     .build();
 
             Metadata metadata = new MetadataSources(serviceRegistry)
-                    .addAnnotatedClass(Employee.class)
+                    .addAnnotatedClass(Customer.class)
+                    .addAnnotatedClass(Address.class)
+                    .addAnnotatedClass(Owner.class)
+                    .addAnnotatedClass(Pet.class)
                     .getMetadataBuilder()
                     .build();
 
@@ -50,7 +57,7 @@ public class HibernateUtil {
         }
     }
 
-    static Session getSession() {
+    public static Session getSession() {
         try {
             return sessionFactory.openSession();
         } catch (Exception e) {
