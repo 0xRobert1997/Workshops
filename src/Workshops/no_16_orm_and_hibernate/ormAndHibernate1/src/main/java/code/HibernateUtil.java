@@ -1,5 +1,7 @@
 package code;
 
+import code.manyToMany.Employee;
+import code.manyToMany.Project;
 import code.oneToMany.Owner;
 import code.oneToMany.Pet;
 import code.oneToOne.Address;
@@ -39,6 +41,8 @@ public class HibernateUtil {
                     .addAnnotatedClass(Address.class)
                     .addAnnotatedClass(Owner.class)
                     .addAnnotatedClass(Pet.class)
+                    .addAnnotatedClass(Employee.class)
+                    .addAnnotatedClass(Project.class)
                     .getMetadataBuilder()
                     .build();
 
@@ -49,7 +53,7 @@ public class HibernateUtil {
 
     }
 
-    static void closeSessionFactory() {
+    public static void closeSessionFactory() {
         try {
             sessionFactory.close();
         } catch (Exception e) {

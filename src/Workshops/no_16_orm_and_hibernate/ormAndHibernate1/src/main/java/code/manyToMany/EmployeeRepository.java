@@ -1,4 +1,4 @@
-package code.oneToMany;
+package code.manyToMany;
 
 import code.HibernateUtil;
 import org.hibernate.Session;
@@ -6,67 +6,64 @@ import org.hibernate.Session;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Set;
 
-public class OwnerRepository {
+public class EmployeeRepository {
 
-    Owner insertData(final Owner owner, final Set<Pet> pets) {
+    List<Employee> insertData(final List<Employee> employees) {
         try (Session session = HibernateUtil.getSession()) {
             if (Objects.isNull(session)) {
                 throw new RuntimeException("Session is null");
             }
             session.beginTransaction();
-            owner.setPets(pets);
-            pets.forEach(pet -> pet.setOwner(owner));
-            session.persist(owner);
+            employees.forEach(session::persist);
             session.getTransaction().commit();
-            return owner;
+            return employees;
         }
     }
 
-    List<Owner> listOwners() {
+    List<Employee> listEmployees() {
         try (Session session = HibernateUtil.getSession()) {
             if (Objects.isNull(session)) {
                 throw new RuntimeException("Session is null");
             }
             session.beginTransaction();
-            String query = "SELECT owner FROM Owner owner";
-            List<Owner> owners = session.createQuery(query, Owner.class).list();
+            String query = "SELECT employee FROM Employee employee";
+            List<Employee> employees = session.createQuery(query, Employee.class).list();
             session.getTransaction().commit();
-            return owners;
+            return employees;
         }
     }
 
-    Optional<Owner> getOwner(Integer ownerId) {
+    Optional<Employee> getEmployee(Long employeeId) {
         try (Session session = HibernateUtil.getSession()) {
             if (Objects.isNull(session)) {
                 throw new RuntimeException("Session is null");
             }
-            return Optional.ofNullable(session.find(Owner.class, ownerId));
+            return Optional.ofNullable(session.find(Employee.class, employeeId));
         }
     }
 
-    void update(Integer ownerId, Pet newPet) {
+    void updateEmployee(Long employeeId, Project newProject) {
         try (Session session = HibernateUtil.getSession()) {
             if (Objects.isNull(session)) {
                 throw new RuntimeException("Session is null");
             }
 
             session.beginTransaction();
-            Owner owner = session.find(Owner.class, ownerId);
-            owner.getPets().add(newPet);
+            Employee employee = session.find(Employee.class, employeeId);
+            employee.getProjects().add(newProject);
             session.getTransaction().commit();
         }
     }
 
-    void deleteOwner(Integer ownerId) {
+    void deleteEmployee(Long employeeId) {
         try (Session session = HibernateUtil.getSession()) {
             if (Objects.isNull(session)) {
                 throw new RuntimeException("Session is null");
             }
 
             session.beginTransaction();
-            session.remove(session.find(Owner.class, ownerId));
+            session.remove(session.find(Employee.class, employeeId));
             session.getTransaction().commit();
         }
     }
@@ -78,8 +75,8 @@ public class OwnerRepository {
             }
 
             session.beginTransaction();
-            String query = "select owner from Owner owner";
-            session.createQuery(query, Owner.class).list().forEach(session::remove);
+            String query = "select employee from Employee employee";
+            session.createQuery(query, Employee.class).list().forEach(session::remove);
             session.getTransaction().commit();
         }
     }
