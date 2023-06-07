@@ -20,9 +20,11 @@ public class HibernateUtil {
 
     private static final Map<String, Object> SETTINGS = Map.ofEntries(
             Map.entry(Environment.DRIVER,"org.postgresql.Driver"),
+            // dane naszej bazy danych
             Map.entry(Environment.URL,"jdbc:postgresql://localhost:5432/w16"),
             Map.entry(Environment.USER,"postgres"),
             Map.entry(Environment.PASS,"postgres"),
+            // dialekt jest zależy od tego jakiej bazy danych używamy
             Map.entry(Environment.DIALECT,"org.hibernate.dialect.PostgreSQLDialect"),
             Map.entry(Environment.HBM2DDL_AUTO,"none"),
             Map.entry(Environment.SHOW_SQL,true),

@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+}
+
+group = 'pl.zajavka'
+version '0.0.1-SNAPSHOT'
+sourceCompatibility = '20'
+
+ext {
+    logbackVersion = '1.4.6'
+    lombokVersion = '1.18.26'
+    junitVersion = '5.9.2'
+    mockitoVersion = '5.2.0'
+
+    jakartaPersistenceApiVersion = '3.1.0'
+    hibernateVersion = '6.2.3.Final'
+    postgresqlDriverVersion = '42.5.0'
+}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+
+    implementation "jakarta.persistence:jakarta.persistence-api:$jakartaPersistenceApiVersion"
+
+    implementation "org.hibernate.orm:hibernate-core:$hibernateVersion"
+    implementation "org.postgresql:postgresql:$postgresqlDriverVersion"
+
+    implementation "ch.qos.logback:logback-classic:$logbackVersion"
+
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    testImplementation "org.mockito:mockito-junit-jupiter:$mockitoVersion"
+    testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'

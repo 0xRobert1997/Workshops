@@ -36,8 +36,8 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
         </processorPath>
-        <module name="ormAndHibernate1.test" />
-        <module name="ormAndHibernate1.main" />
+        <module name="ormAndHibernate2.test" />
+        <module name="ormAndHibernate2.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -51,6 +51,9 @@
       <module name="gradleExercise" target="15" />
       <module name="gradleExercise.main" target="15" />
       <module name="gradleExercise.test" target="15" />
+      <module name="hibernateProject1" target="20" />
+      <module name="hibernateProject1.main" target="20" />
+      <module name="hibernateProject1.test" target="20" />
       <module name="java-maven-examples (1)" target="1.5" />
       <module name="logEx" target="17" />
       <module name="logEx.main" target="17" />
