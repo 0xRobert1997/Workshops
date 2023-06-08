@@ -17,6 +17,5 @@ public class OneToManyRunner {
                 ExampleData.someOwner1(),
                 Set.of(ExampleData.somePet3(), ExampleData.somePet4()));
 
-        ownerRepository.listOwners().forEach(owner -> System.out.println("### " +  owner));
     }
 }

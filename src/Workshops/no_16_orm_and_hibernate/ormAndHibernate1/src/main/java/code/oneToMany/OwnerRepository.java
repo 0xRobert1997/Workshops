@@ -1,7 +1,6 @@
 package code.oneToMany;
 
 import code.HibernateUtil;
-import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
@@ -28,13 +27,13 @@ public class OwnerRepository {
         }
     }
 
-    List<Owner> listOwners() {
+    List<Owner> findAll() {
         try (Session session = HibernateUtil.getSession()) {
             if (Objects.isNull(session)) {
                 throw new RuntimeException("Session is null");
             }
             session.beginTransaction();
-            String query = "SELECT owner FROM Owner owner";
+            String query = "FROM Owner";
             List<Owner> owners = session.createQuery(query, Owner.class).list();
             session.getTransaction().commit();
             return owners;
@@ -161,7 +160,7 @@ public class OwnerRepository {
         return result;
     }
 
-    int deleteeHQL(final String email) {
+    int deleteHQL(final String email) {
         EntityManager entityManager = null;
         EntityTransaction transaction = null;
         int result;
@@ -197,4 +196,118 @@ public class OwnerRepository {
         }
         return result;
     }
+    List<Owner> selectExample1() {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+            String query = "FROM Owner";
+            List<Owner> owners = session.createQuery(query, Owner.class).list();
+            session.getTransaction().commit();
+            return owners;
+        }
+    }
+
+    List<Owner> selectExample2() {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+            String example2 = "SELECT new code.onetomany.OwnerTemp(ow.id, ow.name) FROM Owner as ow";
+            List<Owner> owners = session.createQuery(example2, Owner.class).getResultList();
+            session.getTransaction().commit();
+            return owners;
+        }
+    }
+
+    List<Owner> selectExample3() {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+            String example3 = "SELECT ow FROM Owner ow WHERE ow.email = :email";
+            List<Owner> owners = session
+                    .createQuery(example3, Owner.class)
+                    .setParameter("email", "adrian@zajavka.pl")
+                    .getResultList();
+            session.getTransaction().commit();
+            return owners;
+        }
+    }
+
+    List<Owner> selectExample4() {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+            String example4 = "SELECT ow FROM Owner ow ORDER BY ow.email ASC, ow.name DESC";
+            List<Owner> owners = session
+                    .createQuery(example4, Owner.class)
+                    .getResultList();
+            session.getTransaction().commit();
+            return owners;
+        }
+    }
+
+    // paginacja
+    List<Owner> selectExample5() {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+            String example5 = "SELECT ow FROM Owner ow ORDER BY ow.email DESC";
+            List<Owner> owners = session
+                    .createQuery(example5, Owner.class)
+                    .setFirstResult(0)
+                    .setMaxResults(31)
+                    .getResultList();
+
+            session.getTransaction().commit();
+            return owners;
+        }
+    }
+
+    Optional<Owner> selectExample6(final String name) {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+            String example6 = "SELECT ow FROM Owner ow WHERE ow.name = :name";
+            Optional<Owner> owners = session
+                    .createQuery(example6, Owner.class)
+                    .uniqueResultOptional();
+            // jeśli w bazie bd dwie osoby o takim samym imieniu a użyjemy uniqueResultOptional to dostaniemy wyjątek
+
+            session.getTransaction().commit();
+            return owners;
+        }
+    }
+
+    void selectExample7(final String name) {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+                                                                // V łączymy na podstawie pola w pets w obiekcie owner
+            String select7_1 = "SELECT ow FROM Owner ow INNER JOIN ow.pets pt";
+            session.createQuery(select7_1, Owner.class)
+                            .getResultList()
+                                    .forEach(e -> System.out.println("###Entity: " + e));
+
+            session.getTransaction().commit();
+
+        }
+    }
+
+
+
 }
+
+

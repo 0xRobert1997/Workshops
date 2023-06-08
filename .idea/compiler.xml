@@ -69,6 +69,7 @@
       <module name="mockingSpring" target="20" />
       <module name="mockingSpring.main" target="20" />
       <module name="mockingSpring.test" target="20" />
+      <module name="ormAndHibernate2" target="20" />
       <module name="pl.zajavka.LogsExercise" target="17" />
       <module name="pl.zajavka.LogsExercise.main" target="17" />
       <module name="pl.zajavka.LogsExercise.test" target="17" />
