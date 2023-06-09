@@ -302,7 +302,21 @@ public class OwnerRepository {
                                     .forEach(e -> System.out.println("###Entity: " + e));
 
             session.getTransaction().commit();
+        }
+    }
 
+    void selectExampleNamedQuery(final String email) {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+            session.createNamedQuery("Owner.findAllByEmail", Owner.class)
+                    .setParameter("email", email)
+                    .getResultList()
+                    .forEach(e -> System.out.println("###Entity: " + e));
+
+            session.getTransaction().commit();
         }
     }
 

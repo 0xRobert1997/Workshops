@@ -27,7 +27,9 @@ public class HibernateUtil {
             // dialekt jest zależy od tego jakiej bazy danych używamy
             Map.entry(Environment.DIALECT,"org.hibernate.dialect.PostgreSQLDialect"),
             Map.entry(Environment.HBM2DDL_AUTO,"none"),
+            // show sql po to żeby logować zapytania od hibernate i żeby można było to obserwować i optymalizować
             Map.entry(Environment.SHOW_SQL,true),
+            // przy format false hibernate będzie logował sql-ki jedno-linijkowo
             Map.entry(Environment.FORMAT_SQL,true)
             );
     private static SessionFactory sessionFactory = loadSessionFactory();
