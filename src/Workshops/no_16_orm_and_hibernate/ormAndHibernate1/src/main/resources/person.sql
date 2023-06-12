@@ -19,3 +19,11 @@ name VARCHAR(32) NOT NULL,
 breed VARCHAR(32) NOT NULL,
 owner_id INT references owner(owner_id)
 )
+
+CREATE TABLE cached_employee (
+employee_id SERIAL NOT NULL PRIMARY KEY,
+	name varchar(20) NOT NULL,
+	surname varchar(20) NOT NULL,
+	salary varchar(20) NOT NULL,
+	since TIMESTAMP WITH TIME ZONE NOT NULL
+);

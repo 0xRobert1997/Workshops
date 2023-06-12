@@ -12,7 +12,7 @@ import java.util.Set;
 // dajemy @Getter i @Setter, przy @Data mogą wystąpić błędy(potem będzie jeszcze wyjaśnione)
 @Getter
 @Setter
-// jeśli nadpiszemy quals po kluczu głównym to dopóki nie zapiszemy odbiektu do bazy danych to będzie on null'em
+// jeśli nadpiszemy quals po kluczu głównym, który jest serial to dopóki nie zapiszemy odbiektu do bazy danych to będzie on null'em
 @EqualsAndHashCode(of = "email")
 @Entity
 @Builder

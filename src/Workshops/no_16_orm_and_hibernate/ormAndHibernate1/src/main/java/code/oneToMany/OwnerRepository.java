@@ -1,10 +1,18 @@
 package code.oneToMany;
 
 import code.HibernateUtil;
+import code.oneToOne.Customer;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
+import jakarta.persistence.Tuple;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.ParameterExpression;
+import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.query.criteria.HibernateCriteriaBuilder;
 
 import java.util.List;
 import java.util.Objects;
@@ -315,6 +323,45 @@ public class OwnerRepository {
                     .setParameter("email", email)
                     .getResultList()
                     .forEach(e -> System.out.println("###Entity: " + e));
+
+            session.getTransaction().commit();
+        }
+    }
+
+    void nativeQueryExample(final String email) {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+            String sql = "SELECT * FROM OWNER";
+            NativeQuery<Owner> nativeQuery = session.createNativeQuery(sql, Owner.class);
+            List<Owner> list = nativeQuery.list();
+
+            session.getTransaction().commit();
+        }
+    }
+
+    void criteriaExample() {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+
+            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+            CriteriaQuery<Customer> criteriaQuery = criteriaBuilder.createQuery(Customer.class);
+            Root<Customer> root = criteriaQuery.from(Customer.class);
+
+            ParameterExpression<String> parameter1 = criteriaBuilder.parameter(String.class);
+
+            criteriaQuery
+                    .select(root)
+                    .where(criteriaBuilder.equal(root.get("email"), parameter1));
+
+            var query = session.createQuery(criteriaQuery);
+            query.setParameter(parameter1, "adrian@zajavka.pl");
+            List<Customer> resultList = query.getResultList();
 
             session.getTransaction().commit();
         }

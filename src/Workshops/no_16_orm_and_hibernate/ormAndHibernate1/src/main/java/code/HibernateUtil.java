@@ -1,6 +1,6 @@
 package code;
 
-import code.manyToMany.Employee;
+import code.cache.CachedEmployee;
 import code.manyToMany.Project;
 import code.oneToMany.Owner;
 import code.oneToMany.Pet;
@@ -26,18 +26,28 @@ public class HibernateUtil {
             Map.entry(Environment.PASS,"postgres"),
             // dialekt jest zależy od tego jakiej bazy danych używamy
             Map.entry(Environment.DIALECT,"org.hibernate.dialect.PostgreSQLDialect"),
+            Map.entry(Environment.CONNECTION_PROVIDER, "org.hibernate.hikaricp.internal.HikariCPConnectionProvider"),
             Map.entry(Environment.HBM2DDL_AUTO,"none"),
             // show sql po to żeby logować zapytania od hibernate i żeby można było to obserwować i optymalizować
             Map.entry(Environment.SHOW_SQL,true),
             // przy format false hibernate będzie logował sql-ki jedno-linijkowo
             Map.entry(Environment.FORMAT_SQL,true)
             );
+
+    private static final Map<String, Object> HIKARI_CP_SETTINGS = Map.ofEntries(
+            Map.entry("hibernate.hikari.connectionTimeout","20000"),
+            Map.entry("hibernate.hikari.minimumIdle","10"),
+            Map.entry("hibernate.hikari.maximumPoolSize","20"),
+            Map.entry("hibernate.hikari.idleTimeout","300000")
+
+    );
     private static SessionFactory sessionFactory = loadSessionFactory();
 
     private static SessionFactory loadSessionFactory() {
         try {
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(SETTINGS)
+                    .applySettings(HIKARI_CP_SETTINGS)
                     .build();
 
             Metadata metadata = new MetadataSources(serviceRegistry)
@@ -45,7 +55,8 @@ public class HibernateUtil {
                     .addAnnotatedClass(Address.class)
                     .addAnnotatedClass(Owner.class)
                     .addAnnotatedClass(Pet.class)
-                    .addAnnotatedClass(Employee.class)
+                    .addAnnotatedClass(code.manyToMany.Employee.class)
+                    .addAnnotatedClass(CachedEmployee.class)
                     .addAnnotatedClass(Project.class)
                     .getMetadataBuilder()
                     .build();
