@@ -1,6 +1,9 @@
 package code;
 
 import code.cache.CachedEmployee;
+import code.locks.EventEntity;
+import code.locks.TicketEntity;
+import code.manyToMany.Employee;
 import code.manyToMany.Project;
 import code.oneToMany.Owner;
 import code.oneToMany.Pet;
@@ -13,6 +16,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
+import org.hibernate.stat.Statistics;
 
 import java.util.Map;
 
@@ -26,6 +30,7 @@ public class HibernateUtil {
             Map.entry(Environment.PASS,"postgres"),
             // dialekt jest zależy od tego jakiej bazy danych używamy
             Map.entry(Environment.DIALECT,"org.hibernate.dialect.PostgreSQLDialect"),
+            Map.entry(Environment.GENERATE_STATISTICS, true),
             Map.entry(Environment.CONNECTION_PROVIDER, "org.hibernate.hikaricp.internal.HikariCPConnectionProvider"),
             Map.entry(Environment.HBM2DDL_AUTO,"none"),
             // show sql po to żeby logować zapytania od hibernate i żeby można było to obserwować i optymalizować
@@ -41,6 +46,13 @@ public class HibernateUtil {
             Map.entry("hibernate.hikari.idleTimeout","300000")
 
     );
+
+    private static final Map<String, Object> CACHE_SETTINGS = Map.ofEntries(
+            Map.entry(Environment.CACHE_REGION_FACTORY, "jcache"),
+            Map.entry("hibernate.javax.cache.provider", "org.ehcache.jsr107.EhcacheCachingProvider"),
+            Map.entry("hibernate.javax.chache.uri", "META-INF/ehcache.xml"),
+            Map.entry(Environment.USE_SECOND_LEVEL_CACHE, true)
+    );
     private static SessionFactory sessionFactory = loadSessionFactory();
 
     private static SessionFactory loadSessionFactory() {
@@ -55,9 +67,11 @@ public class HibernateUtil {
                     .addAnnotatedClass(Address.class)
                     .addAnnotatedClass(Owner.class)
                     .addAnnotatedClass(Pet.class)
-                    .addAnnotatedClass(code.manyToMany.Employee.class)
+                    .addAnnotatedClass(Employee.class)
                     .addAnnotatedClass(CachedEmployee.class)
                     .addAnnotatedClass(Project.class)
+                    .addAnnotatedClass(EventEntity.class)
+                    .addAnnotatedClass(TicketEntity.class)
                     .getMetadataBuilder()
                     .build();
 
@@ -83,5 +97,9 @@ public class HibernateUtil {
             System.err.println("Exception while opening session");
         }
         return null;
+    }
+
+    public static Statistics getStatistic() {
+        return sessionFactory.getStatistics();
     }
 }

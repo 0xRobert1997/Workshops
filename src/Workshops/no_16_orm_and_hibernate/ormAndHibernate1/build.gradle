@@ -11,10 +11,12 @@ ext {
     lombokVersion = '1.18.26'
     junitVersion = '5.9.2'
     mockitoVersion = '5.2.0'
-    hikariVersion = '5.0.1'
 
     jakartaPersistenceApiVersion = '3.1.0'
     hibernateVersion = '6.2.3.Final'
+    hikariVersion = '5.0.1'
+    ehcacheVersion = '3.10.6'
+    jaxbApiVersion = '2.3.1'
     postgresqlDriverVersion = '42.5.4'
 }
 
@@ -26,8 +28,15 @@ dependencies {
     implementation "jakarta.persistence:jakarta.persistence-api:$jakartaPersistenceApiVersion"
 
     implementation "org.hibernate.orm:hibernate-core:$hibernateVersion"
+
     implementation "org.hibernate.orm:hibernate-hikaricp:$hibernateVersion"
     implementation "com.zaxxer:HikariCP:$hikariVersion"
+
+    implementation "org.hibernate:hibernate-jcache:$hibernateVersion"
+    implementation "org.ehcache:ehcache:$ehcacheVersion"
+    implementation "javax.xml.bind:jaxb-api:$jaxbApiVersion"
+    implementation "com.sun.xml.bind:jaxb-impl:$jaxbApiVersion"
+
     implementation "org.postgresql:postgresql:$postgresqlDriverVersion"
 
     implementation "ch.qos.logback:logback-classic:$logbackVersion"

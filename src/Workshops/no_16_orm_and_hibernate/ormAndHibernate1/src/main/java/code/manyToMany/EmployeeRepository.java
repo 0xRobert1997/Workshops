@@ -1,8 +1,10 @@
 package code.manyToMany;
 
 import code.HibernateUtil;
+import code.locks.EventEntity;
 import org.hibernate.Session;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -27,8 +29,10 @@ public class EmployeeRepository {
                 throw new RuntimeException("Session is null");
             }
             session.beginTransaction();
+
             String query = "SELECT employee FROM Employee employee";
             List<Employee> employees = session.createQuery(query, Employee.class).list();
+
             session.getTransaction().commit();
             return employees;
         }
@@ -48,10 +52,11 @@ public class EmployeeRepository {
             if (Objects.isNull(session)) {
                 throw new RuntimeException("Session is null");
             }
-
             session.beginTransaction();
+
             Employee employee = session.find(Employee.class, employeeId);
             employee.getProjects().add(newProject);
+
             session.getTransaction().commit();
         }
     }
@@ -61,9 +66,9 @@ public class EmployeeRepository {
             if (Objects.isNull(session)) {
                 throw new RuntimeException("Session is null");
             }
-
             session.beginTransaction();
             session.remove(session.find(Employee.class, employeeId));
+
             session.getTransaction().commit();
         }
     }
@@ -73,10 +78,25 @@ public class EmployeeRepository {
             if (Objects.isNull(session)) {
                 throw new RuntimeException("Session is null");
             }
-
             session.beginTransaction();
+
             String query = "select employee from Employee employee";
             session.createQuery(query, Employee.class).list().forEach(session::remove);
+
+            session.getTransaction().commit();
+        }
+    }
+
+    void changeDateTime(OffsetDateTime newDateTime, Long eventId) {
+        try (Session session = HibernateUtil.getSession()) {
+            if (Objects.isNull(session)) {
+                throw new RuntimeException("Session is null");
+            }
+            session.beginTransaction();
+
+            EventEntity eventEntity = session.find(EventEntity.class, eventId);
+            eventEntity.setDateTime(newDateTime);
+
             session.getTransaction().commit();
         }
     }
