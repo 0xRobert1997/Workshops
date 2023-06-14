@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group = 'pl.zajavka'
+version '0.0.1-SNAPSHOT'
+sourceCompatibility = '20'
+
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "ch.qos.logback:logback-classic:$logbackVersion"
+
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    implementation "org.hibernate.orm:hibernate-core:$hibernateVersion"
+    implementation "org.hibernate.orm:hibernate-hikaricp:$hibernateVersion"
+    implementation "com.zaxxer:HikariCP:$hikariVersion"
+    implementation "org.postgresql:postgresql:$postgresqlDriverVersion"
+
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
