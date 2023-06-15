@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import java.util.List;
 import java.util.Objects;
 
-public class CarDealershipManagmentRepository implements CarDealershipManagementDAO {
+public class CarDealershipManagementRepository implements CarDealershipManagementDAO {
     @Override
     public void purge() {
         try (Session session = HibernateUtil.getSession()) {

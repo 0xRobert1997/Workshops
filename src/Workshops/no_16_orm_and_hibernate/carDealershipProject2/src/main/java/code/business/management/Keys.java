@@ -1,9 +1,15 @@
 package code.business.management;
 
+import code.infrastructure.database.entity.CarHistoryEntity;
+
 public interface Keys {
 
     enum InputDataGroup {
         INIT,
+        BUY_FIRST_TIME,
+        BUY_AGAIN,
+        SERVICE_REQUEST,
+        DO_THE_SERVICE
 
     }
 
@@ -12,6 +18,12 @@ public interface Keys {
         MECHANIC,
         CAR,
         SERVICE,
-        PART
+        PART,
+        CUSTOMER
+    }
+
+    enum Constants {
+        WHAT,
+        FINISHED
     }
 }

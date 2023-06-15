@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @UtilityClass
 public class InputDataCache {
 
-    private static final String FILE_PATH = ".src/main/resources/traffic_simulation.md";
+    private static final String FILE_PATH = "./src/main/resources/traffic_simulation.md";
 
     private static final Map<String, List<String>> inputData;
 
@@ -52,6 +52,18 @@ public class InputDataCache {
                 .orElse(List.of())
                 .stream()
                 .filter(line -> line.startsWith(entity.toString()))
+                .map(mapper)
+                .toList();
+    }
+
+    public static <T> List<T> getInputData(
+            final Keys.InputDataGroup inputDataGroup,
+            final Function<String, T> mapper
+    ) {
+
+        return Optional.ofNullable(inputData.get(inputDataGroup.toString()))
+                .orElse(List.of())
+                .stream()
                 .map(mapper)
                 .toList();
     }
