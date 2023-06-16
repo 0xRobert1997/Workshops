@@ -1,0 +1,1603 @@
+INFO  - ### RUNNING ORDER 1
+;INFO  - HHH000412: Hibernate ORM core version 6.1.4.Final
+{INFO  - HHH000130: Instantiating explicit connection provider: org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+$INFO  - HikariPool-1 - Starting...
+RINFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@13f9ad9
+)INFO  - HikariPool-1 - Start completed.
+KINFO  - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+}INFO  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+)Hibernate: delete from service_mechanic
+%Hibernate: delete from service_part
+,Hibernate: delete from car_service_request
+ Hibernate: delete from invoice
+!Hibernate: delete from mechanic
+Hibernate: delete from part
+ Hibernate: delete from service
+'Hibernate: delete from car_to_service
+#Hibernate: delete from car_to_buy
+!Hibernate: delete from customer
+ Hibernate: delete from address
+!Hibernate: delete from salesman
+INFO  - Session Metrics {
+:    21900 nanoseconds spent acquiring 1 JDBC connections;
+:    23700 nanoseconds spent releasing 1 JDBC connections;
+;    660000 nanoseconds spent preparing 12 JDBC statements;
+=    16210800 nanoseconds spent executing 12 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+`    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+m    351500 nanoseconds spent executing 12 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  - ### RUNNING ORDER 2
+IHibernate: insert into salesman (name, pesel, surname) values (?, ?, ?)
+7TRACE - binding parameter [1] as [VARCHAR] - [Stefan]
+7TRACE - binding parameter [1] as [VARCHAR] - [Stefan]
+<TRACE - binding parameter [2] as [VARCHAR] - [67020499436]
+<TRACE - binding parameter [2] as [VARCHAR] - [67020499436]
+;TRACE - binding parameter [3] as [VARCHAR] - [Sprzedawca]
+;TRACE - binding parameter [3] as [VARCHAR] - [Sprzedawca]
+IHibernate: insert into salesman (name, pesel, surname) values (?, ?, ?)
+:TRACE - binding parameter [1] as [VARCHAR] - [Agnieszka]
+:TRACE - binding parameter [1] as [VARCHAR] - [Agnieszka]
+<TRACE - binding parameter [2] as [VARCHAR] - [73021314515]
+<TRACE - binding parameter [2] as [VARCHAR] - [73021314515]
+<TRACE - binding parameter [3] as [VARCHAR] - [Samochodowa]
+<TRACE - binding parameter [3] as [VARCHAR] - [Samochodowa]
+IHibernate: insert into salesman (name, pesel, surname) values (?, ?, ?)
+7TRACE - binding parameter [1] as [VARCHAR] - [Tomasz]
+7TRACE - binding parameter [1] as [VARCHAR] - [Tomasz]
+<TRACE - binding parameter [2] as [VARCHAR] - [55091699846]
+<TRACE - binding parameter [2] as [VARCHAR] - [55091699846]
+6TRACE - binding parameter [3] as [VARCHAR] - [Kombi]
+6TRACE - binding parameter [3] as [VARCHAR] - [Kombi]
+IHibernate: insert into salesman (name, pesel, surname) values (?, ?, ?)
+:TRACE - binding parameter [1] as [VARCHAR] - [RafaÄ¹â€š]
+:TRACE - binding parameter [1] as [VARCHAR] - [RafaÄ¹â€š]
+<TRACE - binding parameter [2] as [VARCHAR] - [62081825675]
+<TRACE - binding parameter [2] as [VARCHAR] - [62081825675]
+5TRACE - binding parameter [3] as [VARCHAR] - [Dach]
+5TRACE - binding parameter [3] as [VARCHAR] - [Dach]
+IHibernate: insert into mechanic (name, pesel, surname) values (?, ?, ?)
+7TRACE - binding parameter [1] as [VARCHAR] - [Robert]
+7TRACE - binding parameter [1] as [VARCHAR] - [Robert]
+<TRACE - binding parameter [2] as [VARCHAR] - [52070997836]
+<TRACE - binding parameter [2] as [VARCHAR] - [52070997836]
+ATRACE - binding parameter [3] as [VARCHAR] - [Ä¹Å¡rubokrÃ„â„¢t]
+ATRACE - binding parameter [3] as [VARCHAR] - [Ä¹Å¡rubokrÃ„â„¢t]
+IHibernate: insert into mechanic (name, pesel, surname) values (?, ?, ?)
+8TRACE - binding parameter [1] as [VARCHAR] - [Zygmunt]
+8TRACE - binding parameter [1] as [VARCHAR] - [Zygmunt]
+<TRACE - binding parameter [2] as [VARCHAR] - [83011863727]
+<TRACE - binding parameter [2] as [VARCHAR] - [83011863727]
+8TRACE - binding parameter [3] as [VARCHAR] - [Naprawa]
+8TRACE - binding parameter [3] as [VARCHAR] - [Naprawa]
+IHibernate: insert into mechanic (name, pesel, surname) values (?, ?, ?)
+:TRACE - binding parameter [1] as [VARCHAR] - [Remigiusz]
+:TRACE - binding parameter [1] as [VARCHAR] - [Remigiusz]
+<TRACE - binding parameter [2] as [VARCHAR] - [67111396321]
+<TRACE - binding parameter [2] as [VARCHAR] - [67111396321]
+9TRACE - binding parameter [3] as [VARCHAR] - [Alufelga]
+9TRACE - binding parameter [3] as [VARCHAR] - [Alufelga]
+eHibernate: insert into car_to_buy (brand, color, model, price, vin, year) values (?, ?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 1]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 1]
+6TRACE - binding parameter [4] as [NUMERIC] - [20000]
+6TRACE - binding parameter [4] as [NUMERIC] - [20000]
+BTRACE - binding parameter [5] as [VARCHAR] - [1FT7X2B60FEA74019]
+BTRACE - binding parameter [5] as [VARCHAR] - [1FT7X2B60FEA74019]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+eHibernate: insert into car_to_buy (brand, color, model, price, vin, year) values (?, ?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 3]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 3]
+6TRACE - binding parameter [4] as [NUMERIC] - [30000]
+6TRACE - binding parameter [4] as [NUMERIC] - [30000]
+BTRACE - binding parameter [5] as [VARCHAR] - [1N6BD06T45C416702]
+BTRACE - binding parameter [5] as [VARCHAR] - [1N6BD06T45C416702]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+eHibernate: insert into car_to_buy (brand, color, model, price, vin, year) values (?, ?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 3]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 3]
+6TRACE - binding parameter [4] as [NUMERIC] - [30000]
+6TRACE - binding parameter [4] as [NUMERIC] - [30000]
+BTRACE - binding parameter [5] as [VARCHAR] - [1G1PE5S97B7239380]
+BTRACE - binding parameter [5] as [VARCHAR] - [1G1PE5S97B7239380]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+eHibernate: insert into car_to_buy (brand, color, model, price, vin, year) values (?, ?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 5]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 5]
+6TRACE - binding parameter [4] as [NUMERIC] - [40000]
+6TRACE - binding parameter [4] as [NUMERIC] - [40000]
+BTRACE - binding parameter [5] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [5] as [VARCHAR] - [1GCEC19X27Z109567]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+eHibernate: insert into car_to_buy (brand, color, model, price, vin, year) values (?, ?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 5]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 5]
+6TRACE - binding parameter [4] as [NUMERIC] - [40000]
+6TRACE - binding parameter [4] as [NUMERIC] - [40000]
+BTRACE - binding parameter [5] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [5] as [VARCHAR] - [2C3CDYAG2DH731952]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+eHibernate: insert into car_to_buy (brand, color, model, price, vin, year) values (?, ?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+6TRACE - binding parameter [2] as [VARCHAR] - [black]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 7]
+9TRACE - binding parameter [3] as [VARCHAR] - [Series 7]
+6TRACE - binding parameter [4] as [NUMERIC] - [60000]
+6TRACE - binding parameter [4] as [NUMERIC] - [60000]
+BTRACE - binding parameter [5] as [VARCHAR] - [1GB6G5CG1C1105936]
+BTRACE - binding parameter [5] as [VARCHAR] - [1GB6G5CG1C1105936]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+5TRACE - binding parameter [6] as [INTEGER] - [2020]
+THibernate: insert into service (description, price, service_code) values (?, ?, ?)
+ATRACE - binding parameter [1] as [VARCHAR] - [Wymiana koÄ¹â€ša]
+ATRACE - binding parameter [1] as [VARCHAR] - [Wymiana koÄ¹â€ša]
+7TRACE - binding parameter [2] as [NUMERIC] - [240.20]
+7TRACE - binding parameter [2] as [NUMERIC] - [240.20]
+:TRACE - binding parameter [3] as [VARCHAR] - [58394-014]
+:TRACE - binding parameter [3] as [VARCHAR] - [58394-014]
+THibernate: insert into service (description, price, service_code) values (?, ?, ?)
+CTRACE - binding parameter [1] as [VARCHAR] - [Strojenie koÄ¹â€ša]
+CTRACE - binding parameter [1] as [VARCHAR] - [Strojenie koÄ¹â€ša]
+6TRACE - binding parameter [2] as [NUMERIC] - [50.20]
+6TRACE - binding parameter [2] as [NUMERIC] - [50.20]
+:TRACE - binding parameter [3] as [VARCHAR] - [55319-866]
+:TRACE - binding parameter [3] as [VARCHAR] - [55319-866]
+THibernate: insert into service (description, price, service_code) values (?, ?, ?)
+>TRACE - binding parameter [1] as [VARCHAR] - [Wymiana oleju]
+>TRACE - binding parameter [1] as [VARCHAR] - [Wymiana oleju]
+7TRACE - binding parameter [2] as [NUMERIC] - [140.15]
+7TRACE - binding parameter [2] as [NUMERIC] - [140.15]
+:TRACE - binding parameter [3] as [VARCHAR] - [0008-0407]
+:TRACE - binding parameter [3] as [VARCHAR] - [0008-0407]
+THibernate: insert into service (description, price, service_code) values (?, ?, ?)
+GTRACE - binding parameter [1] as [VARCHAR] - [Wymiana korka do oleju]
+GTRACE - binding parameter [1] as [VARCHAR] - [Wymiana korka do oleju]
+6TRACE - binding parameter [2] as [NUMERIC] - [17.19]
+6TRACE - binding parameter [2] as [NUMERIC] - [17.19]
+:TRACE - binding parameter [3] as [VARCHAR] - [43063-180]
+:TRACE - binding parameter [3] as [VARCHAR] - [43063-180]
+THibernate: insert into service (description, price, service_code) values (?, ?, ?)
+FTRACE - binding parameter [1] as [VARCHAR] - [Wymiana filtra paliwa]
+FTRACE - binding parameter [1] as [VARCHAR] - [Wymiana filtra paliwa]
+6TRACE - binding parameter [2] as [NUMERIC] - [14.98]
+6TRACE - binding parameter [2] as [NUMERIC] - [14.98]
+;TRACE - binding parameter [3] as [VARCHAR] - [14222-2022]
+;TRACE - binding parameter [3] as [VARCHAR] - [14222-2022]
+RHibernate: insert into part (description, price, serial_number) values (?, ?, ?)
+9TRACE - binding parameter [1] as [VARCHAR] - [KoÄ¹â€šo]
+9TRACE - binding parameter [1] as [VARCHAR] - [KoÄ¹â€šo]
+7TRACE - binding parameter [2] as [NUMERIC] - [320.11]
+7TRACE - binding parameter [2] as [NUMERIC] - [320.11]
+;TRACE - binding parameter [3] as [VARCHAR] - [11523-7310]
+;TRACE - binding parameter [3] as [VARCHAR] - [11523-7310]
+RHibernate: insert into part (description, price, serial_number) values (?, ?, ?)
+5TRACE - binding parameter [1] as [VARCHAR] - [Olej]
+5TRACE - binding parameter [1] as [VARCHAR] - [Olej]
+7TRACE - binding parameter [2] as [NUMERIC] - [270.18]
+7TRACE - binding parameter [2] as [NUMERIC] - [270.18]
+:TRACE - binding parameter [3] as [VARCHAR] - [54340-777]
+:TRACE - binding parameter [3] as [VARCHAR] - [54340-777]
+RHibernate: insert into part (description, price, serial_number) values (?, ?, ?)
+?TRACE - binding parameter [1] as [VARCHAR] - [Korek do oleju]
+?TRACE - binding parameter [1] as [VARCHAR] - [Korek do oleju]
+7TRACE - binding parameter [2] as [NUMERIC] - [140.15]
+7TRACE - binding parameter [2] as [NUMERIC] - [140.15]
+:TRACE - binding parameter [3] as [VARCHAR] - [68180-556]
+:TRACE - binding parameter [3] as [VARCHAR] - [68180-556]
+RHibernate: insert into part (description, price, serial_number) values (?, ?, ?)
+@TRACE - binding parameter [1] as [VARCHAR] - [Filtr powietrza]
+@TRACE - binding parameter [1] as [VARCHAR] - [Filtr powietrza]
+6TRACE - binding parameter [2] as [NUMERIC] - [90.19]
+6TRACE - binding parameter [2] as [NUMERIC] - [90.19]
+:TRACE - binding parameter [3] as [VARCHAR] - [0268-1264]
+:TRACE - binding parameter [3] as [VARCHAR] - [0268-1264]
+INFO  - Session Metrics {
+:    15400 nanoseconds spent acquiring 1 JDBC connections;
+:    12300 nanoseconds spent releasing 1 JDBC connections;
+<    1202700 nanoseconds spent preparing 22 JDBC statements;
+=    13281000 nanoseconds spent executing 22 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+g    7439500 nanoseconds spent executing 1 flushes (flushing a total of 22 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  - ### RUNNING ORDER 3
+‹Hibernate: select c1_0.car_to_buy_id,c1_0.brand,c1_0.color,c1_0.model,c1_0.price,c1_0.vin,c1_0.year from car_to_buy c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1G1PE5S97B7239380]
+BTRACE - binding parameter [1] as [VARCHAR] - [1G1PE5S97B7239380]
+¨Hibernate: select i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.customer_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id from invoice i1_0 where i1_0.car_to_buy_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [219]
+4TRACE - binding parameter [1] as [INTEGER] - [219]
+INFO  - Session Metrics {
+:    18700 nanoseconds spent acquiring 1 JDBC connections;
+:    11400 nanoseconds spent releasing 1 JDBC connections;
+:    231300 nanoseconds spent preparing 2 JDBC statements;
+;    1853100 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    161300 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+j    5400 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select s1_0.salesman_id,s1_0.name,s1_0.pesel,s1_0.surname from salesman s1_0 where s1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [73021314515]
+<TRACE - binding parameter [1] as [VARCHAR] - [73021314515]
+INFO  - Session Metrics {
+:    16400 nanoseconds spent acquiring 1 JDBC connections;
+:    12300 nanoseconds spent releasing 1 JDBC connections;
+:    131900 nanoseconds spent preparing 1 JDBC statements;
+;    1014000 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+f    1486500 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    4300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‹Hibernate: select c1_0.car_to_buy_id,c1_0.brand,c1_0.color,c1_0.model,c1_0.price,c1_0.vin,c1_0.year from car_to_buy c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1FT7X2B60FEA74019]
+BTRACE - binding parameter [1] as [VARCHAR] - [1FT7X2B60FEA74019]
+¨Hibernate: select i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.customer_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id from invoice i1_0 where i1_0.car_to_buy_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [217]
+4TRACE - binding parameter [1] as [INTEGER] - [217]
+INFO  - Session Metrics {
+:    18600 nanoseconds spent acquiring 1 JDBC connections;
+:    13300 nanoseconds spent releasing 1 JDBC connections;
+9    74000 nanoseconds spent preparing 2 JDBC statements;
+;    1102800 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    137700 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+j    6600 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select s1_0.salesman_id,s1_0.name,s1_0.pesel,s1_0.surname from salesman s1_0 where s1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [55091699846]
+<TRACE - binding parameter [1] as [VARCHAR] - [55091699846]
+INFO  - Session Metrics {
+:    15800 nanoseconds spent acquiring 1 JDBC connections;
+:    18900 nanoseconds spent releasing 1 JDBC connections;
+9    33900 nanoseconds spent preparing 1 JDBC statements;
+:    502300 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    517900 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    5000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‹Hibernate: select c1_0.car_to_buy_id,c1_0.brand,c1_0.color,c1_0.model,c1_0.price,c1_0.vin,c1_0.year from car_to_buy c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+¨Hibernate: select i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.customer_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id from invoice i1_0 where i1_0.car_to_buy_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [220]
+4TRACE - binding parameter [1] as [INTEGER] - [220]
+INFO  - Session Metrics {
+:    15400 nanoseconds spent acquiring 1 JDBC connections;
+:    10900 nanoseconds spent releasing 1 JDBC connections;
+9    77000 nanoseconds spent preparing 2 JDBC statements;
+;    1100200 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    101800 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+j    6300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select s1_0.salesman_id,s1_0.name,s1_0.pesel,s1_0.surname from salesman s1_0 where s1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [55091699846]
+<TRACE - binding parameter [1] as [VARCHAR] - [55091699846]
+INFO  - Session Metrics {
+:    15700 nanoseconds spent acquiring 1 JDBC connections;
+:    15300 nanoseconds spent releasing 1 JDBC connections;
+9    44000 nanoseconds spent preparing 1 JDBC statements;
+:    749600 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    250300 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    6500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‹Hibernate: select c1_0.car_to_buy_id,c1_0.brand,c1_0.color,c1_0.model,c1_0.price,c1_0.vin,c1_0.year from car_to_buy c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1GB6G5CG1C1105936]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GB6G5CG1C1105936]
+¨Hibernate: select i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.customer_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id from invoice i1_0 where i1_0.car_to_buy_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [222]
+4TRACE - binding parameter [1] as [INTEGER] - [222]
+INFO  - Session Metrics {
+:    17100 nanoseconds spent acquiring 1 JDBC connections;
+:    21700 nanoseconds spent releasing 1 JDBC connections;
+9    95300 nanoseconds spent preparing 2 JDBC statements;
+;    1339500 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    221000 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+j    5800 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select s1_0.salesman_id,s1_0.name,s1_0.pesel,s1_0.surname from salesman s1_0 where s1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [62081825675]
+<TRACE - binding parameter [1] as [VARCHAR] - [62081825675]
+INFO  - Session Metrics {
+:    21900 nanoseconds spent acquiring 1 JDBC connections;
+:    13200 nanoseconds spent releasing 1 JDBC connections;
+9    50400 nanoseconds spent preparing 1 JDBC statements;
+:    635200 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    159400 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    7600 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‹Hibernate: select c1_0.car_to_buy_id,c1_0.brand,c1_0.color,c1_0.model,c1_0.price,c1_0.vin,c1_0.year from car_to_buy c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1N6BD06T45C416702]
+BTRACE - binding parameter [1] as [VARCHAR] - [1N6BD06T45C416702]
+¨Hibernate: select i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.customer_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id from invoice i1_0 where i1_0.car_to_buy_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [218]
+4TRACE - binding parameter [1] as [INTEGER] - [218]
+INFO  - Session Metrics {
+:    12000 nanoseconds spent acquiring 1 JDBC connections;
+:    11400 nanoseconds spent releasing 1 JDBC connections;
+9    83400 nanoseconds spent preparing 2 JDBC statements;
+;    1168900 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    104800 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+j    5100 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select s1_0.salesman_id,s1_0.name,s1_0.pesel,s1_0.surname from salesman s1_0 where s1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [62081825675]
+<TRACE - binding parameter [1] as [VARCHAR] - [62081825675]
+INFO  - Session Metrics {
+:    12500 nanoseconds spent acquiring 1 JDBC connections;
+:    10700 nanoseconds spent releasing 1 JDBC connections;
+9    30500 nanoseconds spent preparing 1 JDBC statements;
+:    458200 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    161300 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    4400 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ZHibernate: insert into address (address, city, country, postal_code) values (?, ?, ?, ?)
+=TRACE - binding parameter [1] as [VARCHAR] - [Bokserska 15]
+=TRACE - binding parameter [1] as [VARCHAR] - [Bokserska 15]
+<TRACE - binding parameter [2] as [VARCHAR] - [WrocÄ¹â€šaw]
+<TRACE - binding parameter [2] as [VARCHAR] - [WrocÄ¹â€šaw]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [4] as [VARCHAR] - [20-001]
+7TRACE - binding parameter [4] as [VARCHAR] - [20-001]
+bHibernate: insert into customer (address_id, email, name, phone, surname) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+ETRACE - binding parameter [2] as [VARCHAR] - [alf.samoch@gmail.com]
+ETRACE - binding parameter [2] as [VARCHAR] - [alf.samoch@gmail.com]
+7TRACE - binding parameter [3] as [VARCHAR] - [Alfred]
+7TRACE - binding parameter [3] as [VARCHAR] - [Alfred]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 754 552 234]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 754 552 234]
+<TRACE - binding parameter [5] as [VARCHAR] - [Samochodowy]
+<TRACE - binding parameter [5] as [VARCHAR] - [Samochodowy]
+|Hibernate: insert into invoice (car_to_buy_id, customer_id, date_time, invoice_number, salesman_id) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [219]
+4TRACE - binding parameter [1] as [INTEGER] - [219]
+4TRACE - binding parameter [2] as [INTEGER] - [183]
+4TRACE - binding parameter [2] as [INTEGER] - [183]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.361663400+02:00]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.361663400+02:00]
+UTRACE - binding parameter [4] as [VARCHAR] - [3d161398-899a-411f-b4ea-49e257e7a008]
+UTRACE - binding parameter [4] as [VARCHAR] - [3d161398-899a-411f-b4ea-49e257e7a008]
+4TRACE - binding parameter [5] as [INTEGER] - [146]
+4TRACE - binding parameter [5] as [INTEGER] - [146]
+INFO  - Session Metrics {
+:    14600 nanoseconds spent acquiring 1 JDBC connections;
+:    17600 nanoseconds spent releasing 1 JDBC connections;
+:    410100 nanoseconds spent preparing 3 JDBC statements;
+;    4007500 nanoseconds spent executing 3 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+f    3926600 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 1 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ZHibernate: insert into address (address, city, country, postal_code) values (?, ?, ?, ?)
+>TRACE - binding parameter [1] as [VARCHAR] - [WesoÄ¹â€ša 24]
+>TRACE - binding parameter [1] as [VARCHAR] - [WesoÄ¹â€ša 24]
+<TRACE - binding parameter [2] as [VARCHAR] - [WrocÄ¹â€šaw]
+<TRACE - binding parameter [2] as [VARCHAR] - [WrocÄ¹â€šaw]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [4] as [VARCHAR] - [30-001]
+7TRACE - binding parameter [4] as [VARCHAR] - [30-001]
+bHibernate: insert into customer (address_id, email, name, phone, surname) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [184]
+4TRACE - binding parameter [1] as [INTEGER] - [184]
+BTRACE - binding parameter [2] as [VARCHAR] - [mon.cyb@gmail.com]
+BTRACE - binding parameter [2] as [VARCHAR] - [mon.cyb@gmail.com]
+7TRACE - binding parameter [3] as [VARCHAR] - [Monika]
+7TRACE - binding parameter [3] as [VARCHAR] - [Monika]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 458 774 125]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 458 774 125]
+9TRACE - binding parameter [5] as [VARCHAR] - [Cybulska]
+9TRACE - binding parameter [5] as [VARCHAR] - [Cybulska]
+|Hibernate: insert into invoice (car_to_buy_id, customer_id, date_time, invoice_number, salesman_id) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [217]
+4TRACE - binding parameter [1] as [INTEGER] - [217]
+4TRACE - binding parameter [2] as [INTEGER] - [184]
+4TRACE - binding parameter [2] as [INTEGER] - [184]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.372186300+02:00]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.372186300+02:00]
+UTRACE - binding parameter [4] as [VARCHAR] - [894ae334-3b6a-46dd-8cbd-9ea59266466d]
+UTRACE - binding parameter [4] as [VARCHAR] - [894ae334-3b6a-46dd-8cbd-9ea59266466d]
+4TRACE - binding parameter [5] as [INTEGER] - [147]
+4TRACE - binding parameter [5] as [INTEGER] - [147]
+INFO  - Session Metrics {
+:    13700 nanoseconds spent acquiring 1 JDBC connections;
+:    22100 nanoseconds spent releasing 1 JDBC connections;
+:    178500 nanoseconds spent preparing 3 JDBC statements;
+;    3553300 nanoseconds spent executing 3 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    754800 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 1 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ZHibernate: insert into address (address, city, country, postal_code) values (?, ?, ?, ?)
+BTRACE - binding parameter [1] as [VARCHAR] - [WrocÄ¹â€šawska 55]
+BTRACE - binding parameter [1] as [VARCHAR] - [WrocÄ¹â€šawska 55]
+7TRACE - binding parameter [2] as [VARCHAR] - [Gdynia]
+7TRACE - binding parameter [2] as [VARCHAR] - [Gdynia]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [4] as [VARCHAR] - [50-001]
+7TRACE - binding parameter [4] as [VARCHAR] - [50-001]
+bHibernate: insert into customer (address_id, email, name, phone, surname) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [185]
+4TRACE - binding parameter [1] as [INTEGER] - [185]
+BTRACE - binding parameter [2] as [VARCHAR] - [tom.zim@gmail.com]
+BTRACE - binding parameter [2] as [VARCHAR] - [tom.zim@gmail.com]
+7TRACE - binding parameter [3] as [VARCHAR] - [Tomasz]
+7TRACE - binding parameter [3] as [VARCHAR] - [Tomasz]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 486 324 125]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 486 324 125]
+8TRACE - binding parameter [5] as [VARCHAR] - [Zimnoch]
+8TRACE - binding parameter [5] as [VARCHAR] - [Zimnoch]
+|Hibernate: insert into invoice (car_to_buy_id, customer_id, date_time, invoice_number, salesman_id) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [220]
+4TRACE - binding parameter [1] as [INTEGER] - [220]
+4TRACE - binding parameter [2] as [INTEGER] - [185]
+4TRACE - binding parameter [2] as [INTEGER] - [185]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.379190700+02:00]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.379190700+02:00]
+UTRACE - binding parameter [4] as [VARCHAR] - [3e238861-2a40-49f9-92d2-8ba22a061e8a]
+UTRACE - binding parameter [4] as [VARCHAR] - [3e238861-2a40-49f9-92d2-8ba22a061e8a]
+4TRACE - binding parameter [5] as [INTEGER] - [147]
+4TRACE - binding parameter [5] as [INTEGER] - [147]
+INFO  - Session Metrics {
+:    20200 nanoseconds spent acquiring 1 JDBC connections;
+:    13500 nanoseconds spent releasing 1 JDBC connections;
+:    160500 nanoseconds spent preparing 3 JDBC statements;
+;    2455400 nanoseconds spent executing 3 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    361000 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 1 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ZHibernate: insert into address (address, city, country, postal_code) values (?, ?, ?, ?)
+?TRACE - binding parameter [1] as [VARCHAR] - [Warszawska 321]
+?TRACE - binding parameter [1] as [VARCHAR] - [Warszawska 321]
+<TRACE - binding parameter [2] as [VARCHAR] - [WrocÄ¹â€šaw]
+<TRACE - binding parameter [2] as [VARCHAR] - [WrocÄ¹â€šaw]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [4] as [VARCHAR] - [10-001]
+7TRACE - binding parameter [4] as [VARCHAR] - [10-001]
+bHibernate: insert into customer (address_id, email, name, phone, surname) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [186]
+4TRACE - binding parameter [1] as [INTEGER] - [186]
+BTRACE - binding parameter [2] as [VARCHAR] - [rob.wes@gmail.com]
+BTRACE - binding parameter [2] as [VARCHAR] - [rob.wes@gmail.com]
+7TRACE - binding parameter [3] as [VARCHAR] - [Robert]
+7TRACE - binding parameter [3] as [VARCHAR] - [Robert]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 184 239 489]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 184 239 489]
+;TRACE - binding parameter [5] as [VARCHAR] - [WesoÄ¹â€šy]
+;TRACE - binding parameter [5] as [VARCHAR] - [WesoÄ¹â€šy]
+|Hibernate: insert into invoice (car_to_buy_id, customer_id, date_time, invoice_number, salesman_id) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [222]
+4TRACE - binding parameter [1] as [INTEGER] - [222]
+4TRACE - binding parameter [2] as [INTEGER] - [186]
+4TRACE - binding parameter [2] as [INTEGER] - [186]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.389197600+02:00]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.389197600+02:00]
+UTRACE - binding parameter [4] as [VARCHAR] - [351f64ce-33ea-4523-925c-33058c24da26]
+UTRACE - binding parameter [4] as [VARCHAR] - [351f64ce-33ea-4523-925c-33058c24da26]
+4TRACE - binding parameter [5] as [INTEGER] - [148]
+4TRACE - binding parameter [5] as [INTEGER] - [148]
+INFO  - Session Metrics {
+:    17800 nanoseconds spent acquiring 1 JDBC connections;
+:    21200 nanoseconds spent releasing 1 JDBC connections;
+:    171200 nanoseconds spent preparing 3 JDBC statements;
+;    2669400 nanoseconds spent executing 3 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    557200 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 1 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ZHibernate: insert into address (address, city, country, postal_code) values (?, ?, ?, ?)
+>TRACE - binding parameter [1] as [VARCHAR] - [CiepÄ¹â€ša 22]
+>TRACE - binding parameter [1] as [VARCHAR] - [CiepÄ¹â€ša 22]
+9TRACE - binding parameter [2] as [VARCHAR] - [Zakopane]
+9TRACE - binding parameter [2] as [VARCHAR] - [Zakopane]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [4] as [VARCHAR] - [40-001]
+7TRACE - binding parameter [4] as [VARCHAR] - [40-001]
+bHibernate: insert into customer (address_id, email, name, phone, surname) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [187]
+4TRACE - binding parameter [1] as [INTEGER] - [187]
+BTRACE - binding parameter [2] as [VARCHAR] - [mar.mar@gmail.com]
+BTRACE - binding parameter [2] as [VARCHAR] - [mar.mar@gmail.com]
+6TRACE - binding parameter [3] as [VARCHAR] - [Marek]
+6TRACE - binding parameter [3] as [VARCHAR] - [Marek]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 587 566 234]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 587 566 234]
+6TRACE - binding parameter [5] as [VARCHAR] - [Marek]
+6TRACE - binding parameter [5] as [VARCHAR] - [Marek]
+|Hibernate: insert into invoice (car_to_buy_id, customer_id, date_time, invoice_number, salesman_id) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [218]
+4TRACE - binding parameter [1] as [INTEGER] - [218]
+4TRACE - binding parameter [2] as [INTEGER] - [187]
+4TRACE - binding parameter [2] as [INTEGER] - [187]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.396206300+02:00]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.396206300+02:00]
+UTRACE - binding parameter [4] as [VARCHAR] - [5815f3a6-7720-4bbc-95d9-8f9c1aa75807]
+UTRACE - binding parameter [4] as [VARCHAR] - [5815f3a6-7720-4bbc-95d9-8f9c1aa75807]
+4TRACE - binding parameter [5] as [INTEGER] - [148]
+4TRACE - binding parameter [5] as [INTEGER] - [148]
+INFO  - Session Metrics {
+:    22400 nanoseconds spent acquiring 1 JDBC connections;
+:    23400 nanoseconds spent releasing 1 JDBC connections;
+:    150100 nanoseconds spent preparing 3 JDBC statements;
+;    2693100 nanoseconds spent executing 3 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    554100 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 1 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‡Hibernate: select c1_0.customer_id,c1_0.address_id,c1_0.email,c1_0.name,c1_0.phone,c1_0.surname from customer c1_0 where c1_0.email=?
+ETRACE - binding parameter [1] as [VARCHAR] - [alf.samoch@gmail.com]
+ETRACE - binding parameter [1] as [VARCHAR] - [alf.samoch@gmail.com]
+‚Hibernate: select a1_0.address_id,a1_0.address,a1_0.city,a1_0.country,a1_0.postal_code from address a1_0 where a1_0.address_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+’Hibernate: select c1_0.customer_id,a1_0.address_id,a1_0.address,a1_0.city,a1_0.country,a1_0.postal_code,c2_0.customer_id,c2_0.car_service_request_id,c2_0.car_to_service_id,c2_0.car_service_request_number,c2_0.completed_date_time,c2_0.customer_comment,c2_0.received_date_time,c1_0.email,i1_0.customer_id,i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id,c1_0.name,c1_0.phone,c1_0.surname from customer c1_0 left join address a1_0 on a1_0.address_id=c1_0.address_id left join car_service_request c2_0 on c1_0.customer_id=c2_0.customer_id left join invoice i1_0 on c1_0.customer_id=i1_0.customer_id where c1_0.address_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+INFO  - Session Metrics {
+:    25300 nanoseconds spent acquiring 1 JDBC connections;
+:    10600 nanoseconds spent releasing 1 JDBC connections;
+:    390300 nanoseconds spent preparing 3 JDBC statements;
+;    3586400 nanoseconds spent executing 3 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    220100 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 2 collections);
+j    7000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‹Hibernate: select c1_0.car_to_buy_id,c1_0.brand,c1_0.color,c1_0.model,c1_0.price,c1_0.vin,c1_0.year from car_to_buy c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+¨Hibernate: select i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.customer_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id from invoice i1_0 where i1_0.car_to_buy_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [221]
+4TRACE - binding parameter [1] as [INTEGER] - [221]
+INFO  - Session Metrics {
+:    17200 nanoseconds spent acquiring 1 JDBC connections;
+:    13300 nanoseconds spent releasing 1 JDBC connections;
+9    52300 nanoseconds spent preparing 2 JDBC statements;
+:    900900 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    179200 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+j    3800 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select s1_0.salesman_id,s1_0.name,s1_0.pesel,s1_0.surname from salesman s1_0 where s1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [55091699846]
+<TRACE - binding parameter [1] as [VARCHAR] - [55091699846]
+INFO  - Session Metrics {
+:    16800 nanoseconds spent acquiring 1 JDBC connections;
+:    10200 nanoseconds spent releasing 1 JDBC connections;
+9    35300 nanoseconds spent preparing 1 JDBC statements;
+:    379300 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    126100 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    4500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+|Hibernate: insert into invoice (car_to_buy_id, customer_id, date_time, invoice_number, salesman_id) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [221]
+4TRACE - binding parameter [1] as [INTEGER] - [221]
+4TRACE - binding parameter [2] as [INTEGER] - [183]
+4TRACE - binding parameter [2] as [INTEGER] - [183]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.491832900+02:00]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.491832900+02:00]
+UTRACE - binding parameter [4] as [VARCHAR] - [1cd5944d-1db3-40be-9b44-4da2394755bf]
+UTRACE - binding parameter [4] as [VARCHAR] - [1cd5944d-1db3-40be-9b44-4da2394755bf]
+4TRACE - binding parameter [5] as [INTEGER] - [147]
+4TRACE - binding parameter [5] as [INTEGER] - [147]
+INFO  - Session Metrics {
+:    13700 nanoseconds spent acquiring 1 JDBC connections;
+:    14800 nanoseconds spent releasing 1 JDBC connections;
+9    34400 nanoseconds spent preparing 1 JDBC statements;
+;    1082700 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    128600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  - ### RUNNING ORDER 4
+}Hibernate: select c1_0.car_to_service_id,c1_0.brand,c1_0.model,c1_0.vin,c1_0.year from car_to_service c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+INFO  - Session Metrics {
+:    16800 nanoseconds spent acquiring 1 JDBC connections;
+6    0 nanoseconds spent releasing 0 JDBC connections;
+:    291100 nanoseconds spent preparing 1 JDBC statements;
+:    778300 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+`    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+j    4400 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‹Hibernate: select c1_0.car_to_buy_id,c1_0.brand,c1_0.color,c1_0.model,c1_0.price,c1_0.vin,c1_0.year from car_to_buy c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+¨Hibernate: select i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.customer_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id from invoice i1_0 where i1_0.car_to_buy_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [221]
+4TRACE - binding parameter [1] as [INTEGER] - [221]
+INFO  - Session Metrics {
+:    16300 nanoseconds spent acquiring 1 JDBC connections;
+:    18200 nanoseconds spent releasing 1 JDBC connections;
+9    73600 nanoseconds spent preparing 2 JDBC statements;
+:    904800 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    214800 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 0 collections);
+j    5700 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+UHibernate: insert into car_to_service (brand, model, vin, year) values (?, ?, ?, ?)
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+9TRACE - binding parameter [2] as [VARCHAR] - [Series 5]
+9TRACE - binding parameter [2] as [VARCHAR] - [Series 5]
+BTRACE - binding parameter [3] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [3] as [VARCHAR] - [2C3CDYAG2DH731952]
+5TRACE - binding parameter [4] as [INTEGER] - [2020]
+5TRACE - binding parameter [4] as [INTEGER] - [2020]
+INFO  - Session Metrics {
+:    23600 nanoseconds spent acquiring 1 JDBC connections;
+:    13200 nanoseconds spent releasing 1 JDBC connections;
+:    138200 nanoseconds spent preparing 1 JDBC statements;
+:    762700 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    135000 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‡Hibernate: select c1_0.customer_id,c1_0.address_id,c1_0.email,c1_0.name,c1_0.phone,c1_0.surname from customer c1_0 where c1_0.email=?
+ETRACE - binding parameter [1] as [VARCHAR] - [alf.samoch@gmail.com]
+ETRACE - binding parameter [1] as [VARCHAR] - [alf.samoch@gmail.com]
+‚Hibernate: select a1_0.address_id,a1_0.address,a1_0.city,a1_0.country,a1_0.postal_code from address a1_0 where a1_0.address_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+’Hibernate: select c1_0.customer_id,a1_0.address_id,a1_0.address,a1_0.city,a1_0.country,a1_0.postal_code,c2_0.customer_id,c2_0.car_service_request_id,c2_0.car_to_service_id,c2_0.car_service_request_number,c2_0.completed_date_time,c2_0.customer_comment,c2_0.received_date_time,c1_0.email,i1_0.customer_id,i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id,c1_0.name,c1_0.phone,c1_0.surname from customer c1_0 left join address a1_0 on a1_0.address_id=c1_0.address_id left join car_service_request c2_0 on c1_0.customer_id=c2_0.customer_id left join invoice i1_0 on c1_0.customer_id=i1_0.customer_id where c1_0.address_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+INFO  - Session Metrics {
+:    15600 nanoseconds spent acquiring 1 JDBC connections;
+:    14000 nanoseconds spent releasing 1 JDBC connections;
+:    102800 nanoseconds spent preparing 3 JDBC statements;
+;    2119500 nanoseconds spent executing 3 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    313700 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 2 collections);
+j    3900 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+¾Hibernate: insert into car_service_request (car_to_service_id, car_service_request_number, completed_date_time, customer_id, customer_comment, received_date_time) values (?, ?, ?, ?, ?, ?)
+3TRACE - binding parameter [1] as [INTEGER] - [23]
+3TRACE - binding parameter [1] as [INTEGER] - [23]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.76]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.76]
+7TRACE - binding parameter [3] as [TIMESTAMP] - [null]
+7TRACE - binding parameter [3] as [TIMESTAMP] - [null]
+4TRACE - binding parameter [4] as [INTEGER] - [183]
+4TRACE - binding parameter [4] as [INTEGER] - [183]
+HTRACE - binding parameter [5] as [VARCHAR] - [KoÄ¹â€šo mi odpadÄ¹â€šo]
+HTRACE - binding parameter [5] as [VARCHAR] - [KoÄ¹â€šo mi odpadÄ¹â€šo]
+GTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T10:02:10Z]
+GTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T10:02:10Z]
+INFO  - Session Metrics {
+:    15500 nanoseconds spent acquiring 1 JDBC connections;
+:    15700 nanoseconds spent releasing 1 JDBC connections;
+:    143200 nanoseconds spent preparing 1 JDBC statements;
+;    3164400 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    189700 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select c1_0.car_to_service_id,c1_0.brand,c1_0.model,c1_0.vin,c1_0.year from car_to_service c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+INFO  - Session Metrics {
+:    23500 nanoseconds spent acquiring 1 JDBC connections;
+6    0 nanoseconds spent releasing 0 JDBC connections;
+9    50000 nanoseconds spent preparing 1 JDBC statements;
+;    1537100 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+`    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+j    9500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‹Hibernate: select c1_0.car_to_buy_id,c1_0.brand,c1_0.color,c1_0.model,c1_0.price,c1_0.vin,c1_0.year from car_to_buy c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+¨Hibernate: select i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.customer_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id from invoice i1_0 where i1_0.car_to_buy_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [220]
+4TRACE - binding parameter [1] as [INTEGER] - [220]
+INFO  - Session Metrics {
+:    21400 nanoseconds spent acquiring 1 JDBC connections;
+:    22400 nanoseconds spent releasing 1 JDBC connections;
+9    84800 nanoseconds spent preparing 2 JDBC statements;
+;    1016400 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    137900 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 0 collections);
+j    4900 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+UHibernate: insert into car_to_service (brand, model, vin, year) values (?, ?, ?, ?)
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+9TRACE - binding parameter [2] as [VARCHAR] - [Series 5]
+9TRACE - binding parameter [2] as [VARCHAR] - [Series 5]
+BTRACE - binding parameter [3] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [3] as [VARCHAR] - [1GCEC19X27Z109567]
+5TRACE - binding parameter [4] as [INTEGER] - [2020]
+5TRACE - binding parameter [4] as [INTEGER] - [2020]
+INFO  - Session Metrics {
+:    27700 nanoseconds spent acquiring 1 JDBC connections;
+:    11600 nanoseconds spent releasing 1 JDBC connections;
+9    38000 nanoseconds spent preparing 1 JDBC statements;
+:    498700 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    144900 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‡Hibernate: select c1_0.customer_id,c1_0.address_id,c1_0.email,c1_0.name,c1_0.phone,c1_0.surname from customer c1_0 where c1_0.email=?
+BTRACE - binding parameter [1] as [VARCHAR] - [tom.zim@gmail.com]
+BTRACE - binding parameter [1] as [VARCHAR] - [tom.zim@gmail.com]
+‚Hibernate: select a1_0.address_id,a1_0.address,a1_0.city,a1_0.country,a1_0.postal_code from address a1_0 where a1_0.address_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [185]
+4TRACE - binding parameter [1] as [INTEGER] - [185]
+’Hibernate: select c1_0.customer_id,a1_0.address_id,a1_0.address,a1_0.city,a1_0.country,a1_0.postal_code,c2_0.customer_id,c2_0.car_service_request_id,c2_0.car_to_service_id,c2_0.car_service_request_number,c2_0.completed_date_time,c2_0.customer_comment,c2_0.received_date_time,c1_0.email,i1_0.customer_id,i1_0.invoice_id,i1_0.car_to_buy_id,i1_0.date_time,i1_0.invoice_number,i1_0.salesman_id,c1_0.name,c1_0.phone,c1_0.surname from customer c1_0 left join address a1_0 on a1_0.address_id=c1_0.address_id left join car_service_request c2_0 on c1_0.customer_id=c2_0.customer_id left join invoice i1_0 on c1_0.customer_id=i1_0.customer_id where c1_0.address_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [185]
+4TRACE - binding parameter [1] as [INTEGER] - [185]
+INFO  - Session Metrics {
+:    19100 nanoseconds spent acquiring 1 JDBC connections;
+:    12100 nanoseconds spent releasing 1 JDBC connections;
+:    131900 nanoseconds spent preparing 3 JDBC statements;
+;    2384900 nanoseconds spent executing 3 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    205400 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 2 collections);
+j    5000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+¾Hibernate: insert into car_service_request (car_to_service_id, car_service_request_number, completed_date_time, customer_id, customer_comment, received_date_time) values (?, ?, ?, ?, ?, ?)
+3TRACE - binding parameter [1] as [INTEGER] - [24]
+3TRACE - binding parameter [1] as [INTEGER] - [24]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.72]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.72]
+7TRACE - binding parameter [3] as [TIMESTAMP] - [null]
+7TRACE - binding parameter [3] as [TIMESTAMP] - [null]
+4TRACE - binding parameter [4] as [INTEGER] - [185]
+4TRACE - binding parameter [4] as [INTEGER] - [185]
+ITRACE - binding parameter [5] as [VARCHAR] - [Olej mi cieknie na stopy]
+ITRACE - binding parameter [5] as [VARCHAR] - [Olej mi cieknie na stopy]
+GTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T10:02:10Z]
+GTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T10:02:10Z]
+INFO  - Session Metrics {
+:    20400 nanoseconds spent acquiring 1 JDBC connections;
+:    24200 nanoseconds spent releasing 1 JDBC connections;
+9    42400 nanoseconds spent preparing 1 JDBC statements;
+:    744200 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    211800 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+UHibernate: insert into car_to_service (brand, model, vin, year) values (?, ?, ?, ?)
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+4TRACE - binding parameter [1] as [VARCHAR] - [BMW]
+9TRACE - binding parameter [2] as [VARCHAR] - [Series 1]
+9TRACE - binding parameter [2] as [VARCHAR] - [Series 1]
+BTRACE - binding parameter [3] as [VARCHAR] - [1N4BA41E18C806520]
+BTRACE - binding parameter [3] as [VARCHAR] - [1N4BA41E18C806520]
+5TRACE - binding parameter [4] as [INTEGER] - [2015]
+5TRACE - binding parameter [4] as [INTEGER] - [2015]
+INFO  - Session Metrics {
+:    28800 nanoseconds spent acquiring 1 JDBC connections;
+:    12500 nanoseconds spent releasing 1 JDBC connections;
+9    45600 nanoseconds spent preparing 1 JDBC statements;
+:    595700 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    143100 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ZHibernate: insert into address (address, city, country, postal_code) values (?, ?, ?, ?)
+<TRACE - binding parameter [1] as [VARCHAR] - [GÄ‚Å‚rna 15]
+<TRACE - binding parameter [1] as [VARCHAR] - [GÄ‚Å‚rna 15]
+9TRACE - binding parameter [2] as [VARCHAR] - [Szczecin]
+9TRACE - binding parameter [2] as [VARCHAR] - [Szczecin]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [3] as [VARCHAR] - [Polska]
+7TRACE - binding parameter [4] as [VARCHAR] - [10-001]
+7TRACE - binding parameter [4] as [VARCHAR] - [10-001]
+bHibernate: insert into customer (address_id, email, name, phone, surname) values (?, ?, ?, ?, ?)
+4TRACE - binding parameter [1] as [INTEGER] - [188]
+4TRACE - binding parameter [1] as [INTEGER] - [188]
+DTRACE - binding parameter [2] as [VARCHAR] - [adr.paczk@gmail.com]
+DTRACE - binding parameter [2] as [VARCHAR] - [adr.paczk@gmail.com]
+7TRACE - binding parameter [3] as [VARCHAR] - [Adrian]
+7TRACE - binding parameter [3] as [VARCHAR] - [Adrian]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 991 221 123]
+@TRACE - binding parameter [4] as [VARCHAR] - [+48 991 221 123]
+:TRACE - binding parameter [5] as [VARCHAR] - [Paczkomat]
+:TRACE - binding parameter [5] as [VARCHAR] - [Paczkomat]
+INFO  - Session Metrics {
+:    12700 nanoseconds spent acquiring 1 JDBC connections;
+:    54400 nanoseconds spent releasing 1 JDBC connections;
+9    68500 nanoseconds spent preparing 2 JDBC statements;
+:    871000 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    174700 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+¾Hibernate: insert into car_service_request (car_to_service_id, car_service_request_number, completed_date_time, customer_id, customer_comment, received_date_time) values (?, ?, ?, ?, ?, ?)
+3TRACE - binding parameter [1] as [INTEGER] - [25]
+3TRACE - binding parameter [1] as [INTEGER] - [25]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.84]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.84]
+7TRACE - binding parameter [3] as [TIMESTAMP] - [null]
+7TRACE - binding parameter [3] as [TIMESTAMP] - [null]
+4TRACE - binding parameter [4] as [INTEGER] - [188]
+4TRACE - binding parameter [4] as [INTEGER] - [188]
+VTRACE - binding parameter [5] as [VARCHAR] - [CoÄ¹â€º nie dziaÄ¹â€ša prawidÄ¹â€šowo]
+VTRACE - binding parameter [5] as [VARCHAR] - [CoÄ¹â€º nie dziaÄ¹â€ša prawidÄ¹â€šowo]
+GTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T10:02:10Z]
+GTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T10:02:10Z]
+INFO  - Session Metrics {
+:    24900 nanoseconds spent acquiring 1 JDBC connections;
+:    17000 nanoseconds spent releasing 1 JDBC connections;
+9    54800 nanoseconds spent preparing 1 JDBC statements;
+:    817100 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    297700 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  - ### RUNNING ORDER 5
+lHibernate: select m1_0.mechanic_id,m1_0.name,m1_0.pesel,m1_0.surname from mechanic m1_0 where m1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [52070997836]
+<TRACE - binding parameter [1] as [VARCHAR] - [52070997836]
+INFO  - Session Metrics {
+:    24000 nanoseconds spent acquiring 1 JDBC connections;
+:    12600 nanoseconds spent releasing 1 JDBC connections;
+9    55300 nanoseconds spent preparing 1 JDBC statements;
+:    516300 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    143800 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    4000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select c1_0.car_to_service_id,c1_0.brand,c1_0.model,c1_0.vin,c1_0.year from car_to_service c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+INFO  - Session Metrics {
+:    13700 nanoseconds spent acquiring 1 JDBC connections;
+:    15700 nanoseconds spent releasing 1 JDBC connections;
+9    54200 nanoseconds spent preparing 1 JDBC statements;
+:    692600 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    157100 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    8300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ÜHibernate: select c1_0.car_service_request_id,c1_0.car_to_service_id,c1_0.car_service_request_number,c1_0.completed_date_time,c1_0.customer_id,c1_0.customer_comment,c1_0.received_date_time from car_service_request c1_0 join car_to_service c2_0 on c2_0.car_to_service_id=c1_0.car_to_service_id where c2_0.vin=? and c1_0.completed_date_time is null
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+INFO  - Session Metrics {
+:    14600 nanoseconds spent acquiring 1 JDBC connections;
+:    14800 nanoseconds spent releasing 1 JDBC connections;
+:    152200 nanoseconds spent preparing 1 JDBC statements;
+;    1336500 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    246700 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 2 collections);
+j    8800 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_code=?
+:TRACE - binding parameter [1] as [VARCHAR] - [58394-014]
+:TRACE - binding parameter [1] as [VARCHAR] - [58394-014]
+INFO  - Session Metrics {
+:    21300 nanoseconds spent acquiring 1 JDBC connections;
+:    14300 nanoseconds spent releasing 1 JDBC connections;
+9    99200 nanoseconds spent preparing 1 JDBC statements;
+;    1066000 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    300800 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    5000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+yHibernate: select p1_0.part_id,p1_0.description,p1_0.price,p1_0.serial_number from part p1_0 where p1_0.serial_number=?
+;TRACE - binding parameter [1] as [VARCHAR] - [11523-7310]
+;TRACE - binding parameter [1] as [VARCHAR] - [11523-7310]
+INFO  - Session Metrics {
+:    21200 nanoseconds spent acquiring 1 JDBC connections;
+:    11000 nanoseconds spent releasing 1 JDBC connections;
+9    73600 nanoseconds spent preparing 1 JDBC statements;
+:    535500 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    114200 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    5600 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‚Hibernate: insert into service_mechanic (car_service_request_id, comment, hours, mechanic_id, service_id) values (?, ?, ?, ?, ?)
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+2TRACE - binding parameter [3] as [INTEGER] - [3]
+2TRACE - binding parameter [3] as [INTEGER] - [3]
+4TRACE - binding parameter [4] as [INTEGER] - [109]
+4TRACE - binding parameter [4] as [INTEGER] - [109]
+4TRACE - binding parameter [5] as [INTEGER] - [181]
+4TRACE - binding parameter [5] as [INTEGER] - [181]
+bHibernate: insert into service_part (car_service_request_id, part_id, quantity) values (?, ?, ?)
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+4TRACE - binding parameter [2] as [INTEGER] - [145]
+4TRACE - binding parameter [2] as [INTEGER] - [145]
+2TRACE - binding parameter [3] as [INTEGER] - [1]
+2TRACE - binding parameter [3] as [INTEGER] - [1]
+INFO  - Session Metrics {
+:    14700 nanoseconds spent acquiring 1 JDBC connections;
+:    15700 nanoseconds spent releasing 1 JDBC connections;
+:    125800 nanoseconds spent preparing 2 JDBC statements;
+;    4167200 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    191600 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select m1_0.mechanic_id,m1_0.name,m1_0.pesel,m1_0.surname from mechanic m1_0 where m1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [67111396321]
+<TRACE - binding parameter [1] as [VARCHAR] - [67111396321]
+INFO  - Session Metrics {
+:    20700 nanoseconds spent acquiring 1 JDBC connections;
+:    55000 nanoseconds spent releasing 1 JDBC connections;
+9    65100 nanoseconds spent preparing 1 JDBC statements;
+:    837700 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    201000 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    7900 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select c1_0.car_to_service_id,c1_0.brand,c1_0.model,c1_0.vin,c1_0.year from car_to_service c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+INFO  - Session Metrics {
+:    31100 nanoseconds spent acquiring 1 JDBC connections;
+:    16100 nanoseconds spent releasing 1 JDBC connections;
+9    41400 nanoseconds spent preparing 1 JDBC statements;
+:    537100 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    113400 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    6400 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ÜHibernate: select c1_0.car_service_request_id,c1_0.car_to_service_id,c1_0.car_service_request_number,c1_0.completed_date_time,c1_0.customer_id,c1_0.customer_comment,c1_0.received_date_time from car_service_request c1_0 join car_to_service c2_0 on c2_0.car_to_service_id=c1_0.car_to_service_id where c2_0.vin=? and c1_0.completed_date_time is null
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+INFO  - Session Metrics {
+:    13500 nanoseconds spent acquiring 1 JDBC connections;
+:    15000 nanoseconds spent releasing 1 JDBC connections;
+9    42100 nanoseconds spent preparing 1 JDBC statements;
+;    1020100 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    180400 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 2 collections);
+j    6500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_code=?
+:TRACE - binding parameter [1] as [VARCHAR] - [55319-866]
+:TRACE - binding parameter [1] as [VARCHAR] - [55319-866]
+INFO  - Session Metrics {
+:    14900 nanoseconds spent acquiring 1 JDBC connections;
+:    14000 nanoseconds spent releasing 1 JDBC connections;
+9    37800 nanoseconds spent preparing 1 JDBC statements;
+:    499200 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    131900 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    4700 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‚Hibernate: insert into service_mechanic (car_service_request_id, comment, hours, mechanic_id, service_id) values (?, ?, ?, ?, ?)
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+2TRACE - binding parameter [3] as [INTEGER] - [2]
+2TRACE - binding parameter [3] as [INTEGER] - [2]
+4TRACE - binding parameter [4] as [INTEGER] - [111]
+4TRACE - binding parameter [4] as [INTEGER] - [111]
+4TRACE - binding parameter [5] as [INTEGER] - [182]
+4TRACE - binding parameter [5] as [INTEGER] - [182]
+€Hibernate: select c1_0.car_service_request_id,c1_0.car_to_service_id,c1_0.car_service_request_number,c1_0.completed_date_time,c1_0.customer_id,c1_0.customer_comment,c1_0.received_date_time from car_service_request c1_0 where c1_0.car_service_request_id=?
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+ÌHibernate: update car_service_request set car_to_service_id=?, car_service_request_number=?, completed_date_time=?, customer_id=?, customer_comment=?, received_date_time=? where car_service_request_id=?
+3TRACE - binding parameter [1] as [INTEGER] - [23]
+3TRACE - binding parameter [1] as [INTEGER] - [23]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.76]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.76]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.633980700+02:00]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.633980700+02:00]
+4TRACE - binding parameter [4] as [INTEGER] - [183]
+4TRACE - binding parameter [4] as [INTEGER] - [183]
+HTRACE - binding parameter [5] as [VARCHAR] - [KoÄ¹â€šo mi odpadÄ¹â€šo]
+HTRACE - binding parameter [5] as [VARCHAR] - [KoÄ¹â€šo mi odpadÄ¹â€šo]
+LTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T11:02:10+01:00]
+LTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T11:02:10+01:00]
+2TRACE - binding parameter [7] as [INTEGER] - [1]
+2TRACE - binding parameter [7] as [INTEGER] - [1]
+INFO  - Session Metrics {
+:    20000 nanoseconds spent acquiring 1 JDBC connections;
+:    22300 nanoseconds spent releasing 1 JDBC connections;
+;    2150800 nanoseconds spent preparing 3 JDBC statements;
+;    2641100 nanoseconds spent executing 3 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+f    8631800 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 2 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select m1_0.mechanic_id,m1_0.name,m1_0.pesel,m1_0.surname from mechanic m1_0 where m1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [52070997836]
+<TRACE - binding parameter [1] as [VARCHAR] - [52070997836]
+INFO  - Session Metrics {
+:    22700 nanoseconds spent acquiring 1 JDBC connections;
+:    12700 nanoseconds spent releasing 1 JDBC connections;
+9    39300 nanoseconds spent preparing 1 JDBC statements;
+:    504700 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    225900 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    6800 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select c1_0.car_to_service_id,c1_0.brand,c1_0.model,c1_0.vin,c1_0.year from car_to_service c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+INFO  - Session Metrics {
+:    19900 nanoseconds spent acquiring 1 JDBC connections;
+:    10400 nanoseconds spent releasing 1 JDBC connections;
+9    26600 nanoseconds spent preparing 1 JDBC statements;
+:    447800 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    122600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    5500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ÜHibernate: select c1_0.car_service_request_id,c1_0.car_to_service_id,c1_0.car_service_request_number,c1_0.completed_date_time,c1_0.customer_id,c1_0.customer_comment,c1_0.received_date_time from car_service_request c1_0 join car_to_service c2_0 on c2_0.car_to_service_id=c1_0.car_to_service_id where c2_0.vin=? and c1_0.completed_date_time is null
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+INFO  - Session Metrics {
+:    11500 nanoseconds spent acquiring 1 JDBC connections;
+:    20800 nanoseconds spent releasing 1 JDBC connections;
+9    25100 nanoseconds spent preparing 1 JDBC statements;
+:    701100 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    184100 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 2 collections);
+j    5500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_code=?
+:TRACE - binding parameter [1] as [VARCHAR] - [0008-0407]
+:TRACE - binding parameter [1] as [VARCHAR] - [0008-0407]
+INFO  - Session Metrics {
+:    19600 nanoseconds spent acquiring 1 JDBC connections;
+:    13500 nanoseconds spent releasing 1 JDBC connections;
+9    34500 nanoseconds spent preparing 1 JDBC statements;
+:    524700 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    132300 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    5100 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+yHibernate: select p1_0.part_id,p1_0.description,p1_0.price,p1_0.serial_number from part p1_0 where p1_0.serial_number=?
+:TRACE - binding parameter [1] as [VARCHAR] - [54340-777]
+:TRACE - binding parameter [1] as [VARCHAR] - [54340-777]
+INFO  - Session Metrics {
+:    17500 nanoseconds spent acquiring 1 JDBC connections;
+:    14400 nanoseconds spent releasing 1 JDBC connections;
+9    38000 nanoseconds spent preparing 1 JDBC statements;
+:    859200 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    160800 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    4800 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‚Hibernate: insert into service_mechanic (car_service_request_id, comment, hours, mechanic_id, service_id) values (?, ?, ?, ?, ?)
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+2TRACE - binding parameter [3] as [INTEGER] - [1]
+2TRACE - binding parameter [3] as [INTEGER] - [1]
+4TRACE - binding parameter [4] as [INTEGER] - [109]
+4TRACE - binding parameter [4] as [INTEGER] - [109]
+4TRACE - binding parameter [5] as [INTEGER] - [183]
+4TRACE - binding parameter [5] as [INTEGER] - [183]
+bHibernate: insert into service_part (car_service_request_id, part_id, quantity) values (?, ?, ?)
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+4TRACE - binding parameter [2] as [INTEGER] - [146]
+4TRACE - binding parameter [2] as [INTEGER] - [146]
+2TRACE - binding parameter [3] as [INTEGER] - [1]
+2TRACE - binding parameter [3] as [INTEGER] - [1]
+INFO  - Session Metrics {
+:    20300 nanoseconds spent acquiring 1 JDBC connections;
+:    11500 nanoseconds spent releasing 1 JDBC connections;
+9    94800 nanoseconds spent preparing 2 JDBC statements;
+;    1241200 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    111300 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select m1_0.mechanic_id,m1_0.name,m1_0.pesel,m1_0.surname from mechanic m1_0 where m1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [83011863727]
+<TRACE - binding parameter [1] as [VARCHAR] - [83011863727]
+INFO  - Session Metrics {
+:    19700 nanoseconds spent acquiring 1 JDBC connections;
+:    18100 nanoseconds spent releasing 1 JDBC connections;
+9    25900 nanoseconds spent preparing 1 JDBC statements;
+:    443700 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    155600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    4200 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select c1_0.car_to_service_id,c1_0.brand,c1_0.model,c1_0.vin,c1_0.year from car_to_service c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+INFO  - Session Metrics {
+:    19600 nanoseconds spent acquiring 1 JDBC connections;
+:    11500 nanoseconds spent releasing 1 JDBC connections;
+9    44100 nanoseconds spent preparing 1 JDBC statements;
+:    499600 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    135200 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    5700 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ÜHibernate: select c1_0.car_service_request_id,c1_0.car_to_service_id,c1_0.car_service_request_number,c1_0.completed_date_time,c1_0.customer_id,c1_0.customer_comment,c1_0.received_date_time from car_service_request c1_0 join car_to_service c2_0 on c2_0.car_to_service_id=c1_0.car_to_service_id where c2_0.vin=? and c1_0.completed_date_time is null
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+INFO  - Session Metrics {
+:    18800 nanoseconds spent acquiring 1 JDBC connections;
+:    39000 nanoseconds spent releasing 1 JDBC connections;
+9    46000 nanoseconds spent preparing 1 JDBC statements;
+:    906800 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    197600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 2 collections);
+j    5500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_code=?
+:TRACE - binding parameter [1] as [VARCHAR] - [43063-180]
+:TRACE - binding parameter [1] as [VARCHAR] - [43063-180]
+INFO  - Session Metrics {
+:    23100 nanoseconds spent acquiring 1 JDBC connections;
+:    12700 nanoseconds spent releasing 1 JDBC connections;
+9    53200 nanoseconds spent preparing 1 JDBC statements;
+:    700200 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    161900 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    8100 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+yHibernate: select p1_0.part_id,p1_0.description,p1_0.price,p1_0.serial_number from part p1_0 where p1_0.serial_number=?
+:TRACE - binding parameter [1] as [VARCHAR] - [68180-556]
+:TRACE - binding parameter [1] as [VARCHAR] - [68180-556]
+INFO  - Session Metrics {
+:    12300 nanoseconds spent acquiring 1 JDBC connections;
+:    13700 nanoseconds spent releasing 1 JDBC connections;
+9    34200 nanoseconds spent preparing 1 JDBC statements;
+:    651100 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    169600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    5000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‚Hibernate: insert into service_mechanic (car_service_request_id, comment, hours, mechanic_id, service_id) values (?, ?, ?, ?, ?)
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+2TRACE - binding parameter [3] as [INTEGER] - [2]
+2TRACE - binding parameter [3] as [INTEGER] - [2]
+4TRACE - binding parameter [4] as [INTEGER] - [110]
+4TRACE - binding parameter [4] as [INTEGER] - [110]
+4TRACE - binding parameter [5] as [INTEGER] - [184]
+4TRACE - binding parameter [5] as [INTEGER] - [184]
+bHibernate: insert into service_part (car_service_request_id, part_id, quantity) values (?, ?, ?)
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+4TRACE - binding parameter [2] as [INTEGER] - [147]
+4TRACE - binding parameter [2] as [INTEGER] - [147]
+2TRACE - binding parameter [3] as [INTEGER] - [2]
+2TRACE - binding parameter [3] as [INTEGER] - [2]
+INFO  - Session Metrics {
+:    12300 nanoseconds spent acquiring 1 JDBC connections;
+:    13200 nanoseconds spent releasing 1 JDBC connections;
+9    88600 nanoseconds spent preparing 2 JDBC statements;
+;    1434800 nanoseconds spent executing 2 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    110100 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 0 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+lHibernate: select m1_0.mechanic_id,m1_0.name,m1_0.pesel,m1_0.surname from mechanic m1_0 where m1_0.pesel=?
+<TRACE - binding parameter [1] as [VARCHAR] - [67111396321]
+<TRACE - binding parameter [1] as [VARCHAR] - [67111396321]
+INFO  - Session Metrics {
+:    16700 nanoseconds spent acquiring 1 JDBC connections;
+:    19500 nanoseconds spent releasing 1 JDBC connections;
+9    39600 nanoseconds spent preparing 1 JDBC statements;
+:    540700 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    120800 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    4700 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select c1_0.car_to_service_id,c1_0.brand,c1_0.model,c1_0.vin,c1_0.year from car_to_service c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+INFO  - Session Metrics {
+:    23200 nanoseconds spent acquiring 1 JDBC connections;
+:    17800 nanoseconds spent releasing 1 JDBC connections;
+9    50600 nanoseconds spent preparing 1 JDBC statements;
+:    727300 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    188600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    7500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+ÜHibernate: select c1_0.car_service_request_id,c1_0.car_to_service_id,c1_0.car_service_request_number,c1_0.completed_date_time,c1_0.customer_id,c1_0.customer_comment,c1_0.received_date_time from car_service_request c1_0 join car_to_service c2_0 on c2_0.car_to_service_id=c1_0.car_to_service_id where c2_0.vin=? and c1_0.completed_date_time is null
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+INFO  - Session Metrics {
+:    20400 nanoseconds spent acquiring 1 JDBC connections;
+:    15000 nanoseconds spent releasing 1 JDBC connections;
+9    33900 nanoseconds spent preparing 1 JDBC statements;
+:    837200 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    188100 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 2 collections);
+j    6900 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+}Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_code=?
+;TRACE - binding parameter [1] as [VARCHAR] - [14222-2022]
+;TRACE - binding parameter [1] as [VARCHAR] - [14222-2022]
+INFO  - Session Metrics {
+:    20100 nanoseconds spent acquiring 1 JDBC connections;
+:    14900 nanoseconds spent releasing 1 JDBC connections;
+9    66800 nanoseconds spent preparing 1 JDBC statements;
+:    746600 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    191200 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    4700 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+yHibernate: select p1_0.part_id,p1_0.description,p1_0.price,p1_0.serial_number from part p1_0 where p1_0.serial_number=?
+:TRACE - binding parameter [1] as [VARCHAR] - [0268-1264]
+:TRACE - binding parameter [1] as [VARCHAR] - [0268-1264]
+INFO  - Session Metrics {
+:    20700 nanoseconds spent acquiring 1 JDBC connections;
+:    11100 nanoseconds spent releasing 1 JDBC connections;
+9    39900 nanoseconds spent preparing 1 JDBC statements;
+:    579400 nanoseconds spent executing 1 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    113400 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+j    5300 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+‚Hibernate: insert into service_mechanic (car_service_request_id, comment, hours, mechanic_id, service_id) values (?, ?, ?, ?, ?)
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+3TRACE - binding parameter [2] as [VARCHAR] - [OK]
+2TRACE - binding parameter [3] as [INTEGER] - [1]
+2TRACE - binding parameter [3] as [INTEGER] - [1]
+4TRACE - binding parameter [4] as [INTEGER] - [111]
+4TRACE - binding parameter [4] as [INTEGER] - [111]
+4TRACE - binding parameter [5] as [INTEGER] - [185]
+4TRACE - binding parameter [5] as [INTEGER] - [185]
+bHibernate: insert into service_part (car_service_request_id, part_id, quantity) values (?, ?, ?)
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+4TRACE - binding parameter [2] as [INTEGER] - [148]
+4TRACE - binding parameter [2] as [INTEGER] - [148]
+2TRACE - binding parameter [3] as [INTEGER] - [2]
+2TRACE - binding parameter [3] as [INTEGER] - [2]
+€Hibernate: select c1_0.car_service_request_id,c1_0.car_to_service_id,c1_0.car_service_request_number,c1_0.completed_date_time,c1_0.customer_id,c1_0.customer_comment,c1_0.received_date_time from car_service_request c1_0 where c1_0.car_service_request_id=?
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+ÌHibernate: update car_service_request set car_to_service_id=?, car_service_request_number=?, completed_date_time=?, customer_id=?, customer_comment=?, received_date_time=? where car_service_request_id=?
+3TRACE - binding parameter [1] as [INTEGER] - [24]
+3TRACE - binding parameter [1] as [INTEGER] - [24]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.72]
+ETRACE - binding parameter [2] as [VARCHAR] - [2027.0.10-10.2.10.72]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.706982800+02:00]
+VTRACE - binding parameter [3] as [TIMESTAMP] - [2023-06-16T10:56:21.706982800+02:00]
+4TRACE - binding parameter [4] as [INTEGER] - [185]
+4TRACE - binding parameter [4] as [INTEGER] - [185]
+ITRACE - binding parameter [5] as [VARCHAR] - [Olej mi cieknie na stopy]
+ITRACE - binding parameter [5] as [VARCHAR] - [Olej mi cieknie na stopy]
+LTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T11:02:10+01:00]
+LTRACE - binding parameter [6] as [TIMESTAMP] - [2027-01-10T11:02:10+01:00]
+2TRACE - binding parameter [7] as [INTEGER] - [2]
+2TRACE - binding parameter [7] as [INTEGER] - [2]
+INFO  - Session Metrics {
+:    18700 nanoseconds spent acquiring 1 JDBC connections;
+:    13800 nanoseconds spent releasing 1 JDBC connections;
+:    169000 nanoseconds spent preparing 4 JDBC statements;
+;    3253300 nanoseconds spent executing 4 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+f    1854400 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 2 collections);
+g    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  - ### RUNNING ORDER 6
+}Hibernate: select c1_0.car_to_service_id,c1_0.brand,c1_0.model,c1_0.vin,c1_0.year from car_to_service c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+BTRACE - binding parameter [1] as [VARCHAR] - [2C3CDYAG2DH731952]
+ûHibernate: select c1_0.car_to_service_id,c1_0.car_service_request_id,c1_0.car_service_request_number,c1_0.completed_date_time,c1_0.customer_id,c1_0.customer_comment,c1_0.received_date_time from car_service_request c1_0 where c1_0.car_to_service_id=?
+3TRACE - binding parameter [1] as [INTEGER] - [23]
+3TRACE - binding parameter [1] as [INTEGER] - [23]
+ÀHibernate: select s1_0.car_service_request_id,s1_0.service_mechanic_id,s1_0.comment,s1_0.hours,s1_0.mechanic_id,s1_0.service_id from service_mechanic s1_0 where s1_0.car_service_request_id=?
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+{Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [181]
+4TRACE - binding parameter [1] as [INTEGER] - [181]
+{Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [182]
+4TRACE - binding parameter [1] as [INTEGER] - [182]
+šHibernate: select s1_0.car_service_request_id,s1_0.service_part_id,s1_0.part_id,s1_0.quantity from service_part s1_0 where s1_0.car_service_request_id=?
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+2TRACE - binding parameter [1] as [INTEGER] - [1]
+sHibernate: select p1_0.part_id,p1_0.description,p1_0.price,p1_0.serial_number from part p1_0 where p1_0.part_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [145]
+4TRACE - binding parameter [1] as [INTEGER] - [145]
+INFO  - Session Metrics {
+:    23900 nanoseconds spent acquiring 1 JDBC connections;
+:    17000 nanoseconds spent releasing 1 JDBC connections;
+:    662200 nanoseconds spent preparing 7 JDBC statements;
+;    4840400 nanoseconds spent executing 7 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+e    573600 nanoseconds spent executing 1 flushes (flushing a total of 8 entities and 6 collections);
+j    6400 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+5INFO  - ###CAR HISTORY FOR VIN: [2C3CDYAG2DH731952]
+åINFO  - ###SERVICE REQUEST: [ServiceRequest{serviceRequestNumber='2027.0.10-10.2.10.76', receivedDateTime=2027-01-10T11:02:10+01:00, completedDateTime=2023-06-16T10:56:21.633981+02:00, customerComment='KoÄ¹â€šo mi odpadÄ¹â€šo}]
+bINFO  - ###SERVICE: [Service[serviceCode=58394-014, description=Wymiana koÄ¹â€ša, price=240.20]]
+cINFO  - ###SERVICE: [Service[serviceCode=55319-866, description=Strojenie koÄ¹â€ša, price=50.20]]
+VINFO  - ###PART: [Part[serialNumber=11523-7310, description=KoÄ¹â€šo, price=320.11]]
+}Hibernate: select c1_0.car_to_service_id,c1_0.brand,c1_0.model,c1_0.vin,c1_0.year from car_to_service c1_0 where c1_0.vin=?
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+BTRACE - binding parameter [1] as [VARCHAR] - [1GCEC19X27Z109567]
+ûHibernate: select c1_0.car_to_service_id,c1_0.car_service_request_id,c1_0.car_service_request_number,c1_0.completed_date_time,c1_0.customer_id,c1_0.customer_comment,c1_0.received_date_time from car_service_request c1_0 where c1_0.car_to_service_id=?
+3TRACE - binding parameter [1] as [INTEGER] - [24]
+3TRACE - binding parameter [1] as [INTEGER] - [24]
+ÀHibernate: select s1_0.car_service_request_id,s1_0.service_mechanic_id,s1_0.comment,s1_0.hours,s1_0.mechanic_id,s1_0.service_id from service_mechanic s1_0 where s1_0.car_service_request_id=?
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+{Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [185]
+4TRACE - binding parameter [1] as [INTEGER] - [185]
+{Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+4TRACE - binding parameter [1] as [INTEGER] - [183]
+{Hibernate: select s1_0.service_id,s1_0.description,s1_0.price,s1_0.service_code from service s1_0 where s1_0.service_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [184]
+4TRACE - binding parameter [1] as [INTEGER] - [184]
+šHibernate: select s1_0.car_service_request_id,s1_0.service_part_id,s1_0.part_id,s1_0.quantity from service_part s1_0 where s1_0.car_service_request_id=?
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+2TRACE - binding parameter [1] as [INTEGER] - [2]
+sHibernate: select p1_0.part_id,p1_0.description,p1_0.price,p1_0.serial_number from part p1_0 where p1_0.part_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [146]
+4TRACE - binding parameter [1] as [INTEGER] - [146]
+sHibernate: select p1_0.part_id,p1_0.description,p1_0.price,p1_0.serial_number from part p1_0 where p1_0.part_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [147]
+4TRACE - binding parameter [1] as [INTEGER] - [147]
+sHibernate: select p1_0.part_id,p1_0.description,p1_0.price,p1_0.serial_number from part p1_0 where p1_0.part_id=?
+4TRACE - binding parameter [1] as [INTEGER] - [148]
+4TRACE - binding parameter [1] as [INTEGER] - [148]
+INFO  - Session Metrics {
+:    18500 nanoseconds spent acquiring 1 JDBC connections;
+:    16100 nanoseconds spent releasing 1 JDBC connections;
+;    357000 nanoseconds spent preparing 10 JDBC statements;
+<    6588000 nanoseconds spent executing 10 JDBC statements;
+2    0 nanoseconds spent executing 0 JDBC batches;
+/    0 nanoseconds spent performing 0 L2C puts;
+/    0 nanoseconds spent performing 0 L2C hits;
+1    0 nanoseconds spent performing 0 L2C misses;
+f    681700 nanoseconds spent executing 1 flushes (flushing a total of 14 entities and 9 collections);
+j    7600 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+5INFO  - ###CAR HISTORY FOR VIN: [1GCEC19X27Z109567]
+æINFO  - ###SERVICE REQUEST: [ServiceRequest{serviceRequestNumber='2027.0.10-10.2.10.72', receivedDateTime=2027-01-10T11:02:10+01:00, completedDateTime=2023-06-16T10:56:21.706983+02:00, customerComment='Olej mi cieknie na stopy}]
+gINFO  - ###SERVICE: [Service[serviceCode=14222-2022, description=Wymiana filtra paliwa, price=14.98]]
+_INFO  - ###SERVICE: [Service[serviceCode=0008-0407, description=Wymiana oleju, price=140.15]]
+gINFO  - ###SERVICE: [Service[serviceCode=43063-180, description=Wymiana korka do oleju, price=17.19]]
+QINFO  - ###PART: [Part[serialNumber=54340-777, description=Olej, price=270.18]]
+[INFO  - ###PART: [Part[serialNumber=68180-556, description=Korek do oleju, price=140.15]]
+[INFO  - ###PART: [Part[serialNumber=0268-1264, description=Filtr powietrza, price=90.19]]
+ .INFO  - HikariPool-1 - Shutdown initiated...
+ ,INFO  - HikariPool-1 - Shutdown completed.

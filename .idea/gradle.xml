@@ -179,6 +179,36 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no16_orm_and_hibernate/carDealershipProject2" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no16_orm_and_hibernate/carDealershipProject2" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no16_orm_and_hibernate/ormAndHibernate1" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no16_orm_and_hibernate/ormAndHibernate1" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no17_spring_data_jpa/springAndHibernate" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no17_spring_data_jpa/springAndHibernate" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="delegatedBuild" value="true" />
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
@@ -297,30 +327,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/src/Workshops/no8_unit_tests/tests_project" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="delegatedBuild" value="true" />
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="LOCAL" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no_16_orm_and_hibernate/carDealershipProject2" />
-        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-8.1.1" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/src/Workshops/no_16_orm_and_hibernate/carDealershipProject2" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="delegatedBuild" value="true" />
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="LOCAL" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no_16_orm_and_hibernate/ormAndHibernate1" />
-        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-8.1.1" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/src/Workshops/no_16_orm_and_hibernate/ormAndHibernate1" />
           </set>
         </option>
       </GradleProjectSettings>
