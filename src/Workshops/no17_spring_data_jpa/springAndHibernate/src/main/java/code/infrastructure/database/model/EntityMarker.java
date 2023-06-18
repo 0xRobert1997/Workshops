@@ -1,4 +1,4 @@
 package code.infrastructure.database.model;
 
-public interface Marker {
+public interface EntityMarker {
 }
