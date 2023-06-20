@@ -2,12 +2,7 @@ package pl.zajavka.zajavkastore.infrastructure.database.jpaRepositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.zajavka.zajavkastore.business.PurchaseDAO;
-import pl.zajavka.zajavkastore.infrastructure.database.entity.CustomerEntity;
 import pl.zajavka.zajavkastore.infrastructure.database.entity.PurchaseEntity;
-
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 
 import java.time.OffsetDateTime;
 import java.util.List;

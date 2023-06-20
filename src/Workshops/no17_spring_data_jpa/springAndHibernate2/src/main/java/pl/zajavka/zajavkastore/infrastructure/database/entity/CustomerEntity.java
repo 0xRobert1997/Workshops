@@ -29,7 +29,7 @@ import java.util.Set;
         ),
         @NamedQuery(
                 name = "CustomerEntity.findCustomerByEmailNQ",
-                query = "FROM CustomerEntity WHERE email = ?"
+                query = "FROM CustomerEntity WHERE email = ?1"
         )
 })
 @NamedNativeQueries({
@@ -41,7 +41,7 @@ import java.util.Set;
         ),
         @NamedNativeQuery(
                 name = "CustomerEntity.findCustomerByEmailNNQ",
-                query = "SELECT * FROM customer WHERE email = ?",
+                query = "SELECT * FROM customer WHERE email = ?1",
                 resultClass = CustomerEntity.class
         )
 })

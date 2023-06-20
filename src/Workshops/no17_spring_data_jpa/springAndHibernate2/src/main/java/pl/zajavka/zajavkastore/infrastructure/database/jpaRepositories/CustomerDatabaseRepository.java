@@ -21,7 +21,7 @@ public interface CustomerDatabaseRepository extends JpaRepository<CustomerEntity
     CustomerEntity findDistinctByEmail(String email);
 
 
-    // te 2 metody nie są queryMethods bo nie są napisane zgodnie z konwencją nazewnictwa
+    // te 4 metody nie są queryMethods bo nie są napisane zgodnie z konwencją nazewnictwa
     // namedQueries
     List<CustomerEntity> findAllCustomersNQ();
     CustomerEntity findCustomerByEmailNQ(String email);
