@@ -15,6 +15,7 @@ ext {
     hibernateVersion = '6.1.4.Final'
     postgresqlDriverVersion = '42.5.0'
     junitVersion = '5.9.1'
+    flywayVersion = '9.8.1'
 }
 
 repositories {
@@ -23,6 +24,7 @@ repositories {
 }
 
 dependencies {
+
     implementation "ch.qos.logback:logback-classic:$logbackVersion"
 
     compileOnly "org.projectlombok:lombok:$lombokVersion"

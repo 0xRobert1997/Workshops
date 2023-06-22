@@ -15,42 +15,37 @@ public class EmployeeService {
 
     private final EmployeeDataJpaRepository employeeDataJpaRepository;
 
+
     @Transactional
-    public void runSuccessful() {
-        employeeDataJpaRepository.deleteAll();
-        employeeDataJpaRepository.flush();
+    public EmployeeEntity create(EmployeeEntity employee) {
+        return employeeDataJpaRepository.save(employee);
+    }
 
-        EmployeeEntity employee1 = employeeDataJpaRepository.save(EmployeeData.someEmployee1());
-        EmployeeEntity employee2 = employeeDataJpaRepository.save(EmployeeData.someEmployee2());
-        EmployeeEntity employee3 = employeeDataJpaRepository.save(EmployeeData.someEmployee3());
+    public EmployeeEntity find(final Integer employeeId) {
+        return employeeDataJpaRepository.findById(employeeId)
+                .orElseThrow(() -> new RuntimeException(
+                        String.format("Employee with id: [%s], doesn't exist", employeeId)
+                ));
+    }
 
-        System.out.println("###Employee 1: " + employeeDataJpaRepository.findById(employee1.getEmployeeId()));
-        System.out.println("###Employee 2: " + employeeDataJpaRepository.findById(employee2.getEmployeeId()));
+    public EmployeeEntity find(final String name, final String surname) {
+        return employeeDataJpaRepository.findByNameAndSurname(name, surname)
+                .orElseThrow(() -> new RuntimeException(
+                        String.format("Employee with name: [%s], surname: [%s] doesn't exist", name, surname)
+                ));
+    }
 
-        EmployeeEntity employeeBeforeUpdate = employeeDataJpaRepository.findById(employee3.getEmployeeId()).orElseThrow();
-        employeeBeforeUpdate.setSalary(new BigDecimal("666"));
-        employeeDataJpaRepository.saveAndFlush(employeeBeforeUpdate);
-
-        employeeDataJpaRepository.findAll()
-                .forEach(employee -> System.out.println("###Employee: " + employee));
-
-        employeeDataJpaRepository.deleteById(employee2.getEmployeeId());
-
-        employeeDataJpaRepository.findAll()
-                .forEach(employee -> System.out.println("###Employee: " + employee));
+    public List<EmployeeEntity> findAll() {
+        return employeeDataJpaRepository.findAll();
     }
 
     @Transactional
-    public void testTransactional() {
+    public void delete(final String name, final String surname) {
+        employeeDataJpaRepository.deleteByNameAndSurname(name, surname);
+    }
+
+    @Transactional
+    public void deleteAll() {
         employeeDataJpaRepository.deleteAll();
-
-        employeeDataJpaRepository.saveAll(
-                List.of(
-                        EmployeeData.someEmployee1(),
-                        EmployeeData.someEmployee2(),
-                        EmployeeData.someEmployee3()
-                )
-        );
-
     }
 }

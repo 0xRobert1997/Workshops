@@ -2,6 +2,7 @@ package pl.zajavka.zajavkastore.infrastructure.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -22,6 +23,7 @@ import java.util.Properties;
 public class PersistenceJPAConfiguration {
 
     @Bean
+  //  @DependsOn("flyway")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource());
@@ -38,6 +40,7 @@ public class PersistenceJPAConfiguration {
         dataSource.setUrl("jdbc:postgresql://localhost:5432/w17_zajavka_store");
         dataSource.setUsername("postgres");
         dataSource.setPassword("postgres");
+        dataSource.setSchema("employee_flyway");
         return dataSource;
     }
 
@@ -61,4 +64,13 @@ public class PersistenceJPAConfiguration {
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
+
+/*        @Bean(initMethod = "migrate")
+    public Flyway flyway() {
+        ClassicConfiguration configuration = new ClassicConfiguration();
+        configuration.setBaselineOnMigrate(true);
+        configuration.setLocations(new Location("filesystem:src/main/resources/flyway/migrations"));
+        configuration.setDataSource(dataSource());
+        return new Flyway(configuration);
+    }*/
 }

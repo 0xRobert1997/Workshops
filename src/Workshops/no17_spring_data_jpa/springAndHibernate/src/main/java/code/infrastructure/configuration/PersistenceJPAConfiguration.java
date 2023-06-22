@@ -4,14 +4,16 @@ import code.infrastructure.database.jpaRepositories.JpaRepositoriesMarker;
 import code.infrastructure.database.model.EntityMarker;
 import jakarta.persistence.EntityManagerFactory;
 import lombok.AllArgsConstructor;
+import org.flywaydb.core.Flyway;
+import org.flywaydb.core.api.Location;
+import org.flywaydb.core.api.configuration.ClassicConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.instrument.classloading.LoadTimeWeaver;
-import org.springframework.instrument.classloading.ReflectiveLoadTimeWeaver;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -31,7 +33,9 @@ import java.util.Properties;
 public class PersistenceJPAConfiguration {
 
     private final Environment environment;
+
     @Bean
+    @DependsOn("flyway")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource());
@@ -45,7 +49,7 @@ public class PersistenceJPAConfiguration {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(environment.getProperty("jdbc.driverClassName"));
+        dataSource.setDriverClassName(Objects.requireNonNull(environment.getProperty("jdbc.driverClassName")));
         dataSource.setUrl(environment.getProperty("jdbc.url"));
         dataSource.setUsername(environment.getProperty("jdbc.user"));
         dataSource.setPassword(environment.getProperty("jdbc.pass"));
@@ -62,7 +66,9 @@ public class PersistenceJPAConfiguration {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(final EntityManagerFactory entityManagerFactory) {
+    public PlatformTransactionManager transactionManager(
+            final EntityManagerFactory entityManagerFactory
+    ) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return transactionManager;
@@ -73,4 +79,12 @@ public class PersistenceJPAConfiguration {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
+    @Bean(initMethod = "migrate")
+    public Flyway flyway() {
+        ClassicConfiguration configuration = new ClassicConfiguration();
+        configuration.setBaselineOnMigrate(true);
+        configuration.setLocations(new Location("filesystem:src/main/resources/flyway/migrations"));
+        configuration.setDataSource(dataSource());
+        return new Flyway(configuration);
+    }
 }

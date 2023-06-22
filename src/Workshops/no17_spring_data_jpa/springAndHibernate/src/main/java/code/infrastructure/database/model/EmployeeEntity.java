@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 
 @Data
@@ -32,6 +33,6 @@ public class EmployeeEntity {
     private BigDecimal salary;
 
     @Column(name = "since")
-    private ZonedDateTime since;
+    private OffsetDateTime since;
 
 }

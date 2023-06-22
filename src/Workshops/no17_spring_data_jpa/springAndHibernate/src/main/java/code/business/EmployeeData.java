@@ -3,6 +3,7 @@ package code.business;
 import code.infrastructure.database.model.EmployeeEntity;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 
 class EmployeeData {
@@ -12,7 +13,7 @@ class EmployeeData {
                 .name("Agnieszka")
                 .surname("Pracownik")
                 .salary(new BigDecimal("5910.73"))
-                .since(ZonedDateTime.now())
+                .since(OffsetDateTime.now())
                 .build();
     }
 
@@ -21,7 +22,7 @@ class EmployeeData {
                 .name("Stefan")
                 .surname("Nowacki")
                 .salary(new BigDecimal("3455.12"))
-                .since(ZonedDateTime.now())
+                .since(OffsetDateTime.now())
                 .build();
     }
 
@@ -30,7 +31,7 @@ class EmployeeData {
                 .name("Tomasz")
                 .surname("Adamski")
                 .salary(new BigDecimal("6112.42"))
-                .since(ZonedDateTime.now())
+                .since(OffsetDateTime.now())
                 .build();
     }
 }
