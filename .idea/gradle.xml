@@ -179,16 +179,20 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no16_orm_and_hibernate/carDealershipProject2" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no16_orm_and_hibernate/carDealership_w16" />
         <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/src/Workshops/no16_orm_and_hibernate/carDealershipProject2" />
+            <option value="$PROJECT_DIR$/src/Workshops/no16_orm_and_hibernate/carDealership_w16" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no16_orm_and_hibernate/ormAndHibernate1" />
         <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
@@ -199,6 +203,21 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no17_spring_data_jpa/carDealership_w17" />
+        <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
+        <option name="gradleJvm" value="openjdk-20" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/src/Workshops/no17_spring_data_jpa/carDealership_w17" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no17_spring_data_jpa/springAndHibernate" />
         <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />
@@ -209,6 +228,8 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/src/Workshops/no17_spring_data_jpa/springAndHibernate2" />
         <option name="gradleHome" value="$USER_HOME$/OneDrive/Documents/Codin/gradle-7.6" />

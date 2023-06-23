@@ -2,31 +2,16 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group = 'pl.zajavka'
+version '0.0.1-SNAPSHOT'
+sourceCompatibility = '20'
+
 
 repositories {
     mavenCentral()
     maven { url 'https://repo.spring.io/milestone'}
 }
-
-ext {
-    jakartaPersistenceApiVersion = '3.1.0'
-    logbackVersion = '1.4.7'
-    lombokVersion = '1.18.26'
-    springDataVersion = '3.1.0'
-    springVersion = '6.0.9'
-    hibernateVersion = '6.2.3.Final'
-    postgresqlDriverVersion = '42.5.4'
-    junitVersion = '5.9.2'
-    flywayVersion = '9.16.0'
-    mockitoVersion = '5.2.0'
-    h2Version = '2.1.214'
-    testContainersVersion = '1.17.6'
-}
-
 dependencies {
-
     implementation "ch.qos.logback:logback-classic:$logbackVersion"
 
     compileOnly "org.projectlombok:lombok:$lombokVersion"
@@ -42,8 +27,11 @@ dependencies {
 
     implementation "org.springframework.data:spring-data-jpa:$springDataVersion"
     implementation "org.hibernate.orm:hibernate-core:$hibernateVersion"
+    implementation "org.hibernate.orm:hibernate-hikaricp:$hibernateVersion"
 
+    implementation "com.zaxxer:HikariCP:$hikariVersion"
     implementation "org.postgresql:postgresql:$postgresqlDriverVersion"
+
     implementation "org.flywaydb:flyway-core:$flywayVersion"
 
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
@@ -54,10 +42,10 @@ dependencies {
     testImplementation "org.mockito:mockito-junit-jupiter:$mockitoVersion"
     testImplementation "org.springframework:spring-test:$springVersion"
 
-    testImplementation "com.h2database:h2:$h2Version"
 
-    testImplementation "org.testcontainers:junit-jupiter:$testContainersVersion"
-    testImplementation "org.testcontainers:postgresql:$testContainersVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
 }
 
 test {

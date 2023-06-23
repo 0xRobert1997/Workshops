@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name ="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%-5level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+<!--     logger żeby hibernate logował do konsoli parametry sql-ek-->
+    <logger name="org.hibernate.orm.jdbc.bind" addiviti="false" level="trace">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
