@@ -1,10 +1,11 @@
 package code.business.management;
 
 import lombok.experimental.UtilityClass;
+import org.springframework.util.ResourceUtils;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -27,7 +28,8 @@ public class InputDataCache {
     }
 
     private static Map<String, List<String>> readFileContent() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get(FILE_PATH)).stream()
+        Path path = ResourceUtils.getFile("classpath:traffic_simulation.md").toPath();
+        List<String> lines = Files.readAllLines(path).stream()
                 .filter(line -> !line.startsWith("[//]: # "))
                 .filter(line -> !line.isBlank())
                 .toList();
@@ -42,19 +44,6 @@ public class InputDataCache {
                 ));
     }
 
-    public static <T> List<T> getInputData(
-            final Keys.InputDataGroup inputDataGroup,
-            final Keys.Entity entity,
-            final Function<String, T> mapper
-    ) {
-
-        return Optional.ofNullable(inputData.get(inputDataGroup.toString()))
-                .orElse(List.of())
-                .stream()
-                .filter(line -> line.startsWith(entity.toString()))
-                .map(mapper)
-                .toList();
-    }
 
     public static <T> List<T> getInputData(
             final Keys.InputDataGroup inputDataGroup,

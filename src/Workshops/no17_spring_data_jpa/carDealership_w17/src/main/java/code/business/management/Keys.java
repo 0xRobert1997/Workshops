@@ -3,7 +3,6 @@ package code.business.management;
 public interface Keys {
 
     enum InputDataGroup {
-        INIT,
         BUY_FIRST_TIME,
         BUY_AGAIN,
         SERVICE_REQUEST,
@@ -11,12 +10,10 @@ public interface Keys {
 
     }
 
-    enum Entity {
+    enum Domain {
         SALESMAN,
         MECHANIC,
         CAR,
-        SERVICE,
-        PART,
         CUSTOMER
     }
 

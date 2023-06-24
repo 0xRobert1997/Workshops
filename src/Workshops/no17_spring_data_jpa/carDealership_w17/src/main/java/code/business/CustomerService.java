@@ -1,39 +1,40 @@
 package code.business;
 
 import code.business.dao.CustomerDAO;
-import code.domain.CarServiceRequest;
-import code.infrastructure.database.entity.AddressEntity;
-import code.infrastructure.database.entity.CustomerEntity;
+import code.domain.Address;
+import code.domain.Customer;
 import lombok.AllArgsConstructor;
 
 import java.util.Optional;
+
 @AllArgsConstructor
 public class CustomerService {
 
     CustomerDAO customerDAO;
-    public void issueInvoice(CustomerEntity customer) {
+
+    public void issueInvoice(Customer customer) {
         customerDAO.issueInvoice(customer);
     }
 
-    public CustomerEntity findCustomer(String email) {
-        Optional<CustomerEntity> customerToFindByEmail = customerDAO.findByEmail(email);
+    public Customer findCustomer(String email) {
+        Optional<Customer> customerToFindByEmail = customerDAO.findByEmail(email);
         if (customerToFindByEmail.isEmpty()) {
             throw new RuntimeException("Could not find customer by email: [%s]".formatted(email));
         }
         return customerToFindByEmail.get();
     }
 
-    public void saveServiceRequest(CustomerEntity customer) {
+    public void saveServiceRequest(Customer customer) {
         customerDAO.saveServiceRequest(customer);
     }
 
-    public CustomerEntity saveCustomer(CarServiceRequest.Customer customer) {
-        CustomerEntity entity = CustomerEntity.builder()
+    public Customer saveCustomer(Customer customer) {
+        Customer entity = Customer.builder()
                 .name(customer.getName())
                 .surname(customer.getSurname())
                 .phone(customer.getPhone())
                 .email(customer.getEmail())
-                .address(AddressEntity.builder()
+                .address(Address.builder()
                         .country(customer.getAddress().getCountry())
                         .city(customer.getAddress().getCity())
                         .postalCode(customer.getAddress().getPostalCode())

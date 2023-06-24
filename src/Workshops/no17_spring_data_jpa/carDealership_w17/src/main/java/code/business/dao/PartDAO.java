@@ -1,10 +1,10 @@
 package code.business.dao;
 
-import code.infrastructure.database.entity.PartEntity;
+import code.domain.Part;
 
 import java.util.Optional;
 
 public interface PartDAO {
 
-    Optional<PartEntity> findBySerialNumber(String serialNumber);
+    Optional<Part> findBySerialNumber(String serialNumber);
 }

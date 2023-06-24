@@ -1,7 +1,8 @@
 package code.infrastructure.configuration;
 
 import code.infrastructure.database.entity._EntityMarker;
-import code.infrastructure.database.repository.jpa.JpaRepositoriesMarker;
+import code.infrastructure.database.repository.jpa._JpaRepositoriesMarker;
+import jakarta.persistence.EntityManagerFactory;
 import lombok.AllArgsConstructor;
 import org.flywaydb.core.Flyway;
 import org.flywaydb.core.api.Location;
@@ -11,10 +12,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
@@ -23,7 +27,7 @@ import java.util.Properties;
 
 @Configuration
 @AllArgsConstructor
-@EnableJpaRepositories(basePackageClasses = JpaRepositoriesMarker.class)
+@EnableJpaRepositories(basePackageClasses = _JpaRepositoriesMarker.class)
 @PropertySource({"classpath:database.properties"})
 @EnableTransactionManagement
 public class PersistenceJPAConfiguration {
@@ -76,6 +80,19 @@ public class PersistenceJPAConfiguration {
         return dataSource;
     }
 
+    @Bean
+    public PlatformTransactionManager transactionManager(
+            final EntityManagerFactory entityManagerFactory
+            ){
+        final JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory);
+        return  transactionManager;
+    }
+
+    @Bean
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslator() {
+        return new PersistenceExceptionTranslationPostProcessor();
+    }
     @Bean(initMethod = "migrate")
     Flyway flyway() {
         ClassicConfiguration configuration = new ClassicConfiguration();

@@ -1,9 +1,9 @@
 package code.business.dao;
 
-import code.infrastructure.database.entity.CarServiceRequestEntity;
+import code.domain.CarServiceRequest;
 
 import java.util.Set;
 
 public interface CarServiceRequestDAO {
-    Set<CarServiceRequestEntity> findActiveServiceRequestsByCarVin(String carVin);
+    Set<CarServiceRequest> findActiveServiceRequestsByCarVin(String carVin);
 }
