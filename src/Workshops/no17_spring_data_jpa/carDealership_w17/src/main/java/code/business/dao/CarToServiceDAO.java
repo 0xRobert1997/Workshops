@@ -6,9 +6,8 @@ import code.domain.CarToService;
 
 import java.util.Optional;
 
-public interface CarDAO {
+public interface CarToServiceDAO {
 
-    Optional<CarToBuy> findCarToBuyByVin(String vin);
 
     Optional<CarToService> findCarToServiceByVin(String vin);
 

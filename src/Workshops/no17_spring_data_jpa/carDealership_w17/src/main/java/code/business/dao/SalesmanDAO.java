@@ -5,5 +5,5 @@ import code.domain.Salesman;
 import java.util.Optional;
 
 public interface SalesmanDAO {
-    Optional<Salesman> findSalesmanByPesel(String pesel);
+    Optional<Salesman> findByPesel(String pesel);
 }

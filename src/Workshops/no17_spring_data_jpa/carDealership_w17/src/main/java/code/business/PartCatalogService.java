@@ -2,6 +2,7 @@ package code.business;
 
 import code.business.dao.PartDAO;
 import code.domain.Part;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.util.Optional;
@@ -9,7 +10,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class PartCatalogService {
     private final PartDAO partDAO;
-
+    @Transactional
     public Part findPart(String partSerialNumber) {
         Optional<Part> part = partDAO.findBySerialNumber(partSerialNumber);
         if (part.isEmpty()) {

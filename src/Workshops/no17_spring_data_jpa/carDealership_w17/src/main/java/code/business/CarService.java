@@ -1,9 +1,11 @@
 package code.business;
 
-import code.business.dao.CarDAO;
+import code.business.dao.CarToBuyDAO;
+import code.business.dao.CarToServiceDAO;
 import code.domain.CarHistory;
 import code.domain.CarToBuy;
 import code.domain.CarToService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,10 +15,11 @@ import java.util.Optional;
 @AllArgsConstructor
 public class CarService {
 
-    private final CarDAO carDAO;
+    private final CarToBuyDAO carToBuyDAO;
+    private final CarToServiceDAO carToServiceDAO;
 
     public CarToBuy findCarToBuy(String vin) {
-        Optional<CarToBuy> carToBuyByVin = carDAO.findCarToBuyByVin(vin);
+        Optional<CarToBuy> carToBuyByVin = carToBuyDAO.findCarToBuyByVin(vin);
         if (carToBuyByVin.isEmpty()) {
             throw new RuntimeException("Could not find car by vin: [%s]".formatted(vin));
         }
@@ -24,13 +27,13 @@ public class CarService {
     }
 
     public Optional<CarToService> findCarToService(String vin) {
-        return carDAO.findCarToServiceByVin(vin);
+        return carToServiceDAO.findCarToServiceByVin(vin);
     }
 
     public Optional<CarToService> findCatToService(String vin) {
-        return carDAO.findCarToServiceByVin(vin);
+        return carToServiceDAO.findCarToServiceByVin(vin);
     }
-
+    @Transactional
     public CarToService saveCarToService(CarToBuy carToBuy) {
         CarToService carToService = CarToService.builder()
                 .vin(carToBuy.getVin())
@@ -38,22 +41,16 @@ public class CarService {
                 .model(carToBuy.getModel())
                 .year(carToBuy.getYear())
                 .build();
-        return carDAO.saveCarToService(carToService);
+        return carToServiceDAO.saveCarToService(carToService);
     }
-
+    @Transactional
     public CarToService saveCarToService(CarToService car) {
-        CarToService carToService = CarToService.builder()
-                .vin(car.getVin())
-                .brand(car.getBrand())
-                .model(car.getModel())
-                .year(car.getYear())
-                .build();
-        return carDAO.saveCarToService(carToService);
+        return carToServiceDAO.saveCarToService(car);
     }
 
 
     public void printCarHistory(String vin) {
-        CarHistory carHistoryByVin = carDAO.findCarHistoryByVin(vin);
+        CarHistory carHistoryByVin = carToServiceDAO.findCarHistoryByVin(vin);
         log.info("###CAR HISTORY FOR VIN: [{}]", vin);
         carHistoryByVin.getCarServiceRequests().forEach(this::printServiceRequest);
     }

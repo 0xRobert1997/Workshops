@@ -2,6 +2,7 @@ package code.business;
 
 import code.business.dao.MechanicDAO;
 import code.domain.Mechanic;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.util.Optional;
@@ -10,7 +11,7 @@ import java.util.Optional;
 public class MechanicService {
 
     private final MechanicDAO mechanicDAO;
-
+    @Transactional
     public Mechanic findMechanic(String pesel) {
         Optional<Mechanic> mechanic = mechanicDAO.findByPesel(pesel);
         if (mechanic.isEmpty()) {

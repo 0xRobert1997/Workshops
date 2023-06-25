@@ -2,6 +2,7 @@ package code.business;
 
 import code.business.management.FileDataPreparationService;
 import code.domain.*;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.time.OffsetDateTime;
@@ -16,7 +17,7 @@ public class CarPurchaseService {
 
     private final CarService carService;
     private final SalesmanService salesmanService;
-
+    @Transactional
     public void purchase() {
         var firstTimeData = fileDataPreparationService.prepareFirstTimePurchaseData();
         var nextTimeData = fileDataPreparationService.prepareNextTimePurchaseData();

@@ -1,54 +1,60 @@
 package code.infrastructure.database.repository;
 
 import code.business.dao.ServiceRequestProcessingDAO;
-import code.infrastructure.configuration.HibernateUtil;
+import code.domain.CarServiceRequest;
+import code.domain.ServiceMechanic;
+import code.domain.ServicePart;
 import code.infrastructure.database.entity.CarServiceRequestEntity;
+import code.infrastructure.database.entity.PartEntity;
 import code.infrastructure.database.entity.ServiceMechanicEntity;
 import code.infrastructure.database.entity.ServicePartEntity;
-import org.hibernate.Session;
+import code.infrastructure.database.repository.jpa.CarServiceRequestJpaRepository;
+import code.infrastructure.database.repository.jpa.PartJpaRepository;
+import code.infrastructure.database.repository.jpa.ServiceMechanicJpaRepository;
+import code.infrastructure.database.repository.jpa.ServicePartJpaRepository;
+import code.infrastructure.database.repository.mapper.ServiceMechanicEntityMapper;
+import code.infrastructure.database.repository.mapper.ServicePartEntityMapper;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.Objects;
 
+@Repository
+@AllArgsConstructor
 public class ServiceRequestProcessingRepository implements ServiceRequestProcessingDAO {
+
+    private final ServiceMechanicJpaRepository serviceMechanicJpaRepository;
+    private final CarServiceRequestJpaRepository carServiceRequestJpaRepository;
+    private final PartJpaRepository partJpaRepository;
+    private final ServicePartJpaRepository servicePartJpaRepository;
+
+    private final ServiceMechanicEntityMapper serviceMechanicEntityMapper;
+    private final ServicePartEntityMapper servicePartEntityMapper;
     @Override
     public void process(
-            CarServiceRequestEntity serviceRequest,
-            ServiceMechanicEntity serviceMechanicEntity
+            CarServiceRequest serviceRequest,
+            ServiceMechanic serviceMechanic
     ) {
-        try (Session session = HibernateUtil.getSession()) {
-            if (Objects.isNull(session)) {
-                throw new RuntimeException("Session is null");
-            }
-            session.beginTransaction();
-            session.persist(serviceMechanicEntity);
-            if (Objects.nonNull(serviceRequest.getCompletedDateTime())) {
-                session.merge(serviceRequest);
-            }
-            session.getTransaction().commit();
+        ServiceMechanicEntity serviceMechanicEntity = serviceMechanicEntityMapper.mapToEntity(serviceMechanic);
+        serviceMechanicJpaRepository.saveAndFlush(serviceMechanicEntity);
+        if (Objects.nonNull(serviceRequest.getCompletedDateTime())) {
+            CarServiceRequestEntity carServiceRequestEntity = carServiceRequestJpaRepository.findById(serviceRequest.getCarServiceRequestId())
+                    .orElseThrow();
+            carServiceRequestEntity.setCompletedDateTime(serviceRequest.getCompletedDateTime());
+            carServiceRequestJpaRepository.saveAndFlush(carServiceRequestEntity);
         }
     }
 
     @Override
     public void process(
-            CarServiceRequestEntity serviceRequest,
-            ServiceMechanicEntity serviceMechanicEntity,
-            ServicePartEntity servicePartEntity
+            CarServiceRequest serviceRequest,
+            ServiceMechanic serviceMechanic,
+            ServicePart servicePart
     ) {
-        try (Session session = HibernateUtil.getSession()) {
-            if (Objects.isNull(session)) {
-                throw new RuntimeException("Session is null");
-            }
-            session.beginTransaction();
-
-            session.persist(serviceMechanicEntity);
-
-            session.persist(servicePartEntity);
-
-            if (Objects.nonNull(serviceRequest.getCompletedDateTime())) {
-                session.merge(serviceRequest);
-            }
-
-            session.getTransaction().commit();
-        }
+        PartEntity partEntity = partJpaRepository.findById(servicePart.getPart().getPartId()).orElseThrow();
+        ServicePartEntity servicePartEntity = servicePartEntityMapper.mapToEntity(servicePart);
+        servicePartEntity.setPart(partEntity);
+        servicePartJpaRepository.saveAndFlush(servicePartEntity);
+        process(serviceRequest, serviceMechanic);
     }
 }

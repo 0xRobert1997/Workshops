@@ -2,6 +2,7 @@ package code.business;
 
 import code.business.dao.ServiceDAO;
 import code.domain.Service;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.util.Optional;
@@ -9,7 +10,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class ServiceCatalogService {
     private final ServiceDAO serviceDAO;
-
+    @Transactional
     public Service findService(String serviceCode) {
         Optional<Service> service = serviceDAO.findByServiceCode(serviceCode);
         if (service.isEmpty()) {

@@ -6,6 +6,7 @@ import code.domain.CarServiceRequest;
 import code.domain.CarToBuy;
 import code.domain.CarToService;
 import code.domain.Customer;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.time.OffsetDateTime;
@@ -23,7 +24,7 @@ public class CarServiceRequestService {
     private final CarService carService;
     private final CustomerService customerService;
     private final CarServiceRequestDAO carServiceRequestDAO;
-
+    @Transactional
     public void requestService() {
         Map<Boolean, List<CarServiceRequest>> serviceRequests = fileDataPreparationService.createCarServiceRequests().stream()
                 .collect(Collectors.groupingBy(element -> element.getCar().wasCarBoughtHere()));
@@ -89,7 +90,7 @@ public class CarServiceRequestService {
     private int randomInt(int min, int max) {
         return new Random().nextInt(max - min) + min;
     }
-
+    @Transactional
     public CarServiceRequest findAnyActiveServiceRequest(String carVin) {
         Set<CarServiceRequest> serviceRequests = carServiceRequestDAO.findActiveServiceRequestsByCarVin(carVin);
         if (serviceRequests.size() != 1) {

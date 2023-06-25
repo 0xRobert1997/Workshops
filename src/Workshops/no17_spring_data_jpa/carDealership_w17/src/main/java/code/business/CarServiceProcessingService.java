@@ -4,6 +4,7 @@ import code.business.dao.ServiceRequestProcessingDAO;
 import code.business.management.FileDataPreparationService;
 import code.business.management.Keys;
 import code.domain.*;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.time.OffsetDateTime;
@@ -20,7 +21,7 @@ public class CarServiceProcessingService {
     private final CarServiceRequestService carServiceRequestService;
     private final ServiceRequestProcessingDAO serviceRequestProcessingDAO;
 
-
+    @Transactional
     public void process() {
         List<CarServiceProcessingInputData> toProcess = fileDataPreparationService.prepareServiceRequestsToProcess();
         toProcess.forEach(this::processRequest);

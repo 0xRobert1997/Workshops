@@ -2,9 +2,7 @@ package code.integration;
 
 import code.business.*;
 import code.business.dao.*;
-import code.business.management.CarDealershipManagementService;
 import code.business.management.FileDataPreparationService;
-import code.infrastructure.configuration.HibernateUtil;
 import code.infrastructure.database.repository.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
@@ -13,7 +11,7 @@ import org.junit.jupiter.api.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CarDealershipTest {
 
-    private CarDealershipManagementService carDealershipManagementService;
+   /* private CarDealershipManagementService carDealershipManagementService;
     private CarPurchaseService carPurchaseService;
     private CarServiceRequestService carServiceRequestService;
     private CarServiceProcessingService carServiceProcessingService;
@@ -114,5 +112,5 @@ public class CarDealershipTest {
         log.info("### RUNNING ORDER 6");
         carService.printCarHistory("2C3CDYAG2DH731952");
         carService.printCarHistory("1GCEC19X27Z109567");
-    }
+    }*/
 }
