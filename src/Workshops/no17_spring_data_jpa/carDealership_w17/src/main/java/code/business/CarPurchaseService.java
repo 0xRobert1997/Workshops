@@ -2,30 +2,31 @@ package code.business;
 
 import code.business.management.FileDataPreparationService;
 import code.domain.*;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
-
+@Service
 @AllArgsConstructor
 public class CarPurchaseService {
 
     private final FileDataPreparationService fileDataPreparationService;
     private final CustomerService customerService;
-
     private final CarService carService;
     private final SalesmanService salesmanService;
-    @Transactional
+
     public void purchase() {
         var firstTimeData = fileDataPreparationService.prepareFirstTimePurchaseData();
         var nextTimeData = fileDataPreparationService.prepareNextTimePurchaseData();
 
-        List<Customer> firsTimeCustomers = firstTimeData.stream()
+        List<Customer> firstTimeCustomers = firstTimeData.stream()
                 .map(this::createFirstTimeToBuyCustomer)
                 .toList();
-        firsTimeCustomers.forEach(customerService::issueInvoice);
+        firstTimeCustomers.forEach(customerService::issueInvoice);
 
         List<Customer> nextTimeCustomers = nextTimeData.stream()
                 .map(this::createNextTimeToBuyCustomer)
@@ -39,7 +40,6 @@ public class CarPurchaseService {
         Invoice invoice = buildInvoice(car, salesman);
 
         return fileDataPreparationService.buildCustomer(inputData, invoice);
-
     }
 
     private Customer createNextTimeToBuyCustomer(CarPurchaseRequestInputData inputData) {
@@ -47,14 +47,15 @@ public class CarPurchaseService {
         CarToBuy car = carService.findCarToBuy(inputData.getCarVin());
         Salesman salesman = salesmanService.findSalesman(inputData.getSalesmanPesel());
         Invoice invoice = buildInvoice(car, salesman);
-        existingCustomer.getInvoices().add(invoice);
-        return existingCustomer;
+        Set<Invoice> existingInvoices = existingCustomer.getInvoices();
+        existingInvoices.add(invoice);
+        return existingCustomer.withInvoices(existingInvoices);
     }
 
     private Invoice buildInvoice(CarToBuy car, Salesman salesman) {
         return Invoice.builder()
                 .invoiceNumber(UUID.randomUUID().toString())
-                .dateTime(OffsetDateTime.now())
+                .dateTime(OffsetDateTime.of(2025, 10, 1, 12, 0, 0, 0, ZoneOffset.UTC))
                 .car(car)
                 .salesman(salesman)
                 .build();

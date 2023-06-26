@@ -4,9 +4,10 @@ import code.business.dao.PartDAO;
 import code.domain.Part;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
+@Service
 @AllArgsConstructor
 public class PartCatalogService {
     private final PartDAO partDAO;

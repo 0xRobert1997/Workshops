@@ -15,6 +15,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Repository
@@ -38,13 +39,14 @@ public class CustomerRepository implements CustomerDAO {
     @Override
     public void issueInvoice(Customer customer) {
         CustomerEntity customerToSave = customerEntityMapper.mapToEntity(customer);
-        CustomerEntity customerSaved = customerJpaRepository.save(customerToSave);
+        CustomerEntity customerSaved = customerJpaRepository.saveAndFlush(customerToSave);
 
         customer.getInvoices().stream()
+                .filter(inv -> Objects.isNull(inv.getInvoiceId()))
                 .map(invoiceEntityMapper::mapToEntity)
-                .forEach((InvoiceEntity entity) -> {
-                    entity.setCustomer(customerSaved);
-                    invoiceJpaRepository.saveAndFlush(entity);
+                .forEach(invoiceEntity -> {
+                    invoiceEntity.setCustomer(customerSaved);
+                    invoiceJpaRepository.saveAndFlush(invoiceEntity);
                 });
     }
 

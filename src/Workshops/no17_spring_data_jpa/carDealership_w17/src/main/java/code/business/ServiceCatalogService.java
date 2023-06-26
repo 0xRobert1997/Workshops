@@ -6,7 +6,7 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.util.Optional;
-
+@org.springframework.stereotype.Service
 @AllArgsConstructor
 public class ServiceCatalogService {
     private final ServiceDAO serviceDAO;

@@ -8,9 +8,11 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Objects;
 
+@org.springframework.stereotype.Service
 @AllArgsConstructor
 public class CarServiceProcessingService {
     private final FileDataPreparationService fileDataPreparationService;
@@ -37,7 +39,7 @@ public class CarServiceProcessingService {
         ServiceMechanic serviceMechanic = buildServiceMechanic(request, mechanic, serviceRequest, service);
 
         if (Keys.Constants.FINISHED.toString().equals(request.getDone())) {
-            serviceRequest.withCompletedDateTime(OffsetDateTime.now());
+            serviceRequest = serviceRequest.withCompletedDateTime(OffsetDateTime.of(2029, 3, 2, 10, 9, 12, 0, ZoneOffset.UTC));
         }
 
         if (Objects.isNull(request.getPartSerialNumber()) || Objects.isNull(request.getPartQuantity())) {

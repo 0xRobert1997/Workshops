@@ -6,8 +6,9 @@ import code.domain.CarServiceRequest;
 import code.domain.CarToBuy;
 import code.domain.CarToService;
 import code.domain.Customer;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
@@ -16,7 +17,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
-
+@Service
 @AllArgsConstructor
 public class CarServiceRequestService {
 
@@ -24,7 +25,7 @@ public class CarServiceRequestService {
     private final CarService carService;
     private final CustomerService customerService;
     private final CarServiceRequestDAO carServiceRequestDAO;
-    @Transactional
+
     public void requestService() {
         Map<Boolean, List<CarServiceRequest>> serviceRequests = fileDataPreparationService.createCarServiceRequests().stream()
                 .collect(Collectors.groupingBy(element -> element.getCar().wasCarBoughtHere()));
@@ -39,9 +40,9 @@ public class CarServiceRequestService {
         Customer customer = customerService.findCustomer(request.getCustomer().getEmail());
 
         CarServiceRequest carServiceRequest = buildCarServiceRequest(request, car, customer);
-        Set<CarServiceRequest> carServiceRequests = customer.getCarServiceRequests();
-        carServiceRequests.add(carServiceRequest);
-        customerService.saveServiceRequest(customer);
+        Set<CarServiceRequest> existingCarServiceRequests = customer.getCarServiceRequests();
+        existingCarServiceRequests.add(carServiceRequest);
+        customerService.saveServiceRequest(customer.withCarServiceRequests(existingCarServiceRequests));
     }
 
     private CarToService findInCarToBuyAndSaveInCarToService(CarToService car) {
@@ -54,9 +55,9 @@ public class CarServiceRequestService {
         Customer customer = customerService.saveCustomer(request.getCustomer());
 
         CarServiceRequest carServiceRequest = buildCarServiceRequest(request, car, customer);
-        Set<CarServiceRequest> carServiceRequests = customer.getCarServiceRequests();
-        carServiceRequests.add(carServiceRequest);
-        customerService.saveServiceRequest(customer);
+        Set<CarServiceRequest> existingCarServiceRequests = customer.getCarServiceRequests();
+        existingCarServiceRequests.add(carServiceRequest);
+        customerService.saveServiceRequest(customer.withCarServiceRequests(existingCarServiceRequests));
     }
 
     private CarServiceRequest buildCarServiceRequest(
@@ -90,6 +91,7 @@ public class CarServiceRequestService {
     private int randomInt(int min, int max) {
         return new Random().nextInt(max - min) + min;
     }
+
     @Transactional
     public CarServiceRequest findAnyActiveServiceRequest(String carVin) {
         Set<CarServiceRequest> serviceRequests = carServiceRequestDAO.findActiveServiceRequestsByCarVin(carVin);

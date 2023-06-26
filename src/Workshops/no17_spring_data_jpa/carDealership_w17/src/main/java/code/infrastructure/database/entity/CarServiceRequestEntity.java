@@ -34,18 +34,17 @@ public class CarServiceRequestEntity {
     @Column(name = "customer_comment")
     private String customerComment;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
     private CustomerEntity customer;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "car_to_service_id")
     private CarToServiceEntity car;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "carServiceRequest")
     private Set<ServiceMechanicEntity> serviceMechanics;
 
-    @OneToMany(fetch =  FetchType.LAZY, mappedBy = "carServiceRequest")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "carServiceRequest")
     private Set<ServicePartEntity> serviceParts;
 }

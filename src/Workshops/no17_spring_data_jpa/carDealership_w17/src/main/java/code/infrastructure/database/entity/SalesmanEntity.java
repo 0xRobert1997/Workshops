@@ -27,7 +27,7 @@ public class SalesmanEntity {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "pesel", unique = true)
+    @Column(name = "pesel")
     private String pesel;
 
 

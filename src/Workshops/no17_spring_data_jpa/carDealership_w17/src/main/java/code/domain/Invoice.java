@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 @ToString(of = {"invoiceId", "invoiceNumber", "dateTime", "car", "salesman"})
-@EqualsAndHashCode(of = {"invoiceId"})
+@EqualsAndHashCode(of = {"invoiceNumber"})
 @Builder
 @With
 public class Invoice {

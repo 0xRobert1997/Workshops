@@ -6,8 +6,8 @@ import lombok.*;
 
 @Getter
 @Setter
-@ToString(of = {"ServiceMechanicId", "hours", "comment"})
-@EqualsAndHashCode(of = {"ServiceMechanicId"})
+@ToString(of = {"serviceMechanicId", "hours", "comment"})
+@EqualsAndHashCode(of = {"serviceMechanicId"})
 @Entity
 @Builder
 @NoArgsConstructor
@@ -18,7 +18,7 @@ public class ServiceMechanicEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "service_mechanic_id")
-    private Integer ServiceMechanicId;
+    private Integer serviceMechanicId;
 
     @Column(name = "hours")
     private Integer hours;

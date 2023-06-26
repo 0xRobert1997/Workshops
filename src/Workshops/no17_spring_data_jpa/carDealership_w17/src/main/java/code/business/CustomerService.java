@@ -1,22 +1,25 @@
 package code.business;
 
 import code.business.dao.CustomerDAO;
-import code.domain.Address;
 import code.domain.Customer;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+@Service
 @AllArgsConstructor
 public class CustomerService {
 
-    CustomerDAO customerDAO;
+    private final CustomerDAO customerDAO;
+
     @Transactional
     public void issueInvoice(Customer customer) {
         customerDAO.issueInvoice(customer);
     }
 
+    @Transactional
     public Customer findCustomer(String email) {
         Optional<Customer> customer = customerDAO.findByEmail(email);
         if (customer.isEmpty()) {
@@ -24,10 +27,12 @@ public class CustomerService {
         }
         return customer.get();
     }
+
     @Transactional
     public void saveServiceRequest(Customer customer) {
         customerDAO.saveServiceRequest(customer);
     }
+
     @Transactional
     public Customer saveCustomer(Customer customer) {
         return customerDAO.saveCustomer(customer);

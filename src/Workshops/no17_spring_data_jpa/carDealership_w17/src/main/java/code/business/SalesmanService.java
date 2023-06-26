@@ -2,14 +2,16 @@ package code.business;
 
 import code.business.dao.SalesmanDAO;
 import code.domain.Salesman;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
-
+@Service
 @AllArgsConstructor
 public class SalesmanService {
     private final SalesmanDAO salesmanDAO;
+
     @Transactional
     public Salesman findSalesman(String pesel) {
         Optional<Salesman> salesman = salesmanDAO.findByPesel(pesel);

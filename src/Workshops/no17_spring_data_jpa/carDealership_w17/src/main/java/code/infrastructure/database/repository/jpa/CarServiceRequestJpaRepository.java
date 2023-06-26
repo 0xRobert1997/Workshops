@@ -14,9 +14,9 @@ public interface CarServiceRequestJpaRepository extends JpaRepository<CarService
 
 
     @Query("""
-            SELECT csr FROM CarServiceRequestEntity csr
-            WHERE csr.completedDateTime IS NULL
-            AND csr.car.vin = :vin
-            """)
+        SELECT csr FROM CarServiceRequestEntity csr
+        WHERE csr.completedDateTime IS NULL
+        AND csr.car.vin = :vin
+        """)
     Set<CarServiceRequestEntity> findActiveServiceRequestsByCarVin(final @Param("vin") String carVin);
 }
