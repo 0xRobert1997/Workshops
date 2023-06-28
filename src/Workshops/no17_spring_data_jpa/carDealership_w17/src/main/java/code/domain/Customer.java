@@ -1,8 +1,5 @@
 package code.domain;
 
-import code.infrastructure.database.entity.AddressEntity;
-import code.infrastructure.database.entity.CarServiceRequestEntity;
-import code.infrastructure.database.entity.InvoiceEntity;
 import lombok.*;
 
 import java.util.HashSet;

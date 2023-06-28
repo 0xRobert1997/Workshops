@@ -16,12 +16,13 @@ public class CarServiceRequestRepository implements CarServiceRequestDAO {
 
     private final CarServiceRequestJpaRepository carServiceRequestJpaRepository;
     private final CarServiceRequestEntityMapper carServiceRequestEntityMapper;
+
     @Override
     public Set<CarServiceRequest> findActiveServiceRequestsByCarVin(String carVin) {
 
-            return carServiceRequestJpaRepository.findActiveServiceRequestsByCarVin(carVin).stream()
-                    .map(carServiceRequestEntityMapper::mapFromEntity)
-                    .collect(Collectors.toSet());
+        return carServiceRequestJpaRepository.findActiveServiceRequestsByCarVin(carVin).stream()
+                .map(carServiceRequestEntityMapper::mapFromEntity)
+                .collect(Collectors.toSet());
 
     }
 }

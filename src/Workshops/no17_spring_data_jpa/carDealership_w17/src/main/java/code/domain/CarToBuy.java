@@ -1,6 +1,5 @@
 package code.domain;
 
-import code.infrastructure.database.entity.InvoiceEntity;
 import lombok.*;
 
 import java.math.BigDecimal;

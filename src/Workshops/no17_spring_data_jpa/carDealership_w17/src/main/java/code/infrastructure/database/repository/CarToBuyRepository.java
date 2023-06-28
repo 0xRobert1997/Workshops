@@ -8,12 +8,14 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+
 @Repository
 @AllArgsConstructor
 public class CarToBuyRepository implements CarToBuyDAO {
 
     private final CarToBuyJpaRepository carToBuyJpaRepository;
     private final CarToBuyEntityMapper carToBuyEntityMapper;
+
     @Override
     public Optional<CarToBuy> findCarToBuyByVin(String vin) {
         return carToBuyJpaRepository.findByVin(vin)

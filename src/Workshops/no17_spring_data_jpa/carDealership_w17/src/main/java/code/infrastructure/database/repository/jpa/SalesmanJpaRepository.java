@@ -1,6 +1,5 @@
 package code.infrastructure.database.repository.jpa;
 
-import code.infrastructure.database.entity.AddressEntity;
 import code.infrastructure.database.entity.SalesmanEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

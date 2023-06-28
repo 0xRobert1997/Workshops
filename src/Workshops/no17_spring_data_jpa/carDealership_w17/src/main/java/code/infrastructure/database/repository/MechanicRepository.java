@@ -14,6 +14,7 @@ import java.util.Optional;
 public class MechanicRepository implements MechanicDAO {
     private final MechanicJpaRepository mechanicJpaRepository;
     private final MechanicEntityMapper mechanicEntityMapper;
+
     @Override
     public Optional<Mechanic> findByPesel(String pesel) {
         return mechanicJpaRepository.findByPesel(pesel)

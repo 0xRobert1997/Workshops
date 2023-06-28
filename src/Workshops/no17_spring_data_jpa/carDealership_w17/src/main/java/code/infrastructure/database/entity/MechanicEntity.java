@@ -1,6 +1,5 @@
 package code.infrastructure.database.entity;
 
-import code.infrastructure.database.entity.ServiceMechanicEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -32,6 +31,6 @@ public class MechanicEntity {
     private String pesel;
 
 
-    @OneToMany(fetch =  FetchType.LAZY, mappedBy = "mechanic")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "mechanic")
     private Set<ServiceMechanicEntity> serviceMechanics;
 }

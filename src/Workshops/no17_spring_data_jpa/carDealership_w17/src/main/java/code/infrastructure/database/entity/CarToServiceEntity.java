@@ -1,6 +1,5 @@
 package code.infrastructure.database.entity;
 
-import code.infrastructure.database.entity.CarServiceRequestEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,7 +8,7 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString(of = {"carToServiceId", "vin", "brand", "model", "year"})
-@EqualsAndHashCode(of ="carToServiceId")
+@EqualsAndHashCode(of = "carToServiceId")
 @Entity
 @Builder
 @NoArgsConstructor

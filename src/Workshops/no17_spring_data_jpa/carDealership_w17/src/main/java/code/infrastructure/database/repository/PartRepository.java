@@ -15,6 +15,7 @@ public class PartRepository implements PartDAO {
 
     private final PartJpaRepository partJpaRepository;
     private final PartEntityMapper partEntityMapper;
+
     @Override
     public Optional<Part> findBySerialNumber(String serialNumber) {
         return partJpaRepository.findBySerialNumber(serialNumber)

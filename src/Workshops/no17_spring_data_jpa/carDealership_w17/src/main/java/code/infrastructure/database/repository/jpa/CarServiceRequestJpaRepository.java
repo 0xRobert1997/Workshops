@@ -1,6 +1,5 @@
 package code.infrastructure.database.repository.jpa;
 
-import code.domain.CarServiceRequest;
 import code.infrastructure.database.entity.CarServiceRequestEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -14,9 +13,9 @@ public interface CarServiceRequestJpaRepository extends JpaRepository<CarService
 
 
     @Query("""
-        SELECT csr FROM CarServiceRequestEntity csr
-        WHERE csr.completedDateTime IS NULL
-        AND csr.car.vin = :vin
-        """)
+            SELECT csr FROM CarServiceRequestEntity csr
+            WHERE csr.completedDateTime IS NULL
+            AND csr.car.vin = :vin
+            """)
     Set<CarServiceRequestEntity> findActiveServiceRequestsByCarVin(final @Param("vin") String carVin);
 }

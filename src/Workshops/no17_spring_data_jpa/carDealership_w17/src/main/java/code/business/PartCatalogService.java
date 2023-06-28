@@ -7,10 +7,12 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 public class PartCatalogService {
     private final PartDAO partDAO;
+
     @Transactional
     public Part findPart(String partSerialNumber) {
         Optional<Part> part = partDAO.findBySerialNumber(partSerialNumber);

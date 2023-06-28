@@ -1,6 +1,5 @@
 package code.domain;
 
-import code.infrastructure.database.entity.CustomerEntity;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Value;

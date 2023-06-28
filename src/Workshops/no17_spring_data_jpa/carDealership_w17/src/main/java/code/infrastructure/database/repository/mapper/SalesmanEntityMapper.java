@@ -1,7 +1,6 @@
 package code.infrastructure.database.repository.mapper;
 
 import code.domain.Salesman;
-import code.infrastructure.database.entity.AddressEntity;
 import code.infrastructure.database.entity.SalesmanEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

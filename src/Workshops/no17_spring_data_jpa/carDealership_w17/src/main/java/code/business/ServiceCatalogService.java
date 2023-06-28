@@ -6,10 +6,12 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 
 import java.util.Optional;
+
 @org.springframework.stereotype.Service
 @AllArgsConstructor
 public class ServiceCatalogService {
     private final ServiceDAO serviceDAO;
+
     @Transactional
     public Service findService(String serviceCode) {
         Optional<Service> service = serviceDAO.findByServiceCode(serviceCode);

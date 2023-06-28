@@ -1,6 +1,5 @@
 package code.infrastructure.database.entity;
 
-import code.infrastructure.database.entity.ServicePartEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -34,8 +33,6 @@ public class PartEntity {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "part")
     private Set<ServicePartEntity> serviceParts;
-
-
 
 
 }

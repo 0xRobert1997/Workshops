@@ -15,6 +15,7 @@ public class ServiceRepository implements ServiceDAO {
 
     private final ServiceJpaRepository serviceJpaRepository;
     private final ServiceEntityMapper mechanicMapper;
+
     @Override
     public Optional<Service> findByServiceCode(String serviceCode) {
         return serviceJpaRepository.findByServiceCode(serviceCode)

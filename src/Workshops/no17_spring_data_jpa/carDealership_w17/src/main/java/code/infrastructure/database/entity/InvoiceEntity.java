@@ -1,8 +1,5 @@
 package code.infrastructure.database.entity;
 
-import code.infrastructure.database.entity.CarToBuyEntity;
-import code.infrastructure.database.entity.CustomerEntity;
-import code.infrastructure.database.entity.SalesmanEntity;
 import jakarta.persistence.*;
 import lombok.*;
 

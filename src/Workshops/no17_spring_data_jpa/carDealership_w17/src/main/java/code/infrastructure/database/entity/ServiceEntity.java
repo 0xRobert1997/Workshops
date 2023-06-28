@@ -1,6 +1,5 @@
 package code.infrastructure.database.entity;
 
-import code.infrastructure.database.entity.ServiceMechanicEntity;
 import jakarta.persistence.*;
 import lombok.*;
 

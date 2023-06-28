@@ -1,6 +1,5 @@
 package code.infrastructure.database.entity;
 
-import code.infrastructure.database.entity.CarServiceRequestEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,12 +23,12 @@ public class ServicePartEntity {
     private Integer quantity;
 
 
-    @ManyToOne(fetch =  FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "car_service_request_id")
     private CarServiceRequestEntity carServiceRequest;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name ="part_id")
+    @JoinColumn(name = "part_id")
     private PartEntity part;
 
 

@@ -10,12 +10,14 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+
 @Repository
 @AllArgsConstructor
 public class CarToServiceRepository implements CarToServiceDAO {
 
     private final CarToServiceJpaRepository carToServiceJpaRepository;
     private final CarToServiceEntityMapper carToServiceEntityMapper;
+
     @Override
     public Optional<CarToService> findCarToServiceByVin(String vin) {
         return carToServiceJpaRepository.findOptionalByVin(vin)

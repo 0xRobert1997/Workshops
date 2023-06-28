@@ -7,11 +7,13 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 public class MechanicService {
 
     private final MechanicDAO mechanicDAO;
+
     @Transactional
     public Mechanic findMechanic(String pesel) {
         Optional<Mechanic> mechanic = mechanicDAO.findByPesel(pesel);

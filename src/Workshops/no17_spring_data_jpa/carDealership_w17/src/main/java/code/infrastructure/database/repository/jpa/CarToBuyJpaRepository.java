@@ -1,6 +1,5 @@
 package code.infrastructure.database.repository.jpa;
 
-import code.domain.CarToBuy;
 import code.infrastructure.database.entity.CarToBuyEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

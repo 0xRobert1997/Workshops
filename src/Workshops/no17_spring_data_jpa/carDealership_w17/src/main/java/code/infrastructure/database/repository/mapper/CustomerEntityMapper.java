@@ -9,7 +9,6 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.ReportingPolicy;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 

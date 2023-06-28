@@ -4,7 +4,6 @@ import code.business.dao.CustomerDAO;
 import code.domain.Customer;
 import code.infrastructure.database.entity.CarServiceRequestEntity;
 import code.infrastructure.database.entity.CustomerEntity;
-import code.infrastructure.database.entity.InvoiceEntity;
 import code.infrastructure.database.repository.jpa.CarServiceRequestJpaRepository;
 import code.infrastructure.database.repository.jpa.CustomerJpaRepository;
 import code.infrastructure.database.repository.jpa.InvoiceJpaRepository;
@@ -29,6 +28,7 @@ public class CustomerRepository implements CustomerDAO {
     private final CustomerEntityMapper customerEntityMapper;
     private final InvoiceEntityMapper invoiceEntityMapper;
     private final CarServiceRequestEntityMapper carServiceRequestEntityMapper;
+
     @Override
     public Optional<Customer> findByEmail(String email) {
         return customerJpaRepository.findByEmail(email)

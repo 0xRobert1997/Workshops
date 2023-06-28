@@ -30,6 +30,7 @@ public class ServiceRequestProcessingRepository implements ServiceRequestProcess
 
     private final ServiceMechanicEntityMapper serviceMechanicEntityMapper;
     private final ServicePartEntityMapper servicePartEntityMapper;
+
     @Override
     public void process(
             CarServiceRequest serviceRequest,

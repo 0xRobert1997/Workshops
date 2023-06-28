@@ -1,13 +1,12 @@
 package code.infrastructure.database.entity;
 
-import code.infrastructure.database.entity.CustomerEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
 @Setter
 @ToString(of = {"addressId", "country", "city", "postalCode", "address"})
-@EqualsAndHashCode(of ="addressId")
+@EqualsAndHashCode(of = "addressId")
 @Entity
 @Builder
 @NoArgsConstructor
@@ -32,6 +31,6 @@ public class AddressEntity {
     @Column(name = "address")
     private String address;
 
-    @OneToOne(fetch =  FetchType.LAZY, mappedBy = "address")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "address")
     private CustomerEntity customer;
 }
