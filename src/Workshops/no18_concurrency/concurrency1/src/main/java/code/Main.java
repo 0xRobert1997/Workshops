@@ -1,5 +1,8 @@
 package code;
 
+import java.util.Objects;
+import java.util.stream.IntStream;
+
 public class Main {
     public static void main(String[] args) {
         Thread myThread0 = new MyThreadImp();
@@ -31,5 +34,14 @@ public class Main {
         } catch (InterruptedException ex) {
             System.err.println("beep boop, something went wrong xd");
         }
+
+        Object ob1 = new Object();
+        Object ob2 = new Object();
+        synchronized (ob1) {
+            synchronized (ob2){
+
+            }
+        }
+
     }
 }
