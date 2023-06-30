@@ -1,4 +1,4 @@
 1xdCar{name='Stefan'}
-Zajavka
+ZajavkaBootcamp
 somevalue, [Car{name='Stefan'}] 
 somevalue, [Car{name='Stefan'}] 

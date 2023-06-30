@@ -17,7 +17,7 @@ public class main {
             Car car = new Car ("Stefan");
             writer.print(car);
             writer.println();
-            writer.println("Zajavka");
+            writer.println("ZajavkaBootcamp");
             writer.printf("somevalue, [%s] %n", car);
             writer.printf("somevalue, [%s] %n", car);
 
