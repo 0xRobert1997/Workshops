@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'war'
+    // Web Application Archive
 }
 
 group 'org.example'
@@ -10,10 +12,30 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    // Spring 5.X
+    // compileOnly 'javas:javaee-api:8.0.1'
+    // compileOnly 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'
+
+    //spring 6.X
+    compileOnly 'jakarta.platform:jakarta.jakartaee-api:9.1.0'
+    compileOnly 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.0'
+    implementation 'org.springframework:spring-webmvc:6.0.0'
+
+    implementation 'ch.qos.logback:logback-classicL1.4.4'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+}
+
+war {
+    archiveFileName = 'java-gradle-example-project.war'
 }
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
