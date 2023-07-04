@@ -6,6 +6,7 @@ plugins {
 
 group 'org.example'
 version '1.0-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -21,7 +22,10 @@ dependencies {
     compileOnly 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.0'
     implementation 'org.springframework:spring-webmvc:6.0.0'
 
-    implementation 'ch.qos.logback:logback-classicL1.4.4'
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0'
+
+    implementation 'ch.qos.logback:logback-classic:1.4.4'
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
