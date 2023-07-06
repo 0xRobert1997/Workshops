@@ -50,7 +50,8 @@ public class ApplicationConfiguration implements WebMvcConfigurer, ApplicationCo
 
     @Bean
     @DependsOn("flyway")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
+                            // metoda musi nazywać się entityManagerFactory a nie entityManagerFactoryBean xd
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean entityManagerFactory
                 = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setDataSource(dataSource());
@@ -75,7 +76,7 @@ public class ApplicationConfiguration implements WebMvcConfigurer, ApplicationCo
         dataSource.setDriverClassName(Objects.requireNonNull(environment.getProperty(Environment.DRIVER)));
         dataSource.setUrl(environment.getProperty(Environment.URL));
         dataSource.setUsername(environment.getProperty(Environment.USER));
-        dataSource.setUsername(environment.getProperty(Environment.PASS));
+        dataSource.setPassword(environment.getProperty(Environment.PASS));
         return dataSource;
     }
 
@@ -111,7 +112,7 @@ public class ApplicationConfiguration implements WebMvcConfigurer, ApplicationCo
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(this.applicationContext);
-        templateResolver.setPrefix("/WEB-INF/templates");
+        templateResolver.setPrefix("/WEB-INF/templates/");
         templateResolver.setSuffix(".html");
         templateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
         templateResolver.setTemplateMode(TemplateMode.HTML);

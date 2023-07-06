@@ -1,4 +1,9 @@
 package code.infrastructure.database.repository;
 
-public interface EmployeeRepository {
+import code.infrastructure.database.entity.EmployeeEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Integer> {
 }

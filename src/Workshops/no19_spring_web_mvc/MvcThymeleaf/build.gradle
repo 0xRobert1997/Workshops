@@ -47,7 +47,7 @@ dependencies {
     implementation "org.springframework.data:spring-data-jpa:$springDataVersion"
     implementation "org.hibernate.orm:hibernate-core:$hibernateVersion"
 
-    implementation "org.postgeresql:postgresql:$postgresqlDriverVersion"
+    implementation "org.postgresql:postgresql:$postgresqlDriverVersion"
     implementation "org.flywaydb:flyway-core:$flywayVersion"
 
 }
