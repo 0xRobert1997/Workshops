@@ -3,46 +3,61 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for mortgage-calculator-uml-diagram" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
+        </processorPath>
+        <module name="mortgage-calculator-uml-diagram" />
+      </profile>
+      <profile name="Annotation profile for mortgage-calculator-uml-diagram" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
+        </processorPath>
+        <module name="mortgage-calculator-uml-diagram" />
+      </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="lombokMaven" />
-        <module name="mortgage-calculator-uml-diagram (2)" />
+        <module name="maven-exercise" />
         <module name="tests-maven" />
         <module name="java-maven-examples" />
-        <module name="mortgage-calculator-uml-diagram (1)" />
-      </profile>
-      <profile name="Annotation profile for mortgage-calculator-uml-diagram" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
-        </processorPath>
-        <module name="mortgage-calculator-uml-diagram" />
-      </profile>
-      <profile name="Annotation profile for mortgage-calculator-uml-diagram" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
-        </processorPath>
-        <module name="mortgage-calculator-uml-diagram" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
         </processorPath>
-        <module name="MvcThymeleaf.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.5.3.Final/dce418bedafd71ff8dd2cef15006c0fee788b073/mapstruct-processor-1.5.3.Final.jar" />
+        </processorPath>
+        <module name="carDealership_w19.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="car-dealership" target="17" />
+      <module name="car-dealership.main" target="17" />
+      <module name="car-dealership.test" target="17" />
+      <module name="carDealership_w19.test" target="17" />
       <module name="carDealershipProject2.main" target="20" />
       <module name="carDealershipProject2.test" target="20" />
+      <module name="data_access_example1" target="17" />
+      <module name="data_access_example1.main" target="17" />
       <module name="data_access_example1.test" target="17" />
+      <module name="data_access_project" target="17" />
+      <module name="data_access_project.main" target="17" />
+      <module name="data_access_project.test" target="17" />
       <module name="gradle-Exercise" target="18" />
       <module name="gradle-Exercise_main" target="18" />
       <module name="gradle-Exercise_test" target="18" />
@@ -62,26 +77,50 @@
       <module name="LogProject" target="17" />
       <module name="LogProject.main" target="17" />
       <module name="LogProject.test" target="17" />
-      <module name="Logs" target="17" />
-      <module name="Logs.main" target="17" />
-      <module name="LogsProject" target="17" />
-      <module name="LogsProject.main" target="17" />
-      <module name="maven-exercise" target="17" />
+      <module name="mocking_and_spring_exercise" target="20" />
+      <module name="mocking_and_spring_exercise.main" target="20" />
+      <module name="mocking_and_spring_exercise.test" target="20" />
       <module name="mockingSpring" target="20" />
       <module name="mockingSpring.main" target="20" />
       <module name="mockingSpring.test" target="20" />
+      <module name="mortgage-calculator-uml-diagram (1)" target="17" />
+      <module name="mortgage-calculator-uml-diagram (2)" target="17" />
       <module name="ormAndHibernate2" target="20" />
       <module name="ormAndHibernate2.main" target="20" />
       <module name="ormAndHibernate2.test" target="20" />
+      <module name="Patterns" target="20" />
+      <module name="Patterns.main" target="20" />
+      <module name="Patterns.test" target="20" />
+      <module name="pl.zajavka.Logs" target="17" />
+      <module name="pl.zajavka.Logs.main" target="17" />
+      <module name="pl.zajavka.Logs.test" target="17" />
       <module name="pl.zajavka.LogsExercise" target="17" />
       <module name="pl.zajavka.LogsExercise.main" target="17" />
       <module name="pl.zajavka.LogsExercise.test" target="17" />
+      <module name="pl.zajavka.LogsProject" target="17" />
+      <module name="pl.zajavka.LogsProject.main" target="17" />
+      <module name="pl.zajavka.LogsProject.test" target="17" />
       <module name="project" target="17" />
       <module name="project.main" target="17" />
       <module name="project.test" target="17" />
       <module name="project1" target="11" />
       <module name="project1.main" target="11" />
       <module name="project1.test" target="11" />
+      <module name="project11" target="11" />
+      <module name="project11.main" target="11" />
+      <module name="project11.test" target="11" />
+      <module name="spring" target="17" />
+      <module name="spring.main" target="17" />
+      <module name="spring.test" target="17" />
+      <module name="spring_exercise" target="17" />
+      <module name="spring_exercise.main" target="17" />
+      <module name="spring_exercise.test" target="17" />
+      <module name="springAndHibernate" target="17" />
+      <module name="springAndHibernate.main" target="17" />
+      <module name="springAndHibernate.test" target="17" />
+      <module name="springAndHibernate2" target="17" />
+      <module name="springAndHibernate2.main" target="17" />
+      <module name="springAndHibernate2.test" target="17" />
       <module name="test2" target="18" />
       <module name="test2.main" target="18" />
       <module name="test2.test" target="18" />
@@ -94,6 +133,9 @@
       <module name="withGradle" target="17" />
       <module name="withGradle.main" target="17" />
       <module name="withGradle.test" target="17" />
+      <module name="zajavka-gradle-example" target="15" />
+      <module name="zajavka-gradle-example.main" target="15" />
+      <module name="zajavka-gradle-example.test" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>

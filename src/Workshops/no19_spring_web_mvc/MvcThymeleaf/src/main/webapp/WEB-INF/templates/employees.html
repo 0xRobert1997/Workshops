@@ -64,14 +64,14 @@
                     <td>
                         <form action="#"
                               th:action="@{employees/show/{employeeId}(employeeId=${employee.employeeId})}"
-                              method=""GET>
+                              th:method="GET">
                             <button type="submit" class="btn btn-info">Show</button>
                         </form>
                     </td>
                         <td>
                             <form action="#"
                                   th:action="@{employees/show/{employeeId}(employeeId=${employee.employeeId})}"
-                                  th:method=""DELETE>
+                                  th:method="DELETE">
                                 <button type="submit" class="btn btn-danger">DELETE</button>
                             </form>
                         </td>

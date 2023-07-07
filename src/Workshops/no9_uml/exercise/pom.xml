@@ -14,6 +14,8 @@
         <lombok.version>1.18.24</lombok.version>
         <logback-classic.version>1.4.4</logback-classic.version>
         <junit-jupiter.version>5.8.2</junit-jupiter.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -47,7 +49,7 @@
         </dependency>
     </dependencies>
 
-    <Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build>
+    <Workshopss.no13_spirng_beans.Workshops.no13_spirng_beans.build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -65,5 +67,5 @@
                 </configuration>
             </plugin>
         </plugins>
-    </Workshops.no13_spirng_beans.Workshops.no13_spirng_beans.build>
+    </Workshopss.no13_spirng_beans.Workshops.no13_spirng_beans.build>
 </project>

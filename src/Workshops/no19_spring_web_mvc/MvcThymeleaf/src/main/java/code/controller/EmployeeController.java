@@ -41,6 +41,7 @@ public class EmployeeController {
         List<EmployeeEntity> employees = employeeRepository.findAll();
         // nazwa atrybutu żeby się odwoływać w widoku (linijka 38 w employees.html)
         model.addAttribute("employees", employees);
+        model.addAttribute("updateEmployeeDTO", new UpdateEmployeeDTO());
         return "employees";
     }
 
@@ -54,7 +55,7 @@ public class EmployeeController {
                         "EmployeeEntity not found, employeeId: [%s]".formatted(employeeId)
                 ));
         model.addAttribute("employee", employeeEntity);
-        model.addAttribute("updateEmployeeDTO", new UpdateEmployeeDTO());
+       // model.addAttribute("updateEmployeeDTO", new UpdateEmployeeDTO());
         return "employeeDetails";
     }
     @PutMapping("/update")

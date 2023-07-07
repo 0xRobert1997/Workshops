@@ -9,9 +9,11 @@
     <version>1.0.0</version>
 
     <properties>
-        <java.version>18</java.version>
+        <java.version>17</java.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <lombok.version>1.18.22</lombok.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>

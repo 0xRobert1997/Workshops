@@ -6,11 +6,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/Workshops/no5_building_tools/pom.xml" />
         <option value="$PROJECT_DIR$/src/Workshops/no5_building_tools/exMaven/pom.xml" />
+        <option value="$PROJECT_DIR$/src/Workshops/no5_building_tools/maven/exMaven/pom.xml" />
         <option value="$PROJECT_DIR$/src/Workshops/no5_building_tools/maven/maven/pom.xml" />
         <option value="$PROJECT_DIR$/src/Workshops/no6_lombok/withMaven/pom.xml" />
         <option value="$PROJECT_DIR$/src/Workshops/no8_unit_tests/tests_maven/pom.xml" />
-        <option value="$PROJECT_DIR$/src/Workshops/no9_uml/exercise/pom.xml" />
-        <option value="$PROJECT_DIR$/src/Workshops/no9_uml/solutionUml/pom.xml" />
       </list>
     </option>
   </component>
