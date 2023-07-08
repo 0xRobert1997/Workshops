@@ -19,7 +19,7 @@ public interface CarToBuyJpaRepository extends JpaRepository<CarToBuyEntity, Int
 
             """)*/
     @Query("""
-            SELECT car FROM carToBuyEntity car
+            SELECT car FROM CarToBuyEntity car
             LEFT JOIN FETCH car.invoice invoice
             WHERE invoice.car.carToBuyId IS NULL
             """)

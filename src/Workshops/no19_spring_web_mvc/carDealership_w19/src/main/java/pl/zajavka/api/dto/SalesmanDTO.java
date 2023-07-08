@@ -6,17 +6,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import pl.zajavka.domain.Invoice;
 
-import java.math.BigDecimal;
+import java.util.Set;
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CarToBuyDTO {
+public class SalesmanDTO {
 
-    private String vin;
-    private String brand;
-    private String model;
-    private Integer year;
-    private String color;
-    private BigDecimal price;
+    private String name;
+    private String surname;
+    private String pesel;
+
 }
