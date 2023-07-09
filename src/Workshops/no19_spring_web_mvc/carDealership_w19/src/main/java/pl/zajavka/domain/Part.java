@@ -16,6 +16,7 @@ import java.util.Set;
 @ToString(of = {"partId", "serialNumber", "description", "price"})
 public class Part {
 
+    public static final String NONE = "NONE";
     Integer partId;
     String serialNumber;
     String description;

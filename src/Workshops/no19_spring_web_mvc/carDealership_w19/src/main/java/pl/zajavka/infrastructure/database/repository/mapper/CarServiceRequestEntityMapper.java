@@ -10,7 +10,7 @@ import pl.zajavka.infrastructure.database.entity.CarServiceRequestEntity;
 public interface CarServiceRequestEntityMapper {
 
     @Mapping(target = "customer", ignore = true)
-    @Mapping(target = "car", ignore = true)
+  //  @Mapping(target = "car", ignore = true)
     @Mapping(target = "serviceMechanics", ignore = true)
     @Mapping(target = "serviceParts", ignore = true)
     CarServiceRequest mapFromEntity(CarServiceRequestEntity entity);

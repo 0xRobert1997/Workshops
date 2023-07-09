@@ -7,6 +7,7 @@ import pl.zajavka.domain.Service;
 import pl.zajavka.infrastructure.database.repository.jpa.ServiceJpaRepository;
 import pl.zajavka.infrastructure.database.repository.mapper.ServiceEntityMapper;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -15,11 +16,18 @@ import java.util.Optional;
 public class ServiceRepository implements ServiceDAO {
 
     private final ServiceJpaRepository serviceJpaRepository;
-    private final ServiceEntityMapper mechanicMapper;
+    private final ServiceEntityMapper mapper;
 
     @Override
     public Optional<Service> findByServiceCode(String serviceCode) {
         return serviceJpaRepository.findByServiceCode(serviceCode)
-            .map(mechanicMapper::mapFromEntity);
+            .map(mapper::mapFromEntity);
+    }
+
+    @Override
+    public List<Service> findAll() {
+        return serviceJpaRepository.findAll().stream()
+                .map(mapper::mapFromEntity)
+                .toList();
     }
 }

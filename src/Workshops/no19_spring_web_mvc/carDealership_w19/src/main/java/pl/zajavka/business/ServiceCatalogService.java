@@ -1,12 +1,16 @@
 package pl.zajavka.business;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.transaction.annotation.Transactional;
 import pl.zajavka.business.dao.ServiceDAO;
+import pl.zajavka.domain.Part;
 import pl.zajavka.domain.Service;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
-
+@Slf4j
 @org.springframework.stereotype.Service
 @AllArgsConstructor
 public class ServiceCatalogService {
@@ -20,5 +24,11 @@ public class ServiceCatalogService {
             throw new RuntimeException("Could not find service by service code: [%s]".formatted(serviceCode));
         }
         return service.get();
+    }
+
+    public List<Service> findAll() {
+        List<Service> services = serviceDAO.findAll();
+        log.info("available services: [{}]", services);
+        return services;
     }
 }
