@@ -17,7 +17,7 @@
 
         <div class="container">
             <div class="row mt-3">
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
                 <a th:href="@{/}" class="btn btn-info" role="button">Go back to the main page</a>
             </div>
 
@@ -116,7 +116,7 @@
                                 <label for="mechanicComment">Comment:</label>
                             </div>
                             <div class="col-md-3">
-                                <textarea id="mechanicComment" th:field="*{mechanicComment}" rows="10" cols="50" ></textarea>
+                                <textarea id="mechanicComment" th:field="*{mechanicComment}" rows="10" cols="50" required="required"></textarea>
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -153,7 +153,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="part : partDTOs">
+                <tr th:each="part : ${partDTOs}">
                     <td th:text="${part.serialNumber}"></td>
                     <td th:text="${part.description}"></td>
                     <td th:text="${part.price}"></td>
@@ -174,13 +174,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="service : serviceDTOs">
+                <tr th:each="service : ${serviceDTOs}">
                     <td th:text="${service.serviceCode}"></td>
                     <td th:text="${service.description}"></td>
                     <td th:text="${service.price}"></td>
                 </tr>
                 </tbody>
             </table>
+        </div>
         </div>
     </body>
 </html>
