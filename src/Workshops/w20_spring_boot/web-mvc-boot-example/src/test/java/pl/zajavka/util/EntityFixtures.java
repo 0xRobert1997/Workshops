@@ -29,7 +29,7 @@ public class EntityFixtures {
         return EmployeeEntity.builder()
                 .name("Tadek")
                 .surname("Pepega")
-                .salary(new BigDecimal("100000000"))
+                .salary(new BigDecimal("10000"))
                 .phone("+11 222 222 222")
                 .email("something@something.com")
                 .build();

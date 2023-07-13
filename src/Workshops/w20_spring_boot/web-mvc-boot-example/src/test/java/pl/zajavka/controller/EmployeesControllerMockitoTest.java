@@ -1,6 +1,5 @@
 package pl.zajavka.controller;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -8,7 +7,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ui.ExtendedModelMap;
-import pl.zajavka.controller.EmployeesController;
 import pl.zajavka.infrastructure.database.entity.EmployeeEntity;
 import pl.zajavka.infrastructure.database.repository.EmployeeRepository;
 import pl.zajavka.util.EntityFixtures;
@@ -19,7 +17,7 @@ import static org.assertj.core.api.Assertions.*;
 
 
 @ExtendWith(MockitoExtension.class)
-public class EmployeesControllerTest {
+public class EmployeesControllerMockitoTest {
 
     @Mock
     private EmployeeRepository employeeRepository;

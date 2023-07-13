@@ -10,7 +10,11 @@
         </encoder>
     </appender>
 
-    <springProfile name="prod">
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+<!--    <springProfile name="prod">
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
         </root>
@@ -20,6 +24,6 @@
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
         </root>
-    </springProfile>
+    </springProfile>-->
 
 </configuration>
