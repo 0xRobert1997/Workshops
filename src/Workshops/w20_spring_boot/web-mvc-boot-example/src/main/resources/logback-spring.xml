@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
-
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <charset>UTF-8</charset>
-            <pattern>[%t] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <root level="INFO">
-        <appender-ref ref="CONSOLE"/>
-    </root>
 
-<!--    <springProfile name="prod">
-        <root level="INFO">
+    <springProfile name="prod">
+        <root level="DEBUG">
             <appender-ref ref="CONSOLE"/>
         </root>
     </springProfile>
@@ -24,6 +19,7 @@
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
         </root>
-    </springProfile>-->
+    </springProfile>
+
 
 </configuration>

@@ -28,7 +28,7 @@ public class EmployeesControllerWebMvcTest {
     private EmployeeRepository employeeRepository;
 
     @ParameterizedTest
-    @MethodSource
+    @MethodSource("thatPhoneValidationWorksCorrectly")
     void thatPhoneValidationWorksCorrectly(Boolean correctPhone, String phone) throws Exception {
         //given
         LinkedMultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
