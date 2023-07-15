@@ -1,6 +1,6 @@
 package pl.zajavka.infrastructure.security;
 
-import com.sun.net.httpserver.HttpsServer;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -37,7 +37,8 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
+    @ConditionalOnProperty(value = "spring.security.enabled", havingValue = "true", matchIfMissing = true)
+    public SecurityFilterChain securityEnabled(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests()
                 .requestMatchers("/login", "/error", "/images/oh_no.png").permitAll()
                 .requestMatchers(HttpMethod.DELETE).hasAnyAuthority("ADMIN")
@@ -51,7 +52,13 @@ public class SecurityConfiguration {
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
                 .permitAll();
-
+        return httpSecurity.build();
+    }
+    @Bean
+    @ConditionalOnProperty(value = "spring.security.enabled", havingValue = "false")
+    public SecurityFilterChain securityDisabled(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.authorizeHttpRequests()
+                .anyRequest().permitAll();
         return httpSecurity.build();
     }
 
