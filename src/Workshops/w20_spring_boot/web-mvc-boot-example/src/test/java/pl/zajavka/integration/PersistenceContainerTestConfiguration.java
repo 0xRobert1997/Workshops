@@ -2,6 +2,7 @@ package pl.zajavka.integration;
 
 import com.zaxxer.hikari.HikariDataSource;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ public class PersistenceContainerTestConfiguration {
     public static final String POSTGRES_CONTAINER = "postgres:15.0";
 
     @Bean
+    @Qualifier(POSTGRES_BEAN_NAME)
     PostgreSQLContainer<?> postgreSQLContainer() {
         PostgreSQLContainer<?> container = new PostgreSQLContainer<>(POSTGRES_CONTAINER)
                 .withUsername(POSTGRES_USERNAME)
