@@ -1,0 +1,53 @@
+package pl.zajavka.infrastructure.configuration;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+import pl.zajavka.infrastructure.database.entity.EmployeeEntity;
+import pl.zajavka.infrastructure.database.repository.EmployeeRepository;
+import pl.zajavka.infrastructure.database.repository.PetRepository;
+
+import java.math.BigDecimal;
+
+@Slf4j
+@Component
+@AllArgsConstructor
+public class BootstrapApplicationComponent implements ApplicationListener<ContextRefreshedEvent> {
+
+    private EmployeeRepository employeeRepository;
+
+    private PetRepository petRepository;
+
+    @Override
+    @Transactional
+    public void onApplicationEvent(final @NonNull ContextRefreshedEvent event) {
+        employeeRepository.deleteAll();
+        petRepository.deleteAll();
+
+        employeeRepository.save(EmployeeEntity.builder()
+                .name("Stefan")
+                .surname("Zajavka")
+                .salary(new BigDecimal("52322.00"))
+                .phone("+48 666 666 666")
+                .email("one@zajavka.pl")
+                .build());
+        employeeRepository.save(EmployeeEntity.builder()
+                .name("Agnieszka")
+                .surname("Spring")
+                .salary(new BigDecimal("62341.00"))
+                .phone("+48 666 420 666")
+                .email("two@zajavka.pl")
+                .build());
+        employeeRepository.save(EmployeeEntity.builder()
+                .name("Tomasz")
+                .surname("Hibernate")
+                .salary(new BigDecimal("53231.00"))
+                .phone("+48 666 666 420")
+                .email("three@zajavka.pl")
+                .build());
+    }
+}
