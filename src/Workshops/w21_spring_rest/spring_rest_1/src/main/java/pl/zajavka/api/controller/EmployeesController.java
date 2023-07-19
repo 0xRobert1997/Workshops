@@ -1,23 +1,16 @@
 package pl.zajavka.api.controller;
 
-import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.zajavka.api.dto.EmployeeDTO;
-import pl.zajavka.infrastructure.database.entity.EmployeeEntity;
 import pl.zajavka.infrastructure.database.repository.EmployeeRepository;
 
-import java.util.List;
+import static pl.zajavka.api.controller.EmployeesController.EMPLOYEES;
 
 @RestController
-@RequestMapping("/employees")
-
+@RequestMapping(EMPLOYEES)
 public class EmployeesController {
 
-    private EmployeeRepository employeeRepository;
+    public static final String EMPLOYEES = "/employees";
 
     @PostMapping
     public ResponseEntity<?> addEmployee(
