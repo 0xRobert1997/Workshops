@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import pl.zajavka.infrastructure.database.entity.EmployeeEntity;
 import pl.zajavka.infrastructure.database.repository.EmployeeRepository;
-import pl.zajavka.infrastructure.database.repository.PetRepository;
+
 
 import java.math.BigDecimal;
 
@@ -20,13 +20,13 @@ public class BootstrapApplicationComponent implements ApplicationListener<Contex
 
     private EmployeeRepository employeeRepository;
 
-    private PetRepository petRepository;
+//    private PetRepository petRepository;
 
     @Override
     @Transactional
     public void onApplicationEvent(final @NonNull ContextRefreshedEvent event) {
         employeeRepository.deleteAll();
-        petRepository.deleteAll();
+        //petRepository.deleteAll();
 
         employeeRepository.save(EmployeeEntity.builder()
                 .name("Stefan")
