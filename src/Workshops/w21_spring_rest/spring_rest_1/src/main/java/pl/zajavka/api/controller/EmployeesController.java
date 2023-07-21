@@ -3,6 +3,8 @@ package pl.zajavka.api.controller;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,7 @@ import pl.zajavka.api.dto.EmployeesDTO;
 import pl.zajavka.infrastructure.database.entity.EmployeeEntity;
 import pl.zajavka.infrastructure.database.repository.EmployeeRepository;
 
-import java.net.URI;
+import java.math.BigDecimal;
 
 import static pl.zajavka.api.controller.EmployeesController.EMPLOYEES;
 
@@ -23,6 +25,7 @@ public class EmployeesController {
 
     public static final String EMPLOYEES = "/employees";
     public static final String EMPLOYEE_ID = "/{employeeId}";
+    public static final String EMPLOYEE_UPDATE_SALARY = "/{employeeId}/salary";
     public static final String EMPLOYEE_ID_RESULT = "/%s";
 
     private EmployeeRepository employeeRepository;
@@ -62,9 +65,17 @@ public class EmployeesController {
                 .email(employeeDTO.getEmail())
                 .build();
         EmployeeEntity created = employeeRepository.save(employeeEntity);
-        return ResponseEntity
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Location", EMPLOYEES + EMPLOYEE_ID_RESULT.formatted(created.getEmployeeId()));
+
+        return new ResponseEntity<>(
+            headers,
+            HttpStatus.CREATED
+        );
+/*        return ResponseEntity
                 .created(URI.create(EMPLOYEES + EMPLOYEE_ID_RESULT.formatted(created.getEmployeeId())))
-                .build();
+                .build();*/
     }
 
     @PutMapping(EMPLOYEE_ID)
@@ -89,8 +100,8 @@ public class EmployeesController {
 
     @DeleteMapping(EMPLOYEE_ID)
     public ResponseEntity<?> deleteEmployee(
-        @PathVariable Integer employeeId
-    ){
+            @PathVariable Integer employeeId
+    ) {
         // najpierw szukamy pracownika bo deleteById nie zwraca info czy się udało
         var employeeOpt = employeeRepository.findById(employeeId);
 
@@ -100,6 +111,20 @@ public class EmployeesController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PatchMapping(EMPLOYEE_UPDATE_SALARY)
+    public ResponseEntity<?> updateEmployeeSalary(
+            @PathVariable Integer employeeId,
+            @RequestParam(required = true) BigDecimal newSalary
+    ) {
+        EmployeeEntity existingEmployee = employeeRepository.findById(employeeId)
+                .orElseThrow(() -> new EntityNotFoundException(
+                        "EmployeeEntity not found, employeeId [%s]".formatted(employeeId)
+                ));
+        existingEmployee.setSalary(newSalary);
+        employeeRepository.save(existingEmployee);
+        return ResponseEntity.ok().build();
     }
 
 }

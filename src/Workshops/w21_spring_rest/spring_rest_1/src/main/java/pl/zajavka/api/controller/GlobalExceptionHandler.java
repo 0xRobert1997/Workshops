@@ -1,51 +1,67 @@
 package pl.zajavka.api.controller;
 
+import jakarta.validation.ConstraintViolation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
-import org.springframework.validation.BindException;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
+import org.springframework.http.*;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.context.request.WebRequest;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import pl.zajavka.api.dto.ExceptionMessage;
 
-import java.util.Optional;
+import java.util.Map;
+import java.util.UUID;
 
 @Slf4j
-@ControllerAdvice
-public class GlobalExceptionHandler {
+@RestControllerAdvice
+@Order(Ordered.HIGHEST_PRECEDENCE)
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+
+
+    private static final Map<Class<?>, HttpStatus> EXCEPTION_STATUS = Map.of(
+            ConstraintViolation.class, HttpStatus.BAD_REQUEST,
+            EntityNotFoundException.class, HttpStatus.NOT_FOUND
+    );
+
+    @Override
+    protected ResponseEntity<Object> handleExceptionInternal(
+            @NonNull Exception ex,
+            Object body,
+            @NonNull HttpHeaders headers,
+            @NonNull HttpStatusCode statusCode,
+            @NonNull WebRequest request
+    ) {
+        final String errorId = UUID.randomUUID().toString();
+        log.error("Exception: ID={}, HttpStatus={}", errorId, statusCode, ex);
+        return super.handleExceptionInternal(
+                ex,
+                ExceptionMessage.of(errorId),
+                headers,
+                statusCode,
+                request
+        );
+    }
 
     @ExceptionHandler(Exception.class)
-    public ModelAndView handleException(Exception ex) {
-        String message = String.format("Other exception occurred: [%s]", ex.getMessage());
-        log.error(message, ex);
-        ModelAndView modelView = new ModelAndView("error");
-        modelView.addObject("errorMessage", message);
-        return modelView;
+    public ResponseEntity<?> handle(Exception ex) {
+        return doHandle(ex, getHttpStatusFromException(ex.getClass()));
     }
 
-    @ExceptionHandler(EntityNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ModelAndView handleNoResourceFound(EntityNotFoundException ex) {
-        String message = String.format("Could not find a resource: [%s]", ex.getMessage());
-        log.error(message, ex);
-        ModelAndView modelView = new ModelAndView("error");
-        modelView.addObject("errorMessage", message);
-        return modelView;
+    private ResponseEntity<?> doHandle(Exception ex, HttpStatus status) {
+        final String errorId = UUID.randomUUID().toString();
+        log.error("Exception: ID={}, HttpStatus={}", errorId, status, ex);
+        return ResponseEntity
+                .status(status)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(ExceptionMessage.of(errorId));
     }
 
-    @ExceptionHandler(BindException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ModelAndView handleException(BindException ex) {
-        String message = "Bad request for field: [%s] wrong value: [%s]".formatted(
-                Optional.ofNullable(ex.getFieldError()).map(FieldError::getField).orElse(null),
-                Optional.ofNullable(ex.getFieldError()).map(FieldError::getRejectedValue).orElse(null)
-        );
-        log.error(message, ex);
-        ModelAndView modelView = new ModelAndView("error");
-        modelView.addObject("errorMessage", message);
-        return modelView;
+    private HttpStatus getHttpStatusFromException(final Class<?> exceptionClass) {
+        return EXCEPTION_STATUS.getOrDefault(exceptionClass, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
