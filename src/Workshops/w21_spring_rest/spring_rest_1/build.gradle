@@ -26,12 +26,16 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	// żeby api mogło zwracać xml'e
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
 
 	//db
 	implementation 'org.flywaydb:flyway-core'
 	runtimeOnly 'org.postgresql:postgresql'
+
+	// api
+	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${openApiVersion}"
 
 	//annotations
 	compileOnly 'org.projectlombok:lombok'

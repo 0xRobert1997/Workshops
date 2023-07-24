@@ -37,7 +37,7 @@ public class EmployeeEntity {
     @Column(name = "email")
     private String email;
 
-/*    @OneToMany(fetch = FetchType.EAGER, mappedBy = "employee")
-    private Set<PetEntity> pets;*/
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "employee")
+    private Set<PetEntity> pets;
 
 }

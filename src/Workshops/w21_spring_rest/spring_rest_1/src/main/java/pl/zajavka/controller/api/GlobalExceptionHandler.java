@@ -1,4 +1,4 @@
-package pl.zajavka.api.controller;
+package pl.zajavka.controller.api;
 
 import jakarta.validation.ConstraintViolation;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +12,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import pl.zajavka.api.dto.ExceptionMessage;
+import pl.zajavka.controller.dto.ExceptionMessage;
 
 import java.util.Map;
 import java.util.UUID;
