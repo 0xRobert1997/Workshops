@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version "${springBootVersion}"
 	id 'io.spring.dependency-management' version "${springBootDMVersion}"
+	id 'org.openapi.generator' version "${openApiGeneratorVersion}"
 }
 
 group = 'com.example'
@@ -36,6 +37,10 @@ dependencies {
 
 	// api
 	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${openApiVersion}"
+	implementation "org.openapitools:jackson-databind-nullable:$jacksonDatabindNullableVersion"
+	implementation "javax.annotation:javax.annotation-api:${javaxAnnotationApiVersion}"
+	implementation "io.swagger:swagger-annotations:${swaggerAnnotationsVersion}"
+	implementation "com.google.code.findbugs:jsr305:${jsr305Version}"
 
 	//annotations
 	compileOnly 'org.projectlombok:lombok'
@@ -57,6 +62,29 @@ dependencyManagement {
 		mavenBom "org.testcontainers:testcontainers-bom:${testcontainersVersion}"
 	}
 }
+
+openApiGenerate {
+	generatorName = "java"
+	library = "webclient"
+	configOptions = [
+		serializableModel: "true",
+		dateLibrary: "java8",
+		serializationLibrary: "jackson"
+	]
+
+	outputDir = "$buildDir/generated-sources/openapi".toString()
+	inputSpec = "$rootDir/src/main/resources/petstore-v3.0.2.json".toString()
+	apiPackage = "pl.zajavka.infrastructure.petstore.api"
+	modelPackage = "pl.zajavka.infrastructure.petstore.model"
+}
+
+sourceSets {
+	main {
+		java.srcDirs += "$buildDir/generated-sources/openapi/src/main/java"
+	}
+}
+
+compileJava.dependsOn tasks.openApiGenerate
 
 test {
 	useJUnitPlatform()

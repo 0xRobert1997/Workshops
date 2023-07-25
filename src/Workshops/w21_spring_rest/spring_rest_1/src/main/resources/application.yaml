@@ -3,7 +3,10 @@ server:
   servlet:
     context-path: /zajavka
             # localhost:8087/zajavka
-
+api:
+  petStore:
+    url: https://petstore3.swagger.io/api/v3/
+    
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource

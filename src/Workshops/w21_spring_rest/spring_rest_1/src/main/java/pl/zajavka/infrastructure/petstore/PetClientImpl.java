@@ -2,8 +2,8 @@ package pl.zajavka.infrastructure.petstore;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.client.WebClient;
 import pl.zajavka.controller.dao.PetDao;
+import pl.zajavka.infrastructure.petstore.api.PetApi;
 
 import java.util.Optional;
 
@@ -11,19 +11,17 @@ import java.util.Optional;
 @AllArgsConstructor
 public class PetClientImpl implements PetDao {
 
-    private final WebClient webClient;
+    private final PetApi petApi;
+    private final PetMapper petMapper;
 
 
     @Override
     public Optional<Pet> getPet(Long petId) {
         try {
-            Pet result = webClient
-                    .get()
-                    .uri("/pet/" + petId)
-                    .retrieve()
-                    .bodyToMono(Pet.class)
+            final var available = petApi.findPetsByStatusWithHttpInfo("available")
                     .block();
-            return Optional.ofNullable(result);
+            return Optional.ofNullable(petApi.getPetById(petId).block())
+                    .map(petMapper::map);
         } catch (Exception e) {
             return Optional.empty();
         }
