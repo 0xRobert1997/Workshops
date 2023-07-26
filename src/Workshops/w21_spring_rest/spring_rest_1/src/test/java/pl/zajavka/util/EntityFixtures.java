@@ -1,4 +1,4 @@
-package pl.zajavka.controller.util;
+package pl.zajavka.util;
 
 import pl.zajavka.infrastructure.database.entity.EmployeeEntity;
 
