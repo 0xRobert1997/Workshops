@@ -35,7 +35,7 @@ public interface EmployeesControllerTestSupport {
                 .as(EmployeeDTO.class);
     }
 
-    default EmployeeDTO getEmployeeById(final String employeeId) {
+    default EmployeeDTO getEmployeeById(final Integer employeeId) {
         return requestSpecification()
                 .get(EmployeesController.EMPLOYEES + EmployeesController.EMPLOYEE_ID, employeeId)
                 .then()

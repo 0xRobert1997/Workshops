@@ -14,6 +14,8 @@ import pl.zajavka.util.DtoFixtures;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class EmployeesControllerTestRestTemplateIT extends AbstractIntegrationTest {
 
+
+    // zazwyczaj nie pisze się testów z TestRestTemplate tylko z RestAssured
     @LocalServerPort
     private int port;
 
