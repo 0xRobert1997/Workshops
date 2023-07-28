@@ -9,17 +9,19 @@ import io.restassured.config.ObjectMapperConfig;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
+import org.apache.http.HttpHeaders;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
 
+import pl.zajavka.controller.integration.support.AuthenticationTestSupport;
 import pl.zajavka.controller.integration.support.ControllerTestSupport;
 
-public abstract class RestAssuredIntegrationTestBase extends AbstractIntegrationTest implements ControllerTestSupport {
+public abstract class RestAssuredIntegrationTestBase
+        extends AbstractIntegrationTest
+        implements ControllerTestSupport, AuthenticationTestSupport {
 
     @LocalServerPort
     private int serverPort;
@@ -28,6 +30,10 @@ public abstract class RestAssuredIntegrationTestBase extends AbstractIntegration
     private String basePath;
 
     protected static WireMockServer wireMockServer;
+    private String jSessionIdValue;
+
+    @Autowired
+    protected ObjectMapper objectMapper;
 
     @BeforeAll
     static void beforeAll() {
@@ -39,8 +45,23 @@ public abstract class RestAssuredIntegrationTestBase extends AbstractIntegration
         wireMockServer.start();
     }
 
+    // Przed każdym testem się loguje i zwraca ciastko które można użyć w teście
+    @BeforeEach
+    void beforeEach() {
+        jSessionIdValue = login("User1", "test")
+                .and()
+                .cookie("JSESSIONID")
+                .header(HttpHeaders.LOCATION, "http://localhost:%s%s/".formatted(serverPort, basePath))
+                .extract()
+                .cookie("JSESSIONID");
+    }
+
     @AfterEach
     void afterEach() {
+        logout()
+                .and()
+                        .cookie("JSESSIONID", "");
+        jSessionIdValue = null;
         wireMockServer.resetAll(); // resetuje konfiguracje wszystkich mocków po każdym teście
     }
 
@@ -49,8 +70,12 @@ public abstract class RestAssuredIntegrationTestBase extends AbstractIntegration
         wireMockServer.stop();
     }
 
-    @Autowired
-    protected ObjectMapper objectMapper;
+    @Test
+    void contextLoad() {
+        Assertions.assertTrue(true, "Context loaded");
+    }
+
+
 
     @Override
     public ObjectMapper getObjectMapper() {
@@ -58,13 +83,22 @@ public abstract class RestAssuredIntegrationTestBase extends AbstractIntegration
     }
 
     public RequestSpecification requestSpecification() {
+        return restAssuredBase()
+                .accept(ContentType.JSON)
+                .contentType(ContentType.JSON)
+                .cookie("JSESSIONID", jSessionIdValue);
+    }
+
+    public RequestSpecification requestSpecificationNoAuthorization() {
+        return restAssuredBase();
+    }
+
+    private RequestSpecification restAssuredBase() {
         return RestAssured
                 .given()
                 .config(getConfig())
                 .basePath(basePath)
-                .port(serverPort)
-                .accept(ContentType.JSON)
-                .contentType(ContentType.JSON);
+                .port(serverPort);
     }
 
 
