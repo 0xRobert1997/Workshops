@@ -39,15 +39,16 @@ dependencies {
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
     annotationProcessor "org.projectlombok:lombok-mapstruct-binding:${lombokMapstructBindingVersion}"
 
-    //api
-    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${openApiVersion}"
+    // api
+    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springDocOpenApiVersion}"
+
+    // Po wygenerowaniu klienta, trzeba będzie dodać poniższe zależności, żeby kod się kompilował
     implementation "org.openapitools:jackson-databind-nullable:${jacksonDatabindNullableVersion}"
     implementation "javax.annotation:javax.annotation-api:${javaxAnnotationApiVersion}"
     implementation "io.swagger:swagger-annotations:${swaggerAnnotationsVersion}"
 
-    // jeśli będzie leciał błąd
     // warning: unknown enum constant When.MAYBE
-    // reason: class file for jacax.annotation.meta.When not found
+    // reason: class file for javax.annotation.meta.When not found
     implementation "com.google.code.findbugs:jsr305:${jsr305Version}"
 
     // test
@@ -58,10 +59,10 @@ dependencies {
     testImplementation 'org.testcontainers:junit-jupiter'
     testImplementation 'org.testcontainers:postgresql'
 
-    testImplementation "io.rest-assured:rest-assured:${restAssuredVersion}"
     // ten slf4j od wiremocka musi być wyżej od wiremocka bo standalone ma swojego i się mieszają
     testImplementation "org.slf4j:slf4j-api:${wiremockSlf4jVersion}"
     testImplementation "com.github.tomakehurst:wiremock-standalone:${wiremockVersion}"
+    testImplementation "io.rest-assured:rest-assured:${restAssuredVersion}"
 }
 
 dependencyManagement {

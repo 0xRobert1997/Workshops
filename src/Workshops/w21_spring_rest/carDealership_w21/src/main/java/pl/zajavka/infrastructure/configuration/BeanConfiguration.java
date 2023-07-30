@@ -13,12 +13,12 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
 
     @Bean
-    public ObjectMapper objectMapper() {
+    public static ObjectMapper objectMapper() {
         return new ObjectMapper()
                 .registerModule(new JavaTimeModule())
                 .registerModule(new Jdk8Module())
-                .configure(SerializationFeature.WRITE_DATE_KEYS_AS_TIMESTAMPS, false)
+                .configure(SerializationFeature.WRITE_DATE_KEYS_AS_TIMESTAMPS, false) //jak jest false to data jest zwracana jako .toString()
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-                .setSerializationInclusion(JsonInclude.Include.NON_NULL);
+                .setSerializationInclusion(JsonInclude.Include.NON_NULL); // jak wybieramy losowe auto i jakieś pole będzie nullem to po prostu go nie pokaże
     }
 }

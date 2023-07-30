@@ -22,31 +22,21 @@ public class WebClientConfiguration {
     public static final int TIMEOUT = 5000;
 
     @Bean
-    public WebClient webClient(final ObjectMapper objectMapper) {
-/*        final var httpClient = HttpClient.create()
-                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, TIMEOUT)
-                .responseTimeout(Duration.ofMillis(TIMEOUT))
-                .doOnConnected(conn ->
-                        conn.addHandlerLast(new ReadTimeoutHandler(TIMEOUT, TimeUnit.MILLISECONDS))
-                                .addHandlerLast(new WriteTimeoutHandler(TIMEOUT, TimeUnit.MILLISECONDS)));*/
-
-        final var exchangeStrategies = ExchangeStrategies
+    public WebClient webClient(ObjectMapper objectMapper) {
+        final var strategies = ExchangeStrategies
                 .builder()
                 .codecs(configurer -> {
                     configurer
                             .defaultCodecs()
                             .jackson2JsonEncoder(
-                                    new Jackson2JsonEncoder(objectMapper, MediaType.APPLICATION_JSON)
-                            );
+                                    new Jackson2JsonEncoder(objectMapper, MediaType.APPLICATION_JSON));
                     configurer
                             .defaultCodecs()
                             .jackson2JsonDecoder(
-                                    new Jackson2JsonDecoder(objectMapper, MediaType.APPLICATION_JSON)
-                            );
-                })
-                .build();
+                                    new Jackson2JsonDecoder(objectMapper, MediaType.APPLICATION_JSON));
+                }).build();
         return WebClient.builder()
-                .exchangeStrategies(exchangeStrategies)
+                .exchangeStrategies(strategies)
                 .build();
     }
 
